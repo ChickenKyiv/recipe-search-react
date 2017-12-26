@@ -87,9 +87,10 @@ class App extends Component {
           </div>
         </div>
 
-        <div style={{"display":"flex"}}>
-        < button type="submit" className="btn btn-outline-success btn-sm" style={{float:"none"}} >Success</button>
-        </div>     
+        <div className="text-center" >
+        < button type="submit" className="btn btn-outline-success btn-sm"  >Success</button>
+        </div> 
+
       </form>
       
       </div>
