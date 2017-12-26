@@ -8,11 +8,17 @@ class App extends Component {
   render() {
     return (
     <div>
-      <div className="container">
-      <nav class="navbar navbar-light">
-        <a class="navbar-brand" href="#">Recipe Planner</a>
+     
+      <nav className="navbar navbar-light">
+     
+        <a className="navbar-brand" href="#">Recipe Planner</a>
+        <ul> 
+        <li className="navbar-brand" href="#">"Plan your recipes quickly"</li>
+        </ul>
+        <a className="navbar-brand" href="#">Welcome</a>
+    
       </nav>
-      </div>
+
 
 
       <form>
