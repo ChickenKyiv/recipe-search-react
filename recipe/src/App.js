@@ -30,7 +30,7 @@ class App extends Component {
           </div>
           
           <div className="col">
-            <input type="text" className="form-control" placeholder="Maximum Cooking Time in Minutes"/>
+            <input type="number" className="form-control" placeholder="Maximum Cooking Time in Minutes"/>
           </div>
         </div>
 
