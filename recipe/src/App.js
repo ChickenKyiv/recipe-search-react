@@ -9,11 +9,11 @@ class App extends Component {
     return (
     <div>
      
-      <nav className="navbar navbar-light">
+      <nav className="navbar navbar-light" style={{background: "#ac6ace"}}>
      
         <a className="navbar-brand" href="#">Recipe Planner</a>
         <ul> 
-        <li className="navbar-brand" href="#">"Plan your recipes quickly"</li>
+        <li className="navbar-brand">"Plan your recipes quickly"</li>
         </ul>
         <a className="navbar-brand" href="#">Welcome</a>
     
@@ -87,7 +87,7 @@ class App extends Component {
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        < button type="submit" className="btn btn-outline-success btn-sm">Success</button>
      
      
      
