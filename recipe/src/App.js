@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './App.css'
 const formFunction =()=>{
 
 }
@@ -87,13 +87,11 @@ class App extends Component {
           </div>
         </div>
 
-        < button type="submit" className="btn btn-outline-success btn-sm">Success</button>
-     
-     
-     
+        <div style={{"display":"flex"}}>
+        < button type="submit" className="btn btn-outline-success btn-sm" style={{float:"none"}} >Success</button>
+        </div>     
       </form>
       
-
       </div>
     );
   }
