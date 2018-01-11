@@ -113,6 +113,7 @@ class App extends Component {
 
     return (
       <div>
+        Hello
         <Layout>
           <Header style={{ width: "100%", height: "120%" }}>  <div className="logo" />
             <Menu
