@@ -1583,6 +1583,7 @@ let ingredients = [
   'orange flower water',
   'Cafe Boheme Liqueur',
   'Barritts Ginger Beer',
-  'absolut mandrin';
+  'absolut mandrin'
+ ];
  
  export default ingredients;
