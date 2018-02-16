@@ -11,6 +11,7 @@ excludedCourse
 allowedHoliday
 excludedHoliday
 
+@TODO we'll redo this project using Gatsby and this will help us to make transitions to Graph ql stuff
 
 @TODO separate stuff into basic components and reduce size of app.js
 
