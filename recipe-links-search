@@ -26,22 +26,3 @@ http://localhost:3000/api/recipe?filter[where][and][0][name]=Pork
 &filter[where][and][5][allergy][allergyId]=allergyId
 &filter[where][and][6][diet][dietId]=dietId
 
-Stage 1
-We'll start from simple queries and getting their responses on our react app.
-Getting ingredients by name
-Getting ingredients by id
-
-Getting attributes by name
-Getting attributes by id
-
-Stage 2
-Recipe filter with simple queries
-Where we have only one item included
-Like include ingredient
-Exclude ingredient
-Include diet
-Exclude diet
-
-
-Hi Rahul, i think i find a way that we can go step by step at testing how API search works.
-Tell me what do you think about it?
