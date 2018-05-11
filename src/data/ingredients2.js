@@ -395,7 +395,7 @@ let ingredients = [
   'fennel seeds',
   'white bread',
   'puff pastry',
-  'fruit', 
+  'fruit',
   'brandy',
   'cooking oil',
   'white chocolate',
@@ -495,6 +495,7 @@ let ingredients = [
   'pistachios',
   'clarified butter',
   'gruyere cheese' ]
+  
 [ 'tortilla chips',
   'cream of mushroom soup',
   'fresh orange juice',
@@ -692,7 +693,7 @@ let ingredients = [
   'yellow mustard',
   'celery root',
   'celery bulbs',
-  'celeriac', 
+  'celeriac',
   'egg noodles',
   'cognac',
   'whipped topping',
@@ -1286,7 +1287,7 @@ let ingredients = [
   'dried thyme leaves',
   'reduced fat cream cheese',
   'granola',
-  'rye bread', 
+  'rye bread',
   'black sesame seeds',
   'grapefruit juice',
   'cress',
@@ -1585,5 +1586,5 @@ let ingredients = [
   'Barritts Ginger Beer',
   'absolut mandrin'
  ];
- 
+
  export default ingredients;
