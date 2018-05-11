@@ -11,7 +11,7 @@ class Allergy extends Component {
   }
 
   render(){
-    return ()
+    return ();
   }
 }
-export default Header;
+export default Allergy;

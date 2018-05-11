@@ -11,7 +11,7 @@ class Cuisine extends Component {
   }
 
   render(){
-    return ()
+    return ();
   }
 }
-export default Header;
+export default Cuisine;

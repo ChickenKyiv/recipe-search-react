@@ -11,7 +11,7 @@ class Course extends Component {
   }
 
   render(){
-    return ()
+    return ();
   }
 }
-export default Header;
+export default Course;

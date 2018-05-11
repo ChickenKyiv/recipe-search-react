@@ -11,7 +11,7 @@ class Diet extends Component {
   }
 
   render(){
-    return ()
+    return ();
   }
 }
-export default Header;
+export default Diet;

@@ -12,7 +12,7 @@ class SearchForm extends Component {
   }
 
   render(){
-    return ()
+    return ();
   }
 }
-export default Header;
+export default SearchForm;

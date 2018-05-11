@@ -11,7 +11,7 @@ class Holiday extends Component {
   }
 
   render(){
-    return ()
+    return ();
   }
 }
-export default Header;
+export default Holiday;

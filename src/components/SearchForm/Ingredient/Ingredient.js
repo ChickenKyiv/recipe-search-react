@@ -12,8 +12,8 @@ class Ingredient extends Component {
   }
 
   render(){
-    return ()
+    return ();
   }
 
 }
-export default Header;
+export default Ingredient;
