@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
+import { Select, Col } from 'antd';
 
 // @todo update the paths. put to components arrays
 import cuisines       from '../../../data/cuisines';
@@ -19,19 +19,19 @@ class Cuisine extends Component {
 
     // @todo change to include, exclude
     this.state = {
-      cuisines_you_like: [],
-      cuisines_you_dont_like: [],
+      include: [],
+      exclude: [],
     }
   }
 
   render(){
 
-    const handleChangeCuisines_you_like = (value) => {
-      this.setState({ cuisines_you_like: value })
+    const onChangeInclude = (value) => {
+      this.setState({ include: value })
     };
 
-    const handleChangeCuisines_you_dont_like = (value) => {
-      this.setState({ cuisines_you_dont_like: value })
+    const onChangeExclude = (value) => {
+      this.setState({ exclude: value })
     };
 
     return (
@@ -40,10 +40,9 @@ class Cuisine extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           placeholder="Cuisines you like"
-          onChange={handleChangeCuisines_you_like}
+          onChange={onChangeInclude}
         >
-          {children_select_cuisines}
-
+          {options}
         </Select>
       </Col>
 
@@ -52,10 +51,9 @@ class Cuisine extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           placeholder="Cuisines you don't like"
-          onChange={handleChangeCuisines_you_dont_like}
+          onChange={onChangeExclude}
         >
-          {children_select_cuisines}
-
+          {options}
         </Select>
       </Col>
     );

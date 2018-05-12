@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
+import { Select, Col } from 'antd';
 
 // @todo update the paths. put to components arrays
 import ingredients from '../../../data/ingredients';
@@ -23,18 +23,18 @@ class Ingredient extends Component {
 
     // @todo change to include, exclude
     this.state = {
-      ingredients_have: [],
-      ingredients_dont_have: [],
+      include: [],
+      exclude: [],
     }
   }
 
   render(){
-    const handleChangeIngredientsHave = (value) => {
-      this.setState({ ingredients_have: value })
+    const onChangeInclude = (value) => {
+      this.setState({ include: value })
     };
 
-    const handleChangeIngredientsDontHave = (value) => {
-      this.setState({ ingredients_dont_have: value })
+    const onChangeExclude = (value) => {
+      this.setState({ exclude: value })
     };
 
     return (
@@ -43,10 +43,9 @@ class Ingredient extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           placeholder="Ingredients you have"
-          onChange={handleChangeIngredientsHave}
+          onChange={onChangeInclude}
         >
-          {children_select_ingredients}
-
+          {options}
         </Select>
       </Col>
 
@@ -55,10 +54,9 @@ class Ingredient extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           placeholder="Ingredients you don't have"
-          onChange={handleChangeIngredientsDontHave}
+          onChange={onChangeExclude}
         >
-          {children_select_ingredients}
-
+          {options}
         </Select>
       </Col>
     );

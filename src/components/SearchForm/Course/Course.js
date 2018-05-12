@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
+import { Select, Col } from 'antd';
 
 // @todo update the paths. put to components arrays
 import courses        from '../../../data/courses';
@@ -21,20 +21,20 @@ class Course extends Component {
     // @todo change to include, exclude
     this.state = {
 
-      courses_you_want: [],
-      courses_you_dont_want: [],
+      include: [],
+      exclude: [],
 
     }
   }
 
   render(){
     //@todo make one method by passing flag variable
-    const handleChangeCourses_you_want = (value) => {
-      this.setState({ courses_you_want: value })
+    const onChangeInclude = (value) => {
+      this.setState({ include: value })
     };
 
-    const handleChangeCourses_you_dont_want = (value) => {
-      this.setState({ courses_you_dont_want: value })
+    const onChangeExclude = (value) => {
+      this.setState({ exclude: value })
     };
 
     return (
@@ -43,10 +43,9 @@ class Course extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           placeholder="Courses You want"
-          onChange={handleChangeCourses_you_want}
+          onChange={onChangeInclude}
         >
-          {children_select_courses}
-
+          {options}
         </Select>
       </Col>
 
@@ -55,10 +54,9 @@ class Course extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           placeholder="Courses You don't want"
-          onChange={handleChangeCourses_you_dont_want}
+          onChange={onChangeExclude}
         >
-          {children_select_courses}
-
+          {options}
         </Select>
       </Col>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
+import { Select, Col } from 'antd';
 
 // @todo update the paths. put to components arrays
 import allergies  from '../../../data/allergies';
@@ -29,7 +29,7 @@ class Allergy extends Component {
 
   render(){
 
-    const handleChangeAllergies = (value) => {
+    const onChange = (value) => {
       this.setState({ allergies: value })
     };
 
@@ -38,10 +38,9 @@ class Allergy extends Component {
         mode="multiple"
         style={{ width: '100%' }}
         placeholder="Allergies"
-        onChange={handleChangeAllergies}
+        onChange={onChange}
       >
-        {children_select_allergies}
-
+        {options}
       </Select>
     );
   }

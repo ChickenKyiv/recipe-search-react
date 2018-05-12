@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
+import { Select, Col } from 'antd';
 
 // @todo update the paths. put to components arrays
-import specific_diets from '../../../data/specific_diets';
+import diets from '../../../data/specific_diets';
 
 const Option     = Select.Option;
 //@todo change push to underscore methods
 const options = [];
-for (let i = 0; i < specific_diets.length; i++) {
+for (let i = 0; i < diets.length; i++) {
   options.push(
-    <Option key={specific_diets[i].toString()}>{specific_diets[i].toString()}</Option>
+    <Option key={diets[i].toString()}>{diets[i].toString()}</Option>
   );
 }
 
@@ -19,14 +19,14 @@ class Diet extends Component {
 
     // @todo change to include
     this.state = {
-      specific_diets: [],
+      diets: [],
     }
   }
 
   render(){
 
-    const handleChangeSpecific_diets = (value) => {
-      this.setState({ specific_diets: value })
+    const onChange = (value) => {
+      this.setState({ diets: value })
     };
 
     return (
@@ -34,10 +34,9 @@ class Diet extends Component {
         mode="multiple"
         style={{ width: '100%' }}
         placeholder="Specific Diets"
-        onChange={handleChangeSpecific_diets}
+        onChange={onChange}
       >
-        {children_select_specific_diets}
-
+        {options}
       </Select>
     );
   }

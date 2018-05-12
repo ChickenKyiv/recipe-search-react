@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
+import { Select, Col } from 'antd';
 
 // @todo update the paths. put to components arrays
 import holidays       from '../../../data/holidays';
@@ -20,19 +20,19 @@ class Holiday extends Component {
 
     // @todo change to include, exclude
     this.state = {
-      holidays_want: [],
-      holidays_dont_want: []
+      include: [],
+      exclude: []
     }
   }
 
   render(){
 
-      const handleChangeholidays_want = (value) => {
-        this.setState({ holidays_want: value })
+      const onChangeInclude = (value) => {
+        this.setState({ include: value })
       };
 
-      const handleChangeholidays_dont_want = (value) => {
-        this.setState({ holidays_dont_want: value })
+      const onChangeExclude = (value) => {
+        this.setState({ exclude: value })
       };
 
     return (
@@ -41,10 +41,9 @@ class Holiday extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           placeholder="Holidays/Specific You want"
-          onChange={handleChangeholidays_want}
+          onChange={onChangeInclude}
         >
-          {children_select_holidays}
-
+          {options}
         </Select>
       </Col>
 
@@ -53,10 +52,9 @@ class Holiday extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           placeholder="Holidays/Specific You don't want"
-          onChange={handleChangeholidays_dont_want}
+          onChange={onChangeExclude}
         >
-          {children_select_holidays}
-
+          {options}
         </Select>
       </Col>
     );
