@@ -13,12 +13,7 @@ allowedHoliday
 excludedHoliday
 ```
 
-<<<<<<< HEAD
-
-@TODO we'll redo this project using Gatsby and this will help us to make transitions to Graph ql stuff
-=======
 #### @TODO we'll redo this project using Gatsby and this will help us to make transitions to Graph ql stuff
->>>>>>> 6e613ccd5ae6cc8d6e13b9038460a3e041b2d5ce
 
 #### @TODO separate stuff into basic components and reduce size of app.js
 
