@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { Select } from 'antd';
 
+// @todo update the paths. put to components arrays
+import cuisines       from '../../../data/cuisines';
 
-
+const Option     = Select.Option;
 //@todo change push to underscore methods
-const children_select_cuisines = [];
+const options = [];
 for (let i = 0; i < cuisines.length; i++) {
-  children_select_cuisines.push(<Option key={cuisines[i].toString()}>{cuisines[i].toString()}</Option>);
+  options.push(
+    <Option key={cuisines[i].toString()}>{cuisines[i].toString()}</Option>
+  );
 }
 
 class Cuisine extends Component {
@@ -30,7 +35,29 @@ class Cuisine extends Component {
     };
 
     return (
+      <Col span={12}>
+        <Select
+          mode="multiple"
+          style={{ width: '100%' }}
+          placeholder="Cuisines you like"
+          onChange={handleChangeCuisines_you_like}
+        >
+          {children_select_cuisines}
 
+        </Select>
+      </Col>
+
+      <Col span={12}>
+        <Select
+          mode="multiple"
+          style={{ width: '100%' }}
+          placeholder="Cuisines you don't like"
+          onChange={handleChangeCuisines_you_dont_like}
+        >
+          {children_select_cuisines}
+
+        </Select>
+      </Col>
     );
   }
 }

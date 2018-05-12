@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { Select } from 'antd';
 
+// @todo update the paths. put to components arrays
+import courses        from '../../../data/courses';
+
+const Option     = Select.Option;
 //@todo change push to underscore methods
-const children_select_courses = [];
+const options = [];
 for (let i = 0; i < courses.length; i++) {
-  children_select_courses.push(<Option key={courses[i].toString()}>{courses[i].toString()}</Option>);
+  options.push(
+    <Option key={courses[i].toString()}>{courses[i].toString()}</Option>
+  );
 }
 
 
@@ -31,7 +38,29 @@ class Course extends Component {
     };
 
     return (
+      <Col span={12}>
+        <Select
+          mode="multiple"
+          style={{ width: '100%' }}
+          placeholder="Courses You want"
+          onChange={handleChangeCourses_you_want}
+        >
+          {children_select_courses}
 
+        </Select>
+      </Col>
+
+      <Col span={12}>
+        <Select
+          mode="multiple"
+          style={{ width: '100%' }}
+          placeholder="Courses You don't want"
+          onChange={handleChangeCourses_you_dont_want}
+        >
+          {children_select_courses}
+
+        </Select>
+      </Col>
     );
   }
 }

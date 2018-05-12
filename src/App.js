@@ -6,25 +6,11 @@ import { Layout, Form, Menu, Input, Col, Select, InputNumber,
 
 const { Header, Footer, Sider, Content } = Layout;
 
-import ingredients    from './ingredients';
-
-import specific_diets from './specific_diets';
-import cuisines       from './cuisines';
-import courses        from './courses';
-import holidays       from './holidays';
-
 
 const InputGroup = Input.Group;
-const Option     = Select.Option;
+
+
 const FormItem   = Form.Item;
-
-
-
-
-
-
-
-
 
 
 class App extends Component {
@@ -32,11 +18,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      formLayout: 'vertical',
-
-      // allergies: [],
-
-
+      formLayout: 'vertical'
 
     }
 
@@ -46,19 +28,13 @@ class App extends Component {
     const { formLayout } = this.state;
 
     const formItemLayout = {
-      labelCol: { offset: 4 },
+      labelCol:   { offset: 4 },
       wrapperCol: { span: 12 }
     };
 
     const buttonItemLayout = {
       wrapperCol: { span: 12, offset: 4 }
     };
-
-
-
-
-
-
 
     return (
       <div>
@@ -87,8 +63,10 @@ class App extends Component {
 
           <Content>
 
-            <Form {...formLayout}>
 
+
+
+            <Form {...formLayout}>
 
               <InputGroup size="large" {...formItemLayout}>
                 <Col span={12}>
@@ -98,151 +76,40 @@ class App extends Component {
                   <Input placeholder="Maximum Cooking Time in Minutes" />
                 </Col>
               </InputGroup>
-
-
               <InputGroup size="large" {...formItemLayout}>
-                <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Ingredients you have"
-                    onChange={handleChangeIngredientsHave}
-                  >
-                    {children_select_ingredients}
 
-                  </Select>
-                </Col>
-                <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Ingredients you don't have"
-                    onChange={handleChangeIngredientsDontHave}
-                  >
-                    {children_select_ingredients}
+                <Ingredient />
 
-                  </Select>
-                </Col>
               </InputGroup>
-
-
-
               <InputGroup size="large" {...formItemLayout}>
 
                 <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Allergies"
-                    onChange={handleChangeAllergies}
-                  >
-                    {children_select_allergies}
 
-                  </Select>
+                  <Allergy />
                 </Col>
 
                 <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Specific Diets"
-                    onChange={handleChangeSpecific_diets}
-                  >
-                    {children_select_specific_diets}
 
-                  </Select>
+                  <Diet />
 
                 </Col>
               </InputGroup>
-
-
               <InputGroup size="large" {...formItemLayout}>
 
-                <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Cuisines you like"
-                    onChange={handleChangeCuisines_you_like}
-                  >
-                    {children_select_cuisines}
-
-                  </Select>
-                </Col>
-
-                <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Cuisines you don't like"
-                    onChange={handleChangeCuisines_you_dont_like}
-                  >
-                    {children_select_cuisines}
-
-                  </Select>
-                </Col>
+                <Cuisine />
 
               </InputGroup>
-
-
               <InputGroup size="large" {...formItemLayout}>
-
-                <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Courses You want"
-                    onChange={handleChangeCourses_you_want}
-                  >
-                    {children_select_courses}
-
-                  </Select>
-                </Col>
-
-                <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Courses You don't want"
-                    onChange={handleChangeCourses_you_dont_want}
-                  >
-                    {children_select_courses}
-
-                  </Select>
-                </Col>
-
+                <Course />
               </InputGroup>
-
-
               <InputGroup size="large" {...formItemLayout}>
-
-                <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Holidays/Specific You want"
-                    onChange={handleChangeholidays_want}
-                  >
-                    {children_select_holidays}
-
-                  </Select>
-                </Col>
-
-                <Col span={12}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Holidays/Specific You don't want"
-                    onChange={handleChangeholidays_dont_want}
-                  >
-                    {children_select_holidays}
-
-                  </Select>
-                </Col>
-
+                <Holiday />
               </InputGroup>
-
             </Form>
+
+
+
+
 
           </Content>
           <Footer>

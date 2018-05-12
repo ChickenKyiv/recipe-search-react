@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { Select } from 'antd';
 
+// @todo update the paths. put to components arrays
+import specific_diets from '../../../data/specific_diets';
 
+const Option     = Select.Option;
 //@todo change push to underscore methods
-const children_select_specific_diets = [];
+const options = [];
 for (let i = 0; i < specific_diets.length; i++) {
-  children_select_specific_diets.push(
+  options.push(
     <Option key={specific_diets[i].toString()}>{specific_diets[i].toString()}</Option>
   );
 }
@@ -12,7 +16,7 @@ for (let i = 0; i < specific_diets.length; i++) {
 class Diet extends Component {
   constructor(props) {
     super(props)
-    
+
     // @todo change to include
     this.state = {
       specific_diets: [],
@@ -26,7 +30,15 @@ class Diet extends Component {
     };
 
     return (
+      <Select
+        mode="multiple"
+        style={{ width: '100%' }}
+        placeholder="Specific Diets"
+        onChange={handleChangeSpecific_diets}
+      >
+        {children_select_specific_diets}
 
+      </Select>
     );
   }
 }

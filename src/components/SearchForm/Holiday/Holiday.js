@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import { Select } from 'antd';
+
+// @todo update the paths. put to components arrays
+import holidays       from '../../../data/holidays';
+
+const Option     = Select.Option;
 
 //@todo change push to underscore methods
-const children_select_holidays = [];
+const options = [];
 for (let i = 0; i < holidays.length; i++) {
-  children_select_holidays.push(<Option key={holidays[i].toString()}>{holidays[i].toString()}</Option>);
+  options.push(
+    <Option key={holidays[i].toString()}>{holidays[i].toString()}</Option>
+  );
 }
 
 class Holiday extends Component {
@@ -28,7 +36,29 @@ class Holiday extends Component {
       };
 
     return (
+      <Col span={12}>
+        <Select
+          mode="multiple"
+          style={{ width: '100%' }}
+          placeholder="Holidays/Specific You want"
+          onChange={handleChangeholidays_want}
+        >
+          {children_select_holidays}
 
+        </Select>
+      </Col>
+
+      <Col span={12}>
+        <Select
+          mode="multiple"
+          style={{ width: '100%' }}
+          placeholder="Holidays/Specific You don't want"
+          onChange={handleChangeholidays_dont_want}
+        >
+          {children_select_holidays}
+
+        </Select>
+      </Col>
     );
   }
 }
