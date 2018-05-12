@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
-
-import { Layout, Form, Menu, Input, Col, Select, InputNumber,
-   DatePicker, AutoComplete, Cascader } from 'antd';
-
 const { Header, Footer, Sider, Content } = Layout;
 
+import SearchFrom from 'SearchForm/SearchForm'
 
-const InputGroup = Input.Group;
+import './App.css';
 
-
-const FormItem   = Form.Item;
 
 
 class App extends Component {
@@ -18,23 +12,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      formLayout: 'vertical'
+
 
     }
 
   }
 
   render() {
-    const { formLayout } = this.state;
 
-    const formItemLayout = {
-      labelCol:   { offset: 4 },
-      wrapperCol: { span: 12 }
-    };
-
-    const buttonItemLayout = {
-      wrapperCol: { span: 12, offset: 4 }
-    };
 
     return (
       <div>
@@ -64,48 +49,7 @@ class App extends Component {
           <Content>
 
 
-
-
-            <Form {...formLayout}>
-
-              <InputGroup size="large" {...formItemLayout}>
-                <Col span={12}>
-                  <Input placeholder="Recipe Name" />
-                </Col>
-                <Col span={12}>
-                  <Input placeholder="Maximum Cooking Time in Minutes" />
-                </Col>
-              </InputGroup>
-              <InputGroup size="large" {...formItemLayout}>
-
-                <Ingredient />
-
-              </InputGroup>
-              <InputGroup size="large" {...formItemLayout}>
-
-                <Col span={12}>
-
-                  <Allergy />
-                </Col>
-
-                <Col span={12}>
-
-                  <Diet />
-
-                </Col>
-              </InputGroup>
-              <InputGroup size="large" {...formItemLayout}>
-
-                <Cuisine />
-
-              </InputGroup>
-              <InputGroup size="large" {...formItemLayout}>
-                <Course />
-              </InputGroup>
-              <InputGroup size="large" {...formItemLayout}>
-                <Holiday />
-              </InputGroup>
-            </Form>
+            <SearchForm />
 
 
 
