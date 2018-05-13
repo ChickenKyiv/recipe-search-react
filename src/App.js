@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-const { Header, Footer, Sider, Content } = Layout;
+const {
+  Header,
+  Footer,
+  Sider,
+  Content 
+} = Layout;
 
 import SearchFrom from 'SearchForm/SearchForm'
 

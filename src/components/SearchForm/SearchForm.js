@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-
-import { Layout, Form, Menu, Input, Col, Select, InputNumber,
-   DatePicker, AutoComplete, Cascader } from 'antd';
+import {
+  Layout,
+  Form,
+  Menu,
+  Input,
+  Col,
+  Select,
+  InputNumber,
+  DatePicker,
+  AutoComplete,
+  Cascader
+} from 'antd';
 
 import Allergy    from '..Allergy/Allergy'
 import Course     from '..Course/Course'
@@ -47,7 +56,7 @@ class SearchForm extends Component {
             <Input placeholder="Maximum Cooking Time in Minutes" />
           </Col>
         </InputGroup>
-        
+
         <InputGroup size="large" {...formItemLayout}>
           <Ingredient />
         </InputGroup>
