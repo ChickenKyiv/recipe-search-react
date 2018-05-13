@@ -5,7 +5,7 @@ import {
 } from 'antd';
 
 // @todo update the paths. put to components arrays
-import diets from '../../../data/specific_diets';
+import diets from '../../../data/diets';
 
 const Option     = Select.Option;
 //@todo change push to underscore methods

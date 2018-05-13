@@ -33,9 +33,9 @@ class SearchForm extends Component {
   }
 
   render(){
-    const { formLayout } = this.state;
+    const { formLayout }   = this.state;
 
-    const formItemLayout = {
+    const formItemLayout   = {
       labelCol:   { offset: 4 },
       wrapperCol: { span: 12 }
     };
