@@ -3,7 +3,7 @@ const {
   Header,
   Footer,
   Sider,
-  Content 
+  Content
 } = Layout;
 
 import SearchFrom from 'SearchForm/SearchForm'
@@ -53,16 +53,11 @@ class App extends Component {
 
           <Content>
 
-
             <SearchForm />
-
-
-
-
 
           </Content>
           <Footer>
-
+            xxx
           </Footer>
         </Layout>
 
