@@ -1,4 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Layout } from 'antd'
+import SearchFrom from '/components/SearchForm/SearchForm'
+import Menu       from '/components/Menu/Menu'
+import './App.css';
+
 const {
   Header,
   Footer,
@@ -6,18 +11,12 @@ const {
   Content
 } = Layout;
 
-import SearchFrom from 'SearchForm/SearchForm'
-
-import './App.css';
-
-
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-
 
     }
 
@@ -32,22 +31,7 @@ class App extends Component {
           <Header style={{ width: "100%", height: "120%" }}>
             <div className="logo" />
 
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={['2']}
-              style={{ lineHeight: '64px' }}
-            >
-              <Menu.Item key="1">
-                Recipe Planner
-              </Menu.Item>
-              <Menu.Item key="2">
-                Plan Your Recipes Quickly
-              </Menu.Item>
-              <Menu.Item key="3">
-                Welcome
-              </Menu.Item>
-            </Menu>
+            <Menu />
 
           </Header>
 
