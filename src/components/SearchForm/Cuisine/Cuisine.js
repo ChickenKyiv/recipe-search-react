@@ -49,7 +49,7 @@ class Cuisine extends Component {
         </Select>
       </Col>
 
-      <Col span={12}>
+      {/*<Col span={12}>
         <Select
           mode="multiple"
           style={{ width: '100%' }}
@@ -58,7 +58,7 @@ class Cuisine extends Component {
         >
           {options}
         </Select>
-      </Col>
+      </Col>*/}
     );
   }
 }

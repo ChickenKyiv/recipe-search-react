@@ -51,7 +51,7 @@ class Ingredient extends Component {
           {options}
         </Select>
       </Col>
-
+      {/*}
       <Col span={12}>
         <Select
           mode="multiple"
@@ -61,7 +61,7 @@ class Ingredient extends Component {
         >
           {options}
         </Select>
-      </Col>
+      </Col>*/}
     );
   }
 

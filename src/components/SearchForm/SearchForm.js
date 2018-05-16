@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import {
-  Layout,
+
   Form,
-  Menu,
+
   Input,
   Col,
   Select,
   InputNumber,
-  DatePicker,
+
   AutoComplete,
   Cascader
 } from 'antd';
 
-import Allergy    from '..Allergy/Allergy'
-import Course     from '..Course/Course'
-import Cuisine    from '..Cuisine/AlCuisinelergy'
-import Diet       from '..Diet/Diet'
-import Holiday    from '..Holiday/Holiday'
-import Ingredient from '..Ingredient/Ingredient'
+import Allergy    from './Allergy/Allergy'
+import Course     from './Course/Course'
+import Cuisine    from './Cuisine/Cuisine'
+import Diet       from './Diet/Diet'
+import Holiday    from './Holiday/Holiday'
+import Ingredient from './Ingredient/Ingredient'
 
 const InputGroup = Input.Group;
 const FormItem   = Form.Item;
@@ -47,7 +47,7 @@ class SearchForm extends Component {
     return (
 
       <Form {...formLayout}>
-
+      {/*
         <InputGroup size="large" {...formItemLayout}>
           <Col span={12}>
             <Input placeholder="Recipe Name" />
@@ -81,6 +81,7 @@ class SearchForm extends Component {
         <InputGroup size="large" {...formItemLayout}>
           <Holiday />
         </InputGroup>
+        */}
       </Form>
 
     );

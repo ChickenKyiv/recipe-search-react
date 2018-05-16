@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Layout } from 'antd'
-import SearchFrom from '/components/SearchForm/SearchForm'
-import Menu       from '/components/Menu/Menu'
+import SearchFrom from './components/SearchForm/SearchForm'
+import MainMenu   from './components/MainMenu/MainMenu'
 import './App.css';
+
+
 
 const {
   Header,
@@ -31,13 +33,13 @@ class App extends Component {
           <Header style={{ width: "100%", height: "120%" }}>
             <div className="logo" />
 
-            <Menu />
+            <MainMenu />
 
           </Header>
 
           <Content>
 
-            <SearchForm />
+            {/*<SearchForm />*/}
 
           </Content>
           <Footer>

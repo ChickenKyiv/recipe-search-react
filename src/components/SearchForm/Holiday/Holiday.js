@@ -49,7 +49,7 @@ class Holiday extends Component {
           {options}
         </Select>
       </Col>
-
+      {/*
       <Col span={12}>
         <Select
           mode="multiple"
@@ -59,7 +59,7 @@ class Holiday extends Component {
         >
           {options}
         </Select>
-      </Col>
+      </Col>*/}
     );
   }
 }
