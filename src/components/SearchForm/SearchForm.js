@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import {
-  Layout,
+
   Form,
-  Menu,
+
   Input,
   Col,
   Select,
   InputNumber,
-  DatePicker,
+
   AutoComplete,
   Cascader
 } from 'antd';
 
-import Allergy    from '..Allergy/Allergy'
-import Course     from '..Course/Course'
-import Cuisine    from '..Cuisine/AlCuisinelergy'
-import Diet       from '..Diet/Diet'
-import Holiday    from '..Holiday/Holiday'
-import Ingredient from '..Ingredient/Ingredient'
+import Allergy    from './Allergy/Allergy'
+import Course     from './Course/Course'
+import Cuisine    from './Cuisine/Cuisine'
+import Diet       from './Diet/Diet'
+import Holiday    from './Holiday/Holiday'
+import Ingredient from './Ingredient/Ingredient'
 
 const InputGroup = Input.Group;
 const FormItem   = Form.Item;
@@ -47,7 +47,7 @@ class SearchForm extends Component {
     return (
 
       <Form {...formLayout}>
-
+      {/*
         <InputGroup size="large" {...formItemLayout}>
           <Col span={12}>
             <Input placeholder="Recipe Name" />
@@ -59,28 +59,35 @@ class SearchForm extends Component {
 
         <InputGroup size="large" {...formItemLayout}>
           <Ingredient />
+
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
           <Col span={12}>
             <Allergy />
+
           </Col>
           <Col span={12}>
             <Diet />
+
           </Col>
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
-          <Cuisine />
+          <Cuisine sign="1" placeholder="Cuisines you like" />
+          <Cuisine sign="0" placeholder="Cuisines you don't like" />
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
-          <Course />
+          <Course sign="1" placeholder="Courses You want" />
+          <Course sign="0" placeholder="Courses You don't want" />
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
-          <Holiday />
+          <Holiday sign="1" placeholder="Holidays/Specific You want" />
+          <Holiday sign="0" placeholder="Holidays/Specific You don't want" />
         </InputGroup>
+        */}
       </Form>
 
     );

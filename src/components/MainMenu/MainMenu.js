@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Menu }             from 'antd'
 
 
-class Menu extends Component {
+class MainMenu extends Component {
   constructor(props) {
     super(props)
 
@@ -31,4 +31,4 @@ class Menu extends Component {
     );
   }
 }
-export default Menu;
+export default MainMenu;

@@ -5,9 +5,9 @@ import {
 } from 'antd';
 
 // @todo update the paths. put to components arrays
-import cuisines       from '../../../data/cuisines';
+import cuisines from '../../../data/cuisines';
 
-const Option     = Select.Option;
+const Option    = Select.Option;
 //@todo change push to underscore methods
 const options = [];
 for (let i = 0; i < cuisines.length; i++) {
@@ -22,19 +22,34 @@ class Cuisine extends Component {
 
     // @todo change to include, exclude
     this.state = {
-      include: [],
-      exclude: [],
+      sign       : props.sign,
+      placeholder: props.placeholder,
+      values     : []
     }
   }
 
   render(){
 
-    const onChangeInclude = (value) => {
-      this.setState({ include: value })
+    // const onChangeInclude = (value) => {
+    //   this.setState({ include: value })
+    // };
+    //
+    // const onChangeExclude = (value) => {
+    //   this.setState({ exclude: value })
+    // };
+    const onChange = (value) => {
+      this.setState({ values: value })
     };
+    const getPlaceholder = () => {
+      return this.state.placeholder;
+    };
+    const createName = (className) => {
+      return ( this.state.sign )
+              ? 'allowed'
+              : 'excluded'
 
-    const onChangeExclude = (value) => {
-      this.setState({ exclude: value })
+              + className
+              ;
     };
 
     return (
@@ -42,19 +57,10 @@ class Cuisine extends Component {
         <Select
           mode="multiple"
           style={{ width: '100%' }}
-          placeholder="Cuisines you like"
-          onChange={onChangeInclude}
-        >
-          {options}
-        </Select>
-      </Col>
-
-      <Col span={12}>
-        <Select
-          mode="multiple"
-          style={{ width: '100%' }}
-          placeholder="Cuisines you don't like"
-          onChange={onChangeExclude}
+          
+          name={createName('Cuisine')}
+          placeholder={getPlaceholder}
+          onChange={onChange}
         >
           {options}
         </Select>
