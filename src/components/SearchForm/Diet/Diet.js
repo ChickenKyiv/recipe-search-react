@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   Select,
-  Col
+
 } from 'antd';
 
 // @todo update the paths. put to components arrays

@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import {
-
   Form,
-
   Input,
   Col,
   Select,
   InputNumber,
-
   AutoComplete,
   Cascader
 } from 'antd';
@@ -26,13 +23,14 @@ class SearchForm extends Component {
 
   constructor(props) {
     super(props)
-
+    
     this.state = {
       formLayout: 'vertical'
     }
   }
 
   render(){
+
     const { formLayout }   = this.state;
 
     const formItemLayout   = {
@@ -47,7 +45,7 @@ class SearchForm extends Component {
     return (
 
       <Form {...formLayout}>
-      {/*
+
         <InputGroup size="large" {...formItemLayout}>
           <Col span={12}>
             <Input placeholder="Recipe Name" />
@@ -58,7 +56,8 @@ class SearchForm extends Component {
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
-          <Ingredient />
+          <Ingredient sign="1" placeholder="Ingredients you have" />
+          <Ingredient sign="0" placeholder="Ingredients you don't have" />
 
         </InputGroup>
 
@@ -87,7 +86,7 @@ class SearchForm extends Component {
           <Holiday sign="1" placeholder="Holidays/Specific You want" />
           <Holiday sign="0" placeholder="Holidays/Specific You don't want" />
         </InputGroup>
-        */}
+
       </Form>
 
     );
