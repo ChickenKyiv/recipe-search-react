@@ -21,22 +21,17 @@ class Holiday extends Component {
   constructor(props) {
     super(props)
 
-    // @todo change to include, exclude
+    
     this.state = {
-      include: [],
-      exclude: []
+      sign       : props.sign,
+      placeholder: props.placeholder,
+      values     : []
+
     }
   }
 
   render(){
 
-      // const onChangeInclude = (value) => {
-      //   this.setState({ include: value })
-      // };
-      //
-      // const onChangeExclude = (value) => {
-      //   this.setState({ exclude: value })
-      // };
       const onChange = (value) => {
         this.setState({ values: value })
       };
@@ -52,29 +47,18 @@ class Holiday extends Component {
                 ;
       };
 
-
     return (
       <Col span={12}>
         <Select
           mode="multiple"
           style={{ width: '100%' }}
-          placeholder="Holidays/Specific You want"
+          name={createName('Holiday')}
+          placeholder={getPlaceholder}
           onChange={onChange}
         >
           {options}
         </Select>
       </Col>
-      {/*
-      <Col span={12}>
-        <Select
-          mode="multiple"
-          style={{ width: '100%' }}
-          placeholder="Holidays/Specific You don't want"
-          onChange={onChangeExclude}
-        >
-          {options}
-        </Select>
-      </Col>*/}
     );
   }
 }

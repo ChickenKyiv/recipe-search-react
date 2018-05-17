@@ -24,44 +24,45 @@ class Ingredient extends Component {
   constructor(props) {
     super(props)
 
-    // @todo change to include, exclude
+    
     this.state = {
-      include: [],
-      exclude: [],
+      sign       : props.sign,
+      placeholder: props.placeholder,
+      values     : []
+
     }
   }
 
   render(){
-    const onChangeInclude = (value) => {
-      this.setState({ include: value })
+    const onChange = (value) => {
+      this.setState({ values: value })
+    };
+    const getPlaceholder = () => {
+      return this.state.placeholder;
+    };
+    const createName = (className) => {
+      return ( this.state.sign )
+              ? 'allowed'
+              : 'excluded'
+
+              + className
+              ;
     };
 
-    const onChangeExclude = (value) => {
-      this.setState({ exclude: value })
-    };
+
 
     return (
       <Col span={12}>
         <Select
           mode="multiple"
           style={{ width: '100%' }}
-          placeholder="Ingredients you have"
-          onChange={onChangeInclude}
+          name={createName('Ingredient')}
+          placeholder={getPlaceholder}
+          onChange={onChange}
         >
           {options}
         </Select>
       </Col>
-      {/*}
-      <Col span={12}>
-        <Select
-          mode="multiple"
-          style={{ width: '100%' }}
-          placeholder="Ingredients you don't have"
-          onChange={onChangeExclude}
-        >
-          {options}
-        </Select>
-      </Col>*/}
     );
   }
 
