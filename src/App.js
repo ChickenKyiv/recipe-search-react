@@ -4,8 +4,6 @@ import SearchFrom from './components/SearchForm/SearchForm'
 import MainMenu   from './components/MainMenu/MainMenu'
 import './App.css';
 
-
-
 const {
   Header,
   Footer,
@@ -39,7 +37,7 @@ class App extends Component {
 
           <Content>
 
-            {/*<SearchForm />*/}
+            <SearchForm />
 
           </Content>
           <Footer>

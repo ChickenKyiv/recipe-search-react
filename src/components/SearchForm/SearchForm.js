@@ -59,27 +59,33 @@ class SearchForm extends Component {
 
         <InputGroup size="large" {...formItemLayout}>
           <Ingredient />
+
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
           <Col span={12}>
             <Allergy />
+
           </Col>
           <Col span={12}>
             <Diet />
+
           </Col>
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
-          <Cuisine />
+          <Cuisine sign="1" placeholder="Cuisines you like" />
+          <Cuisine sign="0" placeholder="Cuisines you don't like" />
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
-          <Course />
+          <Course sign="1" placeholder="Courses You want" />
+          <Course sign="0" placeholder="Courses You don't want" />
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
-          <Holiday />
+          <Holiday sign="1" placeholder="Holidays/Specific You want" />
+          <Holiday sign="0" placeholder="Holidays/Specific You don't want" />
         </InputGroup>
         */}
       </Form>

@@ -30,13 +30,28 @@ class Holiday extends Component {
 
   render(){
 
-      const onChangeInclude = (value) => {
-        this.setState({ include: value })
+      // const onChangeInclude = (value) => {
+      //   this.setState({ include: value })
+      // };
+      //
+      // const onChangeExclude = (value) => {
+      //   this.setState({ exclude: value })
+      // };
+      const onChange = (value) => {
+        this.setState({ values: value })
+      };
+      const getPlaceholder = () => {
+        return this.state.placeholder;
+      };
+      const createName = (className) => {
+        return ( this.state.sign )
+                ? 'allowed'
+                : 'excluded'
+
+                + className
+                ;
       };
 
-      const onChangeExclude = (value) => {
-        this.setState({ exclude: value })
-      };
 
     return (
       <Col span={12}>
@@ -44,7 +59,7 @@ class Holiday extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           placeholder="Holidays/Specific You want"
-          onChange={onChangeInclude}
+          onChange={onChange}
         >
           {options}
         </Select>

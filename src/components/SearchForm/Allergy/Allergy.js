@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { 
+import {
   Select,
   Col
 } from 'antd';
 
 // @todo update the paths. put to components arrays
-import allergies  from '../../../data/allergies';
+import allergies from '../../../data/allergies';
 
 
 const Option     = Select.Option;
@@ -27,8 +27,6 @@ class Allergy extends Component {
       allergies: []
     }
   }
-
-
 
   render(){
 
