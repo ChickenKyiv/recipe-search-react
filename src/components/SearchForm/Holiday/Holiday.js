@@ -24,7 +24,6 @@ class Holiday extends Component {
     
     this.state = {
       sign       : props.sign,
-      placeholder: props.placeholder,
       values     : []
 
     }
@@ -35,9 +34,7 @@ class Holiday extends Component {
       const onChange = (value) => {
         this.setState({ values: value })
       };
-      const getPlaceholder = () => {
-        return this.state.placeholder;
-      };
+
       const createName = (className) => {
         return ( this.state.sign )
                 ? 'allowed'
@@ -53,7 +50,7 @@ class Holiday extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           name={createName('Holiday')}
-          placeholder={getPlaceholder}
+          placeholder={this.props.placeholder}
           onChange={onChange}
         >
           {options}

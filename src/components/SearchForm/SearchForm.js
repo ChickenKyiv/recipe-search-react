@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Form,
-  Input,
-  Col,
-  Select,
-  InputNumber,
-  AutoComplete,
-  Cascader
-} from 'antd';
-
+import {Form,Input,Col} from 'antd';
 import Allergy    from './Allergy/Allergy'
 import Course     from './Course/Course'
 import Cuisine    from './Cuisine/Cuisine'
@@ -17,7 +8,6 @@ import Holiday    from './Holiday/Holiday'
 import Ingredient from './Ingredient/Ingredient'
 
 const InputGroup = Input.Group;
-const FormItem   = Form.Item;
 
 class SearchForm extends Component {
 
@@ -31,15 +21,11 @@ class SearchForm extends Component {
 
   render(){
 
-    const { formLayout }   = this.state;
+    const { formLayout }   = this.state.formLayout;
 
     const formItemLayout   = {
       labelCol:   { offset: 4 },
       wrapperCol: { span: 12 }
-    };
-
-    const buttonItemLayout = {
-      wrapperCol: { span: 12, offset: 4 }
     };
 
     return (
@@ -47,10 +33,10 @@ class SearchForm extends Component {
       <Form {...formLayout}>
 
         <InputGroup size="large" {...formItemLayout}>
-          <Col span={12}>
+          <Col span="12">
             <Input placeholder="Recipe Name" />
           </Col>
-          <Col span={12}>
+          <Col span="12">
             <Input placeholder="Maximum Cooking Time in Minutes" />
           </Col>
         </InputGroup>
@@ -62,11 +48,11 @@ class SearchForm extends Component {
         </InputGroup>
 
         <InputGroup size="large" {...formItemLayout}>
-          <Col span={12}>
+          <Col span="12">
             <Allergy />
 
           </Col>
-          <Col span={12}>
+          <Col span="12">
             <Diet />
 
           </Col>

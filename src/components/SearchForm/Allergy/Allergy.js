@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Select,
-  
-} from 'antd';
+import {  Select } from 'antd';
 
 // @todo update the paths. put to components arrays
 import allergies from '../../../data/allergies';

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Select,
-  Col
-} from 'antd';
+import {  Select, Col } from 'antd';
 
 // @todo update the paths. put to components arrays
 import ingredients from '../../../data/ingredients';
@@ -23,13 +20,10 @@ class Ingredient extends Component {
 
   constructor(props) {
     super(props)
-
     
     this.state = {
       sign       : props.sign,
-      placeholder: props.placeholder,
       values     : []
-
     }
   }
 
@@ -37,9 +31,7 @@ class Ingredient extends Component {
     const onChange = (value) => {
       this.setState({ values: value })
     };
-    const getPlaceholder = () => {
-      return this.state.placeholder;
-    };
+
     const createName = (className) => {
       return ( this.state.sign )
               ? 'allowed'
@@ -49,17 +41,10 @@ class Ingredient extends Component {
               ;
     };
 
-
-
     return (
-      <Col span={12}>
-        <Select
-          mode="multiple"
-          style={{ width: '100%' }}
-          name={createName('Ingredient')}
-          placeholder={getPlaceholder}
-          onChange={onChange}
-        >
+      <Col span="12">
+        <Select mode="multiple" style={{ width: '100%' }} name={createName('Ingredient')}
+         placeholder={this.props.placeholder} onChange={onChange}>
           {options}
         </Select>
       </Col>
