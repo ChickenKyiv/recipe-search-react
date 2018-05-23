@@ -20,12 +20,10 @@ for (let i = 0; i < holidays.length; i++) {
 class Holiday extends Component {
   constructor(props) {
     super(props)
-
-    
+  
     this.state = {
       sign       : props.sign,
       values     : []
-
     }
   }
 
@@ -36,12 +34,7 @@ class Holiday extends Component {
       };
 
       const createName = (className) => {
-        return ( this.state.sign )
-                ? 'allowed'
-                : 'excluded'
-
-                + className
-                ;
+        return  this.state.sign ? 'allowed': 'excluded'  + className ;
       };
 
     return (
