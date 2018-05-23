@@ -38,6 +38,7 @@ class Cuisine extends Component {
     // };
     const onChange = (value) => {
       this.setState({ values: value })
+      this.props.updateCuisines(value)
     };
 
     const createName = (className) => {

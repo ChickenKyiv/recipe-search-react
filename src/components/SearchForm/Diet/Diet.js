@@ -30,6 +30,7 @@ class Diet extends Component {
 
     const onChange = (value) => {
       this.setState({ diets: value })
+      this.props.updateDiet(value)
     };
 
     return (

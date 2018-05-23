@@ -30,6 +30,7 @@ class Ingredient extends Component {
   render(){
     const onChange = (value) => {
       this.setState({ values: value })
+      this.props.updateIng(value)
     };
 
     const createName = (className) => {
@@ -43,7 +44,7 @@ class Ingredient extends Component {
 
     return (
       <Col span="12">
-        <Select mode="multiple" style={{ width: '100%' }} name={createName('Ingredient')}
+        <Select mode="multiple" style={{ width: '100%' }} name={createName('Ingredient')} 
          placeholder={this.props.placeholder} onChange={onChange}>
           {options}
         </Select>

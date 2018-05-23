@@ -44,6 +44,7 @@ class Course extends Component {
 
     const onChange = (value) => {
       this.setState({ values: value })
+      this.props.updateCourses(value)
     };
 
     const createName = (className) => {

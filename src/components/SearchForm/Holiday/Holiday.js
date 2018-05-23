@@ -31,6 +31,7 @@ class Holiday extends Component {
 
       const onChange = (value) => {
         this.setState({ values: value })
+        this.props.updateHoliday(value)
       };
 
       const createName = (className) => {

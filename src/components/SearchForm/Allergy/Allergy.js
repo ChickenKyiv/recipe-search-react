@@ -29,6 +29,7 @@ class Allergy extends Component {
 
     const onChange = (value) => {
       this.setState({ allergies: value })
+      this.props.updateAllergy(value)
     };
 
     return (
