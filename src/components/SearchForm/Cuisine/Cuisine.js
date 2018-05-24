@@ -23,7 +23,6 @@ class Cuisine extends Component {
     // @todo change to include, exclude
     this.state = {
       sign       : props.sign,
-      placeholder: props.placeholder,
       values     : []
     }
   }
@@ -39,10 +38,9 @@ class Cuisine extends Component {
     // };
     const onChange = (value) => {
       this.setState({ values: value })
+      this.props.updateCuisines(value)
     };
-    const getPlaceholder = () => {
-      return this.state.placeholder;
-    };
+
     const createName = (className) => {
       return ( this.state.sign )
               ? 'allowed'
@@ -59,7 +57,7 @@ class Cuisine extends Component {
           style={{ width: '100%' }}
           
           name={createName('Cuisine')}
-          placeholder={getPlaceholder}
+          placeholder={this.props.placeholder}
           onChange={onChange}
         >
           {options}

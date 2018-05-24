@@ -27,7 +27,6 @@ class Course extends Component {
       // sign is a boolean variable that helps to understand if we're
       // including ids from this field or excluding them
       sign       : props.sign,
-      placeholder: props.placeholder,
       values     : []
 
     }
@@ -45,11 +44,9 @@ class Course extends Component {
 
     const onChange = (value) => {
       this.setState({ values: value })
+      this.props.updateCourses(value)
     };
 
-    const getPlaceholder = () => {
-      return this.state.placeholder;
-    };
     const createName = (className) => {
       return ( this.state.sign )
               ? 'allowed'
@@ -66,7 +63,7 @@ class Course extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           name={createName('Course')}
-          placeholder={getPlaceholder}
+          placeholder={this.props.placeholder}
           onChange={onChange}
         >
           {options}

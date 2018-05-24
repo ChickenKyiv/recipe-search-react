@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Select,
-  
-} from 'antd';
+import {  Select } from 'antd';
 
 // @todo update the paths. put to components arrays
 import allergies from '../../../data/allergies';
@@ -32,6 +29,7 @@ class Allergy extends Component {
 
     const onChange = (value) => {
       this.setState({ allergies: value })
+      this.props.updateAllergy(value)
     };
 
     return (
