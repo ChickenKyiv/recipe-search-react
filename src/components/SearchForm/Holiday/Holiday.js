@@ -7,16 +7,6 @@ import {
 // @todo update the paths. put to components arrays
 import holidays       from '../../../data/holidays';
 
-const Option     = Select.Option;
-
-//@todo change push to underscore methods
-const options = [];
-for (let i = 0; i < holidays.length; i++) {
-  options.push(
-    <Option key={holidays[i].toString()}>{holidays[i].toString()}</Option>
-  );
-}
-
 class Holiday extends Component {
   constructor(props) {
     super(props)
@@ -28,6 +18,27 @@ class Holiday extends Component {
   }
 
   render(){
+    const Option     = Select.Option;
+
+    //@todo change push to underscore methods
+    const options = [];
+    for (let i = 0; i < holidays.length; i++) {
+      // options.push(
+      //   <Option key={holidays[i].toString()}>{holidays[i].toString()}</Option>
+      // );
+      if(this.props.passedSelected.indexOf(holidays[i]) === -1){
+        options.push(
+          <Option key={holidays[i].toString()} disabled={false}>{holidays[i].toString()}</Option>
+        );
+      //  console.log("enable in opp of",this.props.placeholder);
+      }
+      else{
+        options.push(
+          <Option key={holidays[i].toString()} disabled={true}>{holidays[i].toString()}</Option>
+        );
+      //  console.log("disable in opp of",this.props.placeholder);
+      }
+    }
 
       const onChange = (value) => {
         this.setState({ values: value })

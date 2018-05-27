@@ -7,15 +7,6 @@ import {
 // @todo update the paths. put to components arrays
 import cuisines from '../../../data/cuisines';
 
-const Option    = Select.Option;
-//@todo change push to underscore methods
-const options = [];
-for (let i = 0; i < cuisines.length; i++) {
-  options.push(
-    <Option key={cuisines[i].toString()}>{cuisines[i].toString()}</Option>
-  );
-}
-
 class Cuisine extends Component {
   constructor(props) {
     super(props)
@@ -36,6 +27,28 @@ class Cuisine extends Component {
     // const onChangeExclude = (value) => {
     //   this.setState({ exclude: value })
     // };
+    const Option    = Select.Option;
+//@todo change push to underscore methods
+    const options = [];
+    for (let i = 0; i < cuisines.length; i++) {
+      // options.push(
+      //   <Option key={cuisines[i].toString()}>{cuisines[i].toString()}</Option>
+      // );
+      if(this.props.passedSelected.indexOf(cuisines[i]) === -1){
+        options.push(
+          <Option key={cuisines[i].toString()} disabled={false}>{cuisines[i].toString()}</Option>
+        );
+        // console.log("enable in opp of",this.props.placeholder);
+      }
+      else{
+        options.push(
+          <Option key={cuisines[i].toString()} disabled={true}>{cuisines[i].toString()}</Option>
+        );
+        // console.log("disable in opp of",this.props.placeholder);
+      }
+
+    }
+
     const onChange = (value) => {
       this.setState({ values: value })
       this.props.updateCuisines(value)

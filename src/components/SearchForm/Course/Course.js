@@ -7,15 +7,6 @@ import {
 // @todo update the paths. put to components arrays
 import courses from '../../../data/courses';
 
-const Option   = Select.Option;
-//@todo change push to underscore methods
-const options = [];
-for (let i = 0; i < courses.length; i++) {
-  options.push(
-    <Option key={courses[i].toString()}>{courses[i].toString()}</Option>
-  );
-}
-
 
 class Course extends Component {
   constructor(props) {
@@ -41,6 +32,27 @@ class Course extends Component {
     // const onChangeExclude = (value) => {
     //   this.setState({ exclude: value })
     // };
+  const Option   = Select.Option;
+  //@todo change push to underscore methods
+  const options = [];
+  for (let i = 0; i < courses.length; i++) {
+    // options.push(
+    //   <Option key={courses[i].toString()}>{courses[i].toString()}</Option>
+    // );
+          if(this.props.passedSelected.indexOf(courses[i]) === -1){
+          options.push(
+            <Option key={courses[i].toString()} disabled={false}>{courses[i].toString()}</Option>
+          );
+          // console.log("enable in opp of",this.props.placeholder);
+        }
+        else{
+          options.push(
+            <Option key={courses[i].toString()} disabled={true}>{courses[i].toString()}</Option>
+          );
+          // console.log("disable in opp of",this.props.placeholder);
+        }
+
+  }
 
     const onChange = (value) => {
       this.setState({ values: value })

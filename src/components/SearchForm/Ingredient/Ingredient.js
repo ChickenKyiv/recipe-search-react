@@ -4,18 +4,6 @@ import {  Select, Col } from 'antd';
 // @todo update the paths. put to components arrays
 import ingredients from '../../../data/ingredients';
 
-const Option     = Select.Option;
-
-//@todo change push to underscore methods
-const options = [];
-for (let i = 0; i < ingredients.length; i++) {
-  options.push(
-    <Option key={ingredients[i].toString()}>{ingredients[i].toString()}</Option>
-  );
-}
-
-
-
 class Ingredient extends Component {
 
   constructor(props) {
@@ -41,6 +29,27 @@ class Ingredient extends Component {
               + className
               ;
     };
+
+    const Option     = Select.Option;
+
+    //@todo change push to underscore methods
+    const options = [];
+    for (let i = 0; i < ingredients.length; i++) {
+      //console.log(this.props.placeholder+this.props.passedSelected.indexOf(ingredients[i]))
+      if(this.props.passedSelected.indexOf(ingredients[i]) === -1){
+        options.push(
+          <Option key={ingredients[i].toString()} disabled={false}>{ingredients[i].toString()}</Option>
+        );
+        // console.log("enable in opp of",this.props.placeholder);
+      }
+      else{
+        options.push(
+          <Option key={ingredients[i].toString()} disabled={true}>{ingredients[i].toString()}</Option>
+        );
+        // console.log("disable in opp of",this.props.placeholder);
+      }
+
+    }
 
     return (
       <Col span="12">
