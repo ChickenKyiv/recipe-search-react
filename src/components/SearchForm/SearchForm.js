@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import {Form,Input,Col} from 'antd';
+import {
+  Form,
+  Input, 
+  Col,
+  Button
+} from 'antd';
 import Allergy    from './Allergy/Allergy'
 import Course     from './Course/Course'
 import Cuisine    from './Cuisine/Cuisine'
@@ -35,7 +40,7 @@ class SearchForm extends Component {
     e.preventDefault()
   }
   updateMaxTime() {
-    var time= window.document.getElementById('time').value
+    var time = window.document.getElementById('time').value
     this.setState({maxTime: time})
   }
 
@@ -100,13 +105,13 @@ class SearchForm extends Component {
               <Input id="time" onChange={this.updateMaxTime.bind(this)} placeholder="Maximum Cooking Time in Minutes" />
             </Col>
           </InputGroup>
-
+          <br />
           <InputGroup size="large" {...formItemLayout}>
             <Ingredient updateIng={this.updateHaveIngredients.bind(this)} sign="1" passedSelected={this.state.dontHaveIngredients} placeholder="Ingredients you have" />
             <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)} sign="0" passedSelected={this.state.haveIngredients} placeholder="Ingredients you don't have" />
 
           </InputGroup>
-
+          <br />
           <InputGroup size="large" {...formItemLayout}>
             <Col span="12">
               <Allergy updateAllergy={this.updateAllergies.bind(this)} />
@@ -117,23 +122,28 @@ class SearchForm extends Component {
 
             </Col>
           </InputGroup>
-
+          <br />
           <InputGroup size="large" {...formItemLayout}>
             <Cuisine updateCuisines={this.updateLikeCuisines.bind(this)} passedSelected={this.state.dontLikeCuisines} sign="1" placeholder="Cuisines you like" />
             <Cuisine updateCuisines={this.updateDontLikeCuisines.bind(this)} passedSelected={this.state.likeCuisines} sign="0" placeholder="Cuisines you don't like" />
           </InputGroup>
-
+          <br />
           <InputGroup size="large" {...formItemLayout}>
             <Course updateCourses={this.updateWantCourses.bind(this)} passedSelected={this.state.dontWantCourses} sign="1" placeholder="Courses You want" />
             <Course updateCourses={this.updateDontWantCourses.bind(this)} passedSelected={this.state.wantCourses} sign="0" placeholder="Courses You don't want" />
           </InputGroup>
-
+          <br />
           <InputGroup size="large" {...formItemLayout}>
             <Holiday updateHoliday={this.updateWantOnHolidays.bind(this)} sign="1" passedSelected={this.state.dontWantOnHolidays} placeholder="Holidays/Specific You want" />
             <Holiday updateHoliday={this.updateDontWantOnHolidays.bind(this)} sign="0" passedSelected={this.state.wantOnHolidays} placeholder="Holidays/Specific You don't want" />
           </InputGroup>
+          <br />
           <input type="submit" />
+          <Button type="primary" htmlType="submit" icon="search">
+            Search Recipes
+          </Button>
         </Form>
+        <hr />
         <div>
           <label>Maximum cooking time: {this.state.maxTime}</label>
           <br />
