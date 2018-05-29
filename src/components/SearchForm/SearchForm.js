@@ -12,6 +12,8 @@ import Diet       from './Diet/Diet'
 import Holiday    from './Holiday/Holiday'
 import Ingredient from './Ingredient/Ingredient'
 
+import Test from './Test/Test'
+
 const InputGroup = Input.Group;
 
 class SearchForm extends Component {
@@ -151,7 +153,7 @@ class SearchForm extends Component {
               sign={true} passedSelected={this.state.dontWantOnHolidays}
               placeholder="Holidays/Specific You want" />
             <Holiday updateHoliday={this.updateDontWantOnHolidays.bind(this)}
-              sign={false} passedSelected={this.state.wantOnHolidays} 
+              sign={false} passedSelected={this.state.wantOnHolidays}
               placeholder="Holidays/Specific You don't want" />
           </InputGroup>
           <br />
@@ -160,32 +162,9 @@ class SearchForm extends Component {
             Search Recipes
           </Button>
         </Form>
-        <hr />
-        <div>
-          <label>Maximum cooking time: {this.state.maxTime}</label>
-          <br />
-          <label>Ingredients you have: {this.state.haveIngredients}</label>
-          <br />
-          <label>Ingredients you don't have: {this.state.dontHaveIngredients}</label>
-          <br />
-          <label>Allergies: {this.state.allergies}</label>
-          <br />
-          <label>Specific diets: {this.state.specificDiets}</label>
-          <br />
-          <label>Cuisines you like: {this.state.likeCuisines}</label>
-          <br />
-          <label>Cuisines you don't like: {this.state.dontLikeCuisines}</label>
-          <br />
-          <label>Courses you want: {this.state.wantCourses}</label>
-          <br />
-          <label>Courses you don't want: {this.state.dontWantCourses}</label>
-          <br />
-          <label>Holidays you want: {this.state.wantOnHolidays}</label>
-          <br />
-          <label>Holidays you don't want: {this.state.dontWantOnHolidays}</label>
-          <br />
-          <br />
-        </div>
+
+        <Test data={this.state} />
+        
       </div>
     );
   }
