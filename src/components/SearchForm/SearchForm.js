@@ -48,15 +48,14 @@ class SearchForm extends Component {
     // params.append("to", 3);
     // params.append("excluded", "ginger");
     // params.append("excluded", "garlic");
-    var exc = ["ginger", "garlic"]
     axios.get(process.env.REACT_APP_API_URL, {
       params: {
-        q: "chicken",
+        q: this.state.haveIngredients,
         app_id: process.env.REACT_APP_API_ID,
         app_key: process.env.REACT_APP_API_KEY,
         from: 0,
         to: 3,
-        excluded: exc
+        excluded: this.state.dontHaveIngredients
       },
       paramsSerializer: function(params) {
         return qs.stringify(params, {arrayFormat: 'repeat'})
