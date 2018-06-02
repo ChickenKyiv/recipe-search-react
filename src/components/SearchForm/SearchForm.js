@@ -13,6 +13,7 @@ import Holiday    from './Holiday/Holiday'
 import Ingredient from './Ingredient/Ingredient'
 import axios from 'axios'
 import Test from './Test/Test'
+import qs from 'qs'
 
 const InputGroup = Input.Group;
 
@@ -38,21 +39,28 @@ class SearchForm extends Component {
     }
   }
 
-  generateString(array) {
-
-  }
-
   onSubmit(e) {
-    var params = new URLSearchParams();
-    params.append("q", "chicken");
-    params.append("app_id", process.env.REACT_APP_API_ID);
-    params.append("app_key", process.env.REACT_APP_API_KEY);
-    params.append("from", 0);
-    params.append("to", 3);
-    params.append("excluded", "ginger");
-    params.append("excluded", "garlic");
+    // var params = new URLSearchParams();
+    // params.append("q", "chicken");
+    // params.append("app_id", process.env.REACT_APP_API_ID);
+    // params.append("app_key", process.env.REACT_APP_API_KEY);
+    // params.append("from", 0);
+    // params.append("to", 3);
+    // params.append("excluded", "ginger");
+    // params.append("excluded", "garlic");
+    var exc = ["ginger", "garlic"]
     axios.get(process.env.REACT_APP_API_URL, {
-      params
+      params: {
+        q: "chicken",
+        app_id: process.env.REACT_APP_API_ID,
+        app_key: process.env.REACT_APP_API_KEY,
+        from: 0,
+        to: 3,
+        excluded: exc
+      },
+      paramsSerializer: function(params) {
+        return qs.stringify(params, {arrayFormat: 'repeat'})
+      },
     }).then(response => {
       console.log(response.data)
       this.setState({displayFetchedRecipes: response.data.hits})
