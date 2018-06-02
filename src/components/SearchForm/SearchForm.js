@@ -11,7 +11,7 @@ import Cuisine    from './Cuisine/Cuisine'
 import Diet       from './Diet/Diet'
 import Holiday    from './Holiday/Holiday'
 import Ingredient from './Ingredient/Ingredient'
-
+import axios from 'axios'
 import Test from './Test/Test'
 
 const InputGroup = Input.Group;
@@ -33,12 +33,30 @@ class SearchForm extends Component {
       wantCourses: [],
       dontWantCourses: [],
       wantOnHolidays: [],
-      dontWantOnHolidays: []
+      dontWantOnHolidays: [],
+      displayFetchedRecipes: []
     }
+  }
+
+  generateString(array) {
+
   }
 
   onSubmit(e) {
     //can make sure that only update when user hits submit or display the final list to ask user if that is correct
+    axios.get(process.env.REACT_APP_API_URL, {
+      params: {
+        q: "chicken",
+        app_id: process.env.REACT_APP_API_ID,
+        app_key: process.env.REACT_APP_API_KEY,
+        from: 0,
+        to: 3
+      }
+    }).then(response => {
+      //console.log(response.data.hits)
+      this.setState({displayFetchedRecipes: response.data.hits})
+    })
+    .catch(error => console.log(error))
     e.preventDefault()
   }
   updateMaxTime() {
@@ -97,7 +115,7 @@ class SearchForm extends Component {
 
     return (
       <div>
-        <Form {...formLayout}>
+        <Form {...formLayout} onSubmit={this.onSubmit.bind(this)}>
 
           <InputGroup size="large" {...formItemLayout}>
             <Col span="12">
@@ -163,7 +181,7 @@ class SearchForm extends Component {
           </Button>
         </Form>
 
-        <Test data={this.state} />
+        <Test passedRecipes={this.state.displayFetchedRecipes} />
         
       </div>
     );
