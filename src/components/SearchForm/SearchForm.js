@@ -43,17 +43,18 @@ class SearchForm extends Component {
   }
 
   onSubmit(e) {
-    //can make sure that only update when user hits submit or display the final list to ask user if that is correct
+    var params = new URLSearchParams();
+    params.append("q", "chicken");
+    params.append("app_id", process.env.REACT_APP_API_ID);
+    params.append("app_key", process.env.REACT_APP_API_KEY);
+    params.append("from", 0);
+    params.append("to", 3);
+    params.append("excluded", "ginger");
+    params.append("excluded", "garlic");
     axios.get(process.env.REACT_APP_API_URL, {
-      params: {
-        q: "chicken",
-        app_id: process.env.REACT_APP_API_ID,
-        app_key: process.env.REACT_APP_API_KEY,
-        from: 0,
-        to: 3
-      }
+      params
     }).then(response => {
-      //console.log(response.data.hits)
+      console.log(response.data)
       this.setState({displayFetchedRecipes: response.data.hits})
     })
     .catch(error => console.log(error))
