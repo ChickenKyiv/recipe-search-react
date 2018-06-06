@@ -49,12 +49,15 @@ class SearchForm extends Component {
     // params.append("excluded", "ginger");
     // params.append("excluded", "garlic");
     axios.get(process.env.REACT_APP_API_URL, {
+      headers: {"Access-Control-Allow-Origin": "*"},
       params: {
         q: this.state.haveIngredients,
         app_id: process.env.REACT_APP_API_ID,
         app_key: process.env.REACT_APP_API_KEY,
         from: 0,
-        to: 3,
+        to: 5,
+        diet: this.state.specificDiets,
+        health: this.state.allergies,
         excluded: this.state.dontHaveIngredients
       },
       paramsSerializer: function(params) {
