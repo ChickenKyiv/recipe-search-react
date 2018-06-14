@@ -16,6 +16,7 @@ import Test from './Test/Test'
 import qs from 'qs'
 
 const InputGroup = Input.Group;
+const start = 0, count = 5;
 
 class SearchForm extends Component {
 
@@ -39,6 +40,20 @@ class SearchForm extends Component {
     }
   }
 
+  handleReset() {
+    let n = []
+    this.updateHaveIngredients(n)
+    this.updateDontHaveIngredients(n)
+    this.updateAllergies(n)
+    this.updateSpecificDiets(n)
+    this.updateLikeCuisines(n)
+    this.updateDontLikeCuisines(n)
+    this.updateWantCourses(n)
+    this.updateDontWantCourses(n)
+    this.updateWantOnHolidays(n)
+    this.updateDontWantOnHolidays(n)
+  }
+
   onSubmit(e) {
     // var params = new URLSearchParams();
     // params.append("q", "chicken");
@@ -54,8 +69,8 @@ class SearchForm extends Component {
         q: this.state.haveIngredients,
         app_id: process.env.REACT_APP_API_ID,
         app_key: process.env.REACT_APP_API_KEY,
-        from: 0,
-        to: 5,
+        from: start,
+        to: start+count,
         diet: this.state.specificDiets,
         health: this.state.allergies,
         excluded: this.state.dontHaveIngredients
@@ -68,6 +83,7 @@ class SearchForm extends Component {
       this.setState({displayFetchedRecipes: response.data.hits})
     })
     .catch(error => console.log(error))
+    this.handleReset()
     e.preventDefault()
   }
   updateMaxTime() {
