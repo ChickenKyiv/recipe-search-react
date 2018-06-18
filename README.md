@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pages
 - page 1 Search Form
 - page 2 Search Results
@@ -22,6 +23,29 @@ We need to use a separated components, that can work without Andt too.
 Have tests. Have form elements separated we
 
 ![Search DB Schema](https://github.com/ChickenKyiv/database-visuals/blob/master/RecipeAPI_Search_Schema%20%20%20SqlDBM.png)
+=======
+## Advanced Search Form for Recipe Based projects
+
+
+
+
+
+
+---
+
+---
+
+
+## Table of Contents
+
+* [Updating to New Releases](#updating-to-new-releases)
+* [Release 2 -  Authentication](#)
+
+## Updating to New Releases
+
+
+## Release 2 -  Authentication
+>>>>>>> 78485626a618f65fd3d4cdd766204efa8de91060
 
 
 #### @TODO replace state names with this lists. more easy to understand

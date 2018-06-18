@@ -1,16 +1,11 @@
 
-Search form #0
-It's a first basic version. It should display select options,
-have basic validation, mask for numeric input and submit event should work.
+Release 2 SearchedHeading: Front + backend making working without bugs.
+SubHeading: Frontend with backend passing our basic tests. Components will have tests. A lot of repeatable code moved into separated npm packages.
 
-Heading: Components, related to advanced search functionality.
-SubHeading: React based frontend page that can help you to find recipes that you want.
-Summary: We'll create a search page with form Inside
-Problem: A lot of food tech projects need a search form. This component will help you to save time. Setup and this form are ready to send an API requests to your server.
-
-Solution: Search form with basic functionality. With clean code, separated backend & frontend logic. Ready to use in your project.
-How to start: Clone/fork -> `npm install`, `npm start`
-Can be deployed to Netlify.
+Summary: this release is more about code quality.
+Problem: It'll take some time if you'll decide to add this functionality into your project.
+Solution: make the code more clear, less long, less complicated.
+Customer Quote: "When components were separated - we didn't spend a lot of time to connect them to our project."
 
 
 #### Release 0 - Free Menu
