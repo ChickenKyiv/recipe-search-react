@@ -1,9 +1,15 @@
-<<<<<<< HEAD
+
 pages
 - page 1 Search Form
 - page 2 Search Results
 - page 3 Recipe Details
 
+
+@TODO
+on results page implement some filtration panel. similar to masonry logic
+https://codepen.io/desandro/pen/wfaGu
+https://codepen.io/desandro/pen/mCdbD
+https://codepen.io/desandro/pen/Jfbpc
 
 #### Search Form
 
