@@ -55,36 +55,46 @@ class SearchForm extends Component {
   }
 
   onSubmit(e) {
-    // var params = new URLSearchParams();
-    // params.append("q", "chicken");
-    // params.append("app_id", process.env.REACT_APP_API_ID);
-    // params.append("app_key", process.env.REACT_APP_API_KEY);
-    // params.append("from", 0);
-    // params.append("to", 3);
-    // params.append("excluded", "ginger");
-    // params.append("excluded", "garlic");
-    axios.get(process.env.REACT_APP_API_URL, {
-      headers: {"Access-Control-Allow-Origin": "*"},
-      params: {
-        q: this.state.haveIngredients,
-        app_id: process.env.REACT_APP_API_ID,
-        app_key: process.env.REACT_APP_API_KEY,
-        from: start,
-        to: start+count,
-        diet: this.state.specificDiets,
-        health: this.state.allergies,
-        excluded: this.state.dontHaveIngredients
-      },
-      paramsSerializer: function(params) {
-        return qs.stringify(params, {arrayFormat: 'repeat'})
-      },
-    }).then(response => {
-      console.log(response.data)
-      this.setState({displayFetchedRecipes: response.data.hits})
-    })
-    .catch(error => console.log(error))
-    this.handleReset()
+    if(this.state.haveIngredients.length > 0){
+      axios.get(process.env.REACT_APP_API_URL, {
+        headers: {"Access-Control-Allow-Origin": "*"},
+        params: {
+          q: this.state.haveIngredients,
+          app_id: process.env.REACT_APP_API_ID,//remove if not required
+          app_key: process.env.REACT_APP_API_KEY,//remove if not required
+          from: start,    //index starting point
+          to: start+count,//index end point
+          diet: this.state.specificDiets,
+          health: this.state.allergies,
+          excluded: this.state.dontHaveIngredients
+        },
+        paramsSerializer: function(params) {//to pass arrays
+          return qs.stringify(params, {arrayFormat: 'repeat'})
+        },
+      }).then(response => {
+        console.log(response.data.hits)
+        this.setState({displayFetchedRecipes: response.data.hits})
+      })
+      .catch(error => console.log(error))
+    }
+    else{
+      alert("Please select atleast one Ingredient")
+    }
+     // this.handleReset() //does not work
     e.preventDefault()
+        // update as per fieldname in database    
+    //   time: this.state.maxTime,
+    //   includeIngredients: this.state.haveIngredients,
+    //   excludeIngredients: this.state.dontHaveIngredients,
+    //   allergy: this.state.allergies,
+    //   diet: this.state.specificDiets,
+    //   likeCuisines: this.state.likeCuisines,
+    //   ignoreCuisines: this.state.dontLikeCuisines,
+    //   wantCourses: this.state.wantCourses,
+    //   excludeCourses: this.state.dontWantCourses,
+    //   wantdays: this.state.wantOnHolidays,
+    //   excludedays: this.state.dontWantOnHolidays,
+        
   }
   updateMaxTime() {
     var time = window.document.getElementById('time').value
@@ -153,7 +163,7 @@ class SearchForm extends Component {
                 placeholder="Maximum Cooking Time in Minutes" />
             </Col>
           </InputGroup>
-          <br />
+          
           <InputGroup size="large" {...formItemLayout}>
             <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.dontHaveIngredients}
@@ -163,7 +173,7 @@ class SearchForm extends Component {
               placeholder="Ingredients you don't have" />
 
           </InputGroup>
-          <br />
+          
           <InputGroup size="large" {...formItemLayout}>
             <Col span="12">
               <Allergy updateAllergy={this.updateAllergies.bind(this)} />
@@ -174,7 +184,7 @@ class SearchForm extends Component {
 
             </Col>
           </InputGroup>
-          <br />
+          
           <InputGroup size="large" {...formItemLayout}>
             <Cuisine updateCuisines={this.updateLikeCuisines.bind(this)}
               passedSelected={this.state.dontLikeCuisines} sign={true}
@@ -183,7 +193,7 @@ class SearchForm extends Component {
               passedSelected={this.state.likeCuisines} sign={false}
               placeholder="Cuisines you don't like" />
           </InputGroup>
-          <br />
+          
           <InputGroup size="large" {...formItemLayout}>
             <Course updateCourses={this.updateWantCourses.bind(this)}
               passedSelected={this.state.dontWantCourses} sign={true}
@@ -192,7 +202,7 @@ class SearchForm extends Component {
               passedSelected={this.state.wantCourses} sign={false}
               placeholder="Courses You don't want" />
           </InputGroup>
-          <br />
+          
           <InputGroup size="large" {...formItemLayout}>
             <Holiday updateHoliday={this.updateWantOnHolidays.bind(this)}
               sign={true} passedSelected={this.state.dontWantOnHolidays}
@@ -201,7 +211,7 @@ class SearchForm extends Component {
               sign={false} passedSelected={this.state.wantOnHolidays}
               placeholder="Holidays/Specific You don't want" />
           </InputGroup>
-          <br />
+          
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes
