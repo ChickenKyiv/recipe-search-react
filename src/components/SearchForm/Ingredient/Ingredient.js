@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {  Select, Col } from 'antd';
-
+const gf = require('@groceristar/groceristar-fetch')
 // @todo update the paths. put to components arrays
-import ingredients from '../../../data/ingredients';
+// import ingredients from '../../../data/ingredients';
 
 class Ingredient extends Component {
 
@@ -34,6 +34,7 @@ class Ingredient extends Component {
 
     //@todo change push to underscore methods
     const options = [];
+    var ingredients = gf.getIngredients()
     for (let i = 0; i < ingredients.length; i++) {
       //console.log(this.props.placeholder+this.props.passedSelected.indexOf(ingredients[i]))
       if(this.props.passedSelected.indexOf(ingredients[i]) === -1){

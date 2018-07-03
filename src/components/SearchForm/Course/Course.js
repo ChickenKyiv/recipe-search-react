@@ -3,9 +3,9 @@ import {
   Select,
   Col
 } from 'antd';
-
+const gf = require('@groceristar/groceristar-fetch')
 // @todo update the paths. put to components arrays
-import courses from '../../../data/courses';
+// import courses from '../../../data/courses';
 
 
 class Course extends Component {
@@ -32,27 +32,28 @@ class Course extends Component {
     // const onChangeExclude = (value) => {
     //   this.setState({ exclude: value })
     // };
-  const Option   = Select.Option;
-  //@todo change push to underscore methods
-  const options = [];
-  for (let i = 0; i < courses.length; i++) {
-    // options.push(
-    //   <Option key={courses[i].toString()}>{courses[i].toString()}</Option>
-    // );
-          if(this.props.passedSelected.indexOf(courses[i]) === -1){
-          options.push(
-            <Option key={courses[i].toString()} disabled={false}>{courses[i].toString()}</Option>
-          );
-          // console.log("enable in opp of",this.props.placeholder);
-        }
-        else{
-          options.push(
-            <Option key={courses[i].toString()} disabled={true}>{courses[i].toString()}</Option>
-          );
-          // console.log("disable in opp of",this.props.placeholder);
-        }
+    const Option   = Select.Option;
+    //@todo change push to underscore methods
+    const options = [];
+    var courses = gf.getCourses();
+    for (let i = 0; i < courses.length; i++) {
+      // options.push(
+      //   <Option key={courses[i].toString()}>{courses[i].toString()}</Option>
+      // );
+            if(this.props.passedSelected.indexOf(courses[i]) === -1){
+            options.push(
+              <Option key={courses[i].toString()} disabled={false}>{courses[i].toString()}</Option>
+            );
+            // console.log("enable in opp of",this.props.placeholder);
+          }
+          else{
+            options.push(
+              <Option key={courses[i].toString()} disabled={true}>{courses[i].toString()}</Option>
+            );
+            // console.log("disable in opp of",this.props.placeholder);
+          }
 
-  }
+    }
 
     const onChange = (value) => {
       this.setState({ values: value })

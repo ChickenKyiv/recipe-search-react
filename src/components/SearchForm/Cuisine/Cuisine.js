@@ -3,9 +3,9 @@ import {
   Select,
   Col
 } from 'antd';
-
+const gf = require('@groceristar/groceristar-fetch')
 // @todo update the paths. put to components arrays
-import cuisines from '../../../data/cuisines';
+// import cuisines from '../../../data/cuisines';
 
 class Cuisine extends Component {
   constructor(props) {
@@ -30,6 +30,7 @@ class Cuisine extends Component {
     const Option    = Select.Option;
 //@todo change push to underscore methods
     const options = [];
+    var cuisines = gf.getCuisines()
     for (let i = 0; i < cuisines.length; i++) {
       // options.push(
       //   <Option key={cuisines[i].toString()}>{cuisines[i].toString()}</Option>

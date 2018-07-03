@@ -3,18 +3,11 @@ import {
   Select,
 
 } from 'antd';
-
+const gf = require('@groceristar/groceristar-fetch')
 // @todo update the paths. put to components arrays
-import diets from '../../../data/diets';
+// import diets from '../../../data/diets';
 
-const Option     = Select.Option;
-//@todo change push to underscore methods
-const options = [];
-for (let i = 0; i < diets.length; i++) {
-  options.push(
-    <Option key={diets[i].toString()}>{diets[i].toString()}</Option>
-  );
-}
+
 
 class Diet extends Component {
   constructor(props) {
@@ -27,6 +20,15 @@ class Diet extends Component {
   }
 
   render(){
+    const Option     = Select.Option;
+    //@todo change push to underscore methods
+    const options = [];
+    var diets = gf.getDiets()
+    for (let i = 0; i < diets.length; i++) {
+      options.push(
+        <Option key={diets[i].toString()}>{diets[i].toString()}</Option>
+      );
+    }
 
     const onChange = (value) => {
       this.setState({ diets: value })

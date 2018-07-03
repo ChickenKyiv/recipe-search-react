@@ -3,9 +3,9 @@ import {
   Select,
   Col
 } from 'antd';
-
+const gf = require('@groceristar/groceristar-fetch')
 // @todo update the paths. put to components arrays
-import holidays       from '../../../data/holidays';
+// import holidays       from '../../../data/holidays';
 
 class Holiday extends Component {
   constructor(props) {
@@ -22,6 +22,7 @@ class Holiday extends Component {
 
     //@todo change push to underscore methods
     const options = [];
+    var holidays = gf.getHolidays()
     for (let i = 0; i < holidays.length; i++) {
       // options.push(
       //   <Option key={holidays[i].toString()}>{holidays[i].toString()}</Option>

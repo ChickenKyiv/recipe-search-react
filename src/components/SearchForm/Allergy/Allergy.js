@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
 import {  Select } from 'antd';
-
+const gf = require('@groceristar/groceristar-fetch')
 // @todo update the paths. put to components arrays
-import allergies from '../../../data/allergies';
+// import allergies from '../../../data/allergies';
 
-
-const Option     = Select.Option;
-
-//@todo change push to underscore methods
-const options = [];
-for (let i = 0; i < allergies.length; i++) {
-  options.push(
-    <Option key={allergies[i].toString()}>{allergies[i].toString()}</Option>
-  );
-}
 
 class Allergy extends Component {
+
   constructor(props) {
     super(props)
-
     // @todo change to include
     this.state = {
       allergies: []
     }
   }
 
-  render(){
+  componentDidMount() {
+    
 
+  }
+
+  render(){
+    const Option     = Select.Option;
+    const options = [];
+    //@todo change push to underscore methods
+    var allergies = gf.getAllergies()
+
+    for (let i = 0; i < allergies.length; i++) {
+      options.push(
+        <Option key={allergies[i].toString()}>{allergies[i].toString()}</Option>
+      );
+    }
     const onChange = (value) => {
       this.setState({ allergies: value })
       this.props.updateAllergy(value)
