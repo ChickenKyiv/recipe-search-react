@@ -6,9 +6,6 @@ import {
 
 import gf from '@groceristar/groceristar-fetch';
 
-// @todo update the paths. put to components arrays
-// import ingredients from '../../../data/ingredients';
-
 class Ingredient extends Component {
 
   constructor(props) {
@@ -18,6 +15,10 @@ class Ingredient extends Component {
       sign       : props.sign,
       values     : []
     }
+  }
+
+  placeholder( flag ) {
+    return (flag) ? "Ingredients you have" : "Ingredients you don't have";
   }
 
   render(){

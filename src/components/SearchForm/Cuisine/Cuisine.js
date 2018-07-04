@@ -4,8 +4,7 @@ import {
   Col
 } from 'antd';
 import gf from '@groceristar/groceristar-fetch';
-// @todo update the paths. put to components arrays
-// import cuisines from '../../../data/cuisines';
+
 
 class Cuisine extends Component {
   constructor(props) {
@@ -16,6 +15,9 @@ class Cuisine extends Component {
       sign       : props.sign,
       values     : []
     }
+  }
+  placeholder( flag ) {
+    return (flag) ? "Cuisines you like"  : "Cuisines you don't like"
   }
 
   render(){

@@ -171,7 +171,6 @@ class SearchForm extends Component {
             <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)}
               sign={false} passedSelected={this.state.haveIngredients}
               placeholder="Ingredients you don't have" />
-
           </InputGroup>
 
           <InputGroup size="large" {...formItemLayout}>
