@@ -20,6 +20,20 @@ class Cuisine extends Component {
     return (flag) ? "Cuisines you like"  : "Cuisines you don't like"
   }
 
+  onChange(value) {
+    this.setState({ values: value })
+    this.props.updateCuisines(value)
+  }
+
+  createName(className) {
+    return ( this.state.sign )
+            ? 'allowed'
+            : 'excluded'
+
+            + className
+            ;
+  }
+
   render(){
 
     // const onChangeInclude = (value) => {
@@ -58,28 +72,14 @@ class Cuisine extends Component {
 
     }
 
-    const onChange = (value) => {
-      this.setState({ values: value })
-      this.props.updateCuisines(value)
-    };
-
-    const createName = (className) => {
-      return ( this.state.sign )
-              ? 'allowed'
-              : 'excluded'
-
-              + className
-              ;
-    };
-
     return (
       <Col span={12}>
         <Select
           mode="multiple"
           style={{ width: '100%' }}
-          name={createName('Cuisine')}
+          name={this.createName('Cuisine')}
           placeholder={this.props.placeholder}
-          onChange={onChange}
+          onChange={this.onChange.bind(this)}
         >
           {options}
         </Select>

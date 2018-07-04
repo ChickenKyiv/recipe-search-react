@@ -26,6 +26,20 @@ class Course extends Component {
     return (flag) ? "Courses You want" : "Courses You don't want";
   }
 
+  onChange(value) {
+    this.setState({ values: value })
+    this.props.updateCourses(value)
+  }
+
+  createName(className) {
+    return ( this.state.sign )
+            ? 'allowed'
+            : 'excluded'
+
+            + className
+            ;
+  };
+
   render(){
     //@todo make one method by passing flag variable
     // const onChangeInclude = (value) => {
@@ -58,36 +72,21 @@ class Course extends Component {
 
     }
 
-    const onChange = (value) => {
-      this.setState({ values: value })
-      this.props.updateCourses(value)
-    };
-
-
     //---Both options looks stupid /
     let name = classNames('', {
       'allowedCourse' : this.state.sign,
       'excludedCourse': !this.state.sign,
     })
 
-    const createName = (className) => {
-      return ( this.state.sign )
-              ? 'allowed'
-              : 'excluded'
-
-              + className
-              ;
-    };
-    //---Both options looks stupid /
 
     return (
       <Col span={12}>
         <Select
           mode="multiple"
           style={{ width: '100%' }}
-          name={createName('Course')}
+          name={this.createName('Course')}
           placeholder={this.props.placeholder}
-          onChange={onChange}
+          onChange={this.onChange.bind(this)}
         >
           {options}
         </Select>

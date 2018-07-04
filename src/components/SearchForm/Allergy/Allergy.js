@@ -15,10 +15,10 @@ class Allergy extends Component {
     }
   }
 
-  componentDidMount() {
-
-
-  }
+  onChange(value) {
+    this.setState({ allergies: value })
+    this.props.updateAllergy(value)
+  };
 
   render(){
     const Option     = Select.Option;
@@ -31,17 +31,14 @@ class Allergy extends Component {
         <Option key={allergies[i].toString()}>{allergies[i].toString()}</Option>
       );
     }
-    const onChange = (value) => {
-      this.setState({ allergies: value })
-      this.props.updateAllergy(value)
-    };
+
 
     return (
       <Select
         mode="multiple"
         style={{ width: '100%' }}
         placeholder="Allergies"
-        onChange={onChange}
+        onChange={this.onChange.bind(this)}
       >
         {options}
       </Select>
