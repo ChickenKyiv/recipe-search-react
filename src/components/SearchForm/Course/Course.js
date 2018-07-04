@@ -5,6 +5,7 @@ import {
 } from 'antd';
 import gf from '@groceristar/groceristar-fetch';
 
+import classNames from 'classnames';
 
 
 class Course extends Component {
@@ -62,6 +63,13 @@ class Course extends Component {
       this.props.updateCourses(value)
     };
 
+
+    //---Both options looks stupid /
+    let name = classnames('', {
+      'allowedCourse' : this.state.sign,
+      'excludedCourse': !this.state.sign,
+    })
+
     const createName = (className) => {
       return ( this.state.sign )
               ? 'allowed'
@@ -70,7 +78,7 @@ class Course extends Component {
               + className
               ;
     };
-
+    //---Both options looks stupid /
 
     return (
       <Col span={12}>
