@@ -55,13 +55,13 @@ class SearchForm extends Component {
   }
 
   onSubmit(e) {
-    if(this.state.haveIngredients.length > 0){
+    if( this.state.haveIngredients.length > 0 ){
       axios.get(process.env.REACT_APP_API_URL, {
         headers: {"Access-Control-Allow-Origin": "*"},
         params: {
           q: this.state.haveIngredients,
-          app_id: process.env.REACT_APP_API_ID,//remove if not required
-          app_key: process.env.REACT_APP_API_KEY,//remove if not required
+          app_id: process.env.REACT_APP_API_ID, //remove if not required
+          app_key: process.env.REACT_APP_API_KEY, //remove if not required
           from: start,    //index starting point
           to: start+count,//index end point
           diet: this.state.specificDiets,
@@ -77,7 +77,7 @@ class SearchForm extends Component {
       })
       .catch(error => console.log(error))
     }
-    else{
+    else {
       alert("Please select atleast one Ingredient")
     }
      // this.handleReset() //does not work
