@@ -19,21 +19,21 @@ class Ingredient extends Component {
       values     : []
     }
   }
+  onChange(value) {
+    this.setState({ values: value })
+    this.props.updateIng(value)
+  }
 
+  createName(className) {
+    return ( this.state.sign )
+            ? 'allowed'
+            : 'excluded'
+
+            + className
+            ;
+  }
+  
   render(){
-    const onChange = (value) => {
-      this.setState({ values: value })
-      this.props.updateIng(value)
-    };
-
-    const createName = (className) => {
-      return ( this.state.sign )
-              ? 'allowed'
-              : 'excluded'
-
-              + className
-              ;
-    };
 
     const Option     = Select.Option;
 
@@ -59,8 +59,8 @@ class Ingredient extends Component {
 
     return (
       <Col span="12">
-        <Select mode="multiple" style={{ width: '100%' }} name={createName('Ingredient')}
-         placeholder={this.props.placeholder} onChange={onChange}>
+        <Select mode="multiple" style={{ width: '100%' }} name={this.createName('Ingredient')}
+         placeholder={this.props.placeholder} onChange={this.onChange.bind(this)}>
           {options}
         </Select>
       </Col>

@@ -19,6 +19,11 @@ class Diet extends Component {
     }
   }
 
+  onChange(value) {
+    this.setState({ diets: value })
+    this.props.updateDiet(value)
+  }
+
   render(){
     const Option     = Select.Option;
     //@todo change push to underscore methods
@@ -30,17 +35,12 @@ class Diet extends Component {
       );
     }
 
-    const onChange = (value) => {
-      this.setState({ diets: value })
-      this.props.updateDiet(value)
-    };
-
     return (
       <Select
         mode="multiple"
         style={{ width: '100%' }}
         placeholder="Specific Diets"
-        onChange={onChange}
+        onChange={this.onChange.bind(this)}
       >
         {options}
       </Select>

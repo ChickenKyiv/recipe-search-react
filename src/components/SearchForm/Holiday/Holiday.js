@@ -17,6 +17,15 @@ class Holiday extends Component {
     }
   }
 
+  onChange(value) {
+    this.setState({ values: value })
+    this.props.updateHoliday(value)
+  }
+
+  createName(className) {
+    return  this.state.sign ? 'allowed': 'excluded'  + className ;
+  }
+
   render(){
     const Option     = Select.Option;
 
@@ -40,23 +49,14 @@ class Holiday extends Component {
       }
     }
 
-      const onChange = (value) => {
-        this.setState({ values: value })
-        this.props.updateHoliday(value)
-      };
-
-      const createName = (className) => {
-        return  this.state.sign ? 'allowed': 'excluded'  + className ;
-      };
-
     return (
       <Col span={12}>
         <Select
           mode="multiple"
           style={{ width: '100%' }}
-          name={createName('Holiday')}
+          name={this.createName('Holiday')}
           placeholder={this.props.placeholder}
-          onChange={onChange}
+          onChange={this.onChange.bind(this)}
         >
           {options}
         </Select>
