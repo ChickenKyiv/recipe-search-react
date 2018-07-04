@@ -4,6 +4,8 @@ import {
   Select
 } from 'antd';
 
+import shori from 'shortid';
+
 const Option   = Select.Option;
 
 class SelectContainer extends Component {
@@ -29,8 +31,13 @@ class SelectContainer extends Component {
   render(){
 
       return (
-        <Select mode="multiple" style={{ width: '100%' }} onChange={this._change} >
-           {Object.keys(this.state.list).map((item, index) => <Option key={index}>{this.state.list[index]}</Option>)}
+        <Select mode="multiple"
+                style={{ width: '100%' }}
+                onChange={this._change}>
+
+           {Object.keys(this.state.list).map(
+             (item, index) => <Option key={shortid.generate}>{this.state.list[index]}</Option>
+           )}
 
         </Select>
       );

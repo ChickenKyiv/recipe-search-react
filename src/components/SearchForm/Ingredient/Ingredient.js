@@ -5,8 +5,7 @@ import {
 } from 'antd';
 
 import gf from '@groceristar/groceristar-fetch';
-import Item from '../Item/Item'
-// import ItemList from '../Item/ItemList'
+
 import SelectContainer from '../Item/SelectContainer'
 
 
@@ -17,26 +16,27 @@ class Ingredient extends Component {
 
     this.state = {
       sign       : props.sign,
-      values     : []
+      values     : [],
+      flag: props.flag
     }
 
-    this._change = this._change.bind(this);
-
+    // this._change = this._change.bind(this);
+    this.placeholder = this.placeholder.bind(this);
 
   }
-
-  _change(items) {
-    this.setState({values: [...items]})
-    console.log(items)
+  placeholder = () => {
+    return (this.state.flag) ? "Ingredients you have" : "Ingredients you don't have";
   }
+
+  // _change(items) {
+  //   this.setState({values: [...items]})
+  //   console.log(items)
+  // }
 
   render(){
 
 
 
-
-    //@todo change push to underscore methods
-    const options = [];
     var list = gf.getIngredients()
 
     return (

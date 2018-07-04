@@ -5,11 +5,11 @@ import {
   Col,
   Button
 } from 'antd';
-import Allergy    from './Allergy/Allergy'
-import Course     from './Course/Course'
-import Cuisine    from './Cuisine/Cuisine'
-import Diet       from './Diet/Diet'
-import Holiday    from './Holiday/Holiday'
+// import Allergy    from './Allergy/Allergy'
+// import Course     from './Course/Course'
+// import Cuisine    from './Cuisine/Cuisine'
+// import Diet       from './Diet/Diet'
+// import Holiday    from './Holiday/Holiday'
 import Ingredient from './Ingredient/Ingredient'
 import axios from 'axios'
 import Test from './Test/Test'
@@ -167,10 +167,7 @@ class SearchForm extends Component {
           </GroupContainer>
 */}
           <GroupContainer >
-            <Ingredient
-                        sign={true}
-
-             />
+            <Ingredient flag={true} />
             {/*<Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.excludedIngredients}
                />
