@@ -30,15 +30,15 @@ class SearchForm extends Component {
       maxTime: '',
       allowedIngredients: [],
       excludedIngredients: [],
-      allergies: [],
-      specificDiets: [],
-      allowedCuisines: [],
-      excludedCuisines: [],
-      allowedCourses: [],
-      excludedCourses: [],
-      allowedHolidays: [],
-      excludedHolidays: [],
-      displayFetchedRecipes: []
+      // allergies: [],
+      // specificDiets: [],
+      // allowedCuisines: [],
+      // excludedCuisines: [],
+      // allowedCourses: [],
+      // excludedCourses: [],
+      // allowedHolidays: [],
+      // excludedHolidays: [],
+      // displayFetchedRecipes: []
     }
   }
 
@@ -46,14 +46,14 @@ class SearchForm extends Component {
     let n = []
     this.updateHaveIngredients(n)
     this.updateDontHaveIngredients(n)
-    this.updateAllergies(n)
-    this.updateSpecificDiets(n)
-    this.updateLikeCuisines(n)
-    this.updateDontLikeCuisines(n)
-    this.updateWantCourses(n)
-    this.updateDontWantCourses(n)
-    this.updateWantOnHolidays(n)
-    this.updateDontWantOnHolidays(n)
+    // this.updateAllergies(n)
+    // this.updateSpecificDiets(n)
+    // this.updateLikeCuisines(n)
+    // this.updateDontLikeCuisines(n)
+    // this.updateWantCourses(n)
+    // this.updateDontWantCourses(n)
+    // this.updateWantOnHolidays(n)
+    // this.updateDontWantOnHolidays(n)
   }
 
   onSubmit(e) {
@@ -111,37 +111,37 @@ class SearchForm extends Component {
   //   this.setState({excludedIngredients: [...item]})
   // }
 
-  updateAllergies(item) {
-    this.setState({allergies: [...item]})
-  }
-
-  updateSpecificDiets(item) {
-    this.setState({specificDiets: [...item]})
-  }
-
-  updateLikeCuisines(item) {
-    this.setState({allowedCuisines: [...item]})
-  }
-
-  updateDontLikeCuisines(item) {
-    this.setState({excludedCuisines: [...item]})
-  }
-
-  updateWantCourses(item) {
-    this.setState({allowedCourses: [...item]})
-  }
-
-  updateDontWantCourses(item) {
-    this.setState({excludedCourses: [...item]})
-  }
-
-  updateWantOnHolidays(item) {
-    this.setState({excludedCourses: [...item]})
-  }
-
-  updateDontWantOnHolidays(item) {
-    this.setState({excludedHolidays: [...item]})
-  }
+  // updateAllergies(item) {
+  //   this.setState({allergies: [...item]})
+  // }
+  //
+  // updateSpecificDiets(item) {
+  //   this.setState({specificDiets: [...item]})
+  // }
+  //
+  // updateLikeCuisines(item) {
+  //   this.setState({allowedCuisines: [...item]})
+  // }
+  //
+  // updateDontLikeCuisines(item) {
+  //   this.setState({excludedCuisines: [...item]})
+  // }
+  //
+  // updateWantCourses(item) {
+  //   this.setState({allowedCourses: [...item]})
+  // }
+  //
+  // updateDontWantCourses(item) {
+  //   this.setState({excludedCourses: [...item]})
+  // }
+  //
+  // updateWantOnHolidays(item) {
+  //   this.setState({excludedCourses: [...item]})
+  // }
+  //
+  // updateDontWantOnHolidays(item) {
+  //   this.setState({excludedHolidays: [...item]})
+  // }
 
   render(){
 
@@ -167,12 +167,16 @@ class SearchForm extends Component {
           </GroupContainer>
 
           <GroupContainer >
-            <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
+            <Ingredient
+                        sign={true}
+                        
+             />
+            {/*<Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.excludedIngredients}
                />
             <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)}
               sign={false} passedSelected={this.state.allowedIngredients}
-               />
+               />*/}
           </GroupContainer>
 
           {/*
