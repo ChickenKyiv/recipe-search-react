@@ -22,9 +22,9 @@ class Course extends Component {
 
     }
   }
-  placeholder( flag ) {
-    return (flag) ? "Courses You want" : "Courses You don't want";
-  }
+  // placeholder( flag ) {
+  //   return (flag) ? "Courses You want" : "Courses You don't want";
+  // }
 
   onChange(value) {
     this.setState({ values: value })
@@ -49,6 +49,9 @@ class Course extends Component {
     // const onChangeExclude = (value) => {
     //   this.setState({ exclude: value })
     // };
+    const placeholder = ( flag ) => {
+      return (flag) ? "Courses You want" : "Courses You don't want";
+    }
     const Option   = Select.Option;
     //@todo change push to underscore methods
     const options = [];
@@ -85,7 +88,7 @@ class Course extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           name={this.createName('Course')}
-          placeholder={this.props.placeholder}
+          placeholder={placeholder(this.props.sign)}
           onChange={this.onChange.bind(this)}
         >
           {options}

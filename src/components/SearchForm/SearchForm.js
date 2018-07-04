@@ -29,15 +29,15 @@ class SearchForm extends Component {
       formLayout: 'vertical',
       maxTime: '',
       allowedIngredients: [],
-      dontHaveIngredients: [],
+      excludedIngredients: [],
       allergies: [],
       specificDiets: [],
       allowedCuisines: [],
-      dontLikeCuisines: [],
+      excludedCuisines: [],
       allowedCourses: [],
-      dontWantCourses: [],
+      excludedCourses: [],
       allowedHolidays: [],
-      dontWantOnHolidays: [],
+      excludedHolidays: [],
       displayFetchedRecipes: []
     }
   }
@@ -104,11 +104,11 @@ class SearchForm extends Component {
   }
 
   updateHaveIngredients(item) {
-    this.setState({haveIngredients: [...item]})
+    this.setState({allowedIngredients: [...item]})
   }
 
   updateDontHaveIngredients(item) {
-    this.setState({dontHaveIngredients: [...item]})
+    this.setState({excludedIngredients: [...item]})
   }
 
   updateAllergies(item) {
@@ -120,27 +120,27 @@ class SearchForm extends Component {
   }
 
   updateLikeCuisines(item) {
-    this.setState({likeCuisines: [...item]})
+    this.setState({allowedCuisines: [...item]})
   }
 
   updateDontLikeCuisines(item) {
-    this.setState({dontLikeCuisines: [...item]})
+    this.setState({excludedCuisines: [...item]})
   }
 
   updateWantCourses(item) {
-    this.setState({wantCourses: [...item]})
+    this.setState({allowedCourses: [...item]})
   }
 
   updateDontWantCourses(item) {
-    this.setState({dontWantCourses: [...item]})
+    this.setState({excludedCourses: [...item]})
   }
 
   updateWantOnHolidays(item) {
-    this.setState({wantOnHolidays: [...item]})
+    this.setState({excludedCourses: [...item]})
   }
 
   updateDontWantOnHolidays(item) {
-    this.setState({dontWantOnHolidays: [...item]})
+    this.setState({excludedHolidays: [...item]})
   }
 
   render(){
@@ -165,13 +165,13 @@ class SearchForm extends Component {
                 placeholder="Maximum Cooking Time in Minutes" />
             </Col>
           </GroupContainer>
-
+          
           <GroupContainer >
             <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
-              sign={true} passedSelected={this.state.dontHaveIngredients}
+              sign={true} passedSelected={this.state.excludedIngredients}
                />
             <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)}
-              sign={false} passedSelected={this.state.haveIngredients}
+              sign={false} passedSelected={this.state.allowedIngredients}
                />
           </GroupContainer>
 
@@ -197,25 +197,25 @@ class SearchForm extends Component {
 
           <GroupContainer >
             <Cuisine updateCuisines={this.updateLikeCuisines.bind(this)}
-              passedSelected={this.state.dontLikeCuisines} sign={true}
+              passedSelected={this.state.excludedCuisines} sign={true}
               placeholder="Cuisines you like" />
             <Cuisine updateCuisines={this.updateDontLikeCuisines.bind(this)}
-              passedSelected={this.state.likeCuisines} sign={false}
+              passedSelected={this.state.allowedCuisines} sign={false}
               placeholder="Cuisines you don't like" />
           </GroupContainer>
 
           <GroupContainer >
             <Course updateCourses={this.updateWantCourses.bind(this)}
-              passedSelected={this.state.dontWantCourses} sign={true}
+              passedSelected={this.state.excludedCourses} sign={true}
               placeholder="Courses You want" />
             <Course updateCourses={this.updateDontWantCourses.bind(this)}
-              passedSelected={this.state.wantCourses} sign={false}
+              passedSelected={this.state.allowedCourses} sign={false}
               placeholder="Courses You don't want" />
           </GroupContainer>
 
           <GroupContainer >
             <Holiday updateHoliday={this.updateWantOnHolidays.bind(this)}
-              sign={true} passedSelected={this.state.dontWantOnHolidays}
+              sign={true} passedSelected={this.state.excludedHolidays}
               placeholder="Holidays/Specific You want" />
             <Holiday updateHoliday={this.updateDontWantOnHolidays.bind(this)}
               sign={false} passedSelected={this.state.wantOnHolidays}

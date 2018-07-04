@@ -4,6 +4,7 @@ import {
   Col
 } from 'antd';
 import gf from '@groceristar/groceristar-fetch';
+import Item from '../Item/Item'
 
 
 class Holiday extends Component {
@@ -15,9 +16,9 @@ class Holiday extends Component {
       values     : []
     }
   }
-  placeholder( flag ) {
-    return (flag) ? "Holidays/Specific You want" : "Holidays/Specific You don't want";
-  }
+  // placeholder( flag ) {
+  //   return (flag) ? "Holidays/Specific You want" : "Holidays/Specific You don't want";
+  // }
 
   onChange(value) {
     this.setState({ values: value })
@@ -29,6 +30,10 @@ class Holiday extends Component {
   }
 
   render(){
+    const placeholder = ( flag ) => {
+      return (flag) ? "Holidays/Specific You want" : "Holidays/Specific You don't want";
+    }
+
     const Option     = Select.Option;
 
     //@todo change push to underscore methods
@@ -38,15 +43,20 @@ class Holiday extends Component {
       // options.push(
       //   <Option key={holidays[i].toString()}>{holidays[i].toString()}</Option>
       // );
+      var name = holidays[i].toString();
       if(this.props.passedSelected.indexOf(holidays[i]) === -1){
-        options.push(
-          <Option key={holidays[i].toString()} disabled={false}>{holidays[i].toString()}</Option>
-        );
+        // options.push(
+        //   <Option key={holidays[i].toString()} disabled={false}>{holidays[i].toString()}</Option>
+        // );
+
+
+        options.push(<Item key={name} disabled={false}>{name}</Item>);
       //  console.log("enable in opp of",this.props.placeholder);
       } else {
-        options.push(
-          <Option key={holidays[i].toString()} disabled={true}>{holidays[i].toString()}</Option>
-        );
+        // options.push(
+        //   <Option key={holidays[i].toString()} disabled={true}>{holidays[i].toString()}</Option>
+        // );
+        options.push(<Item key={name} disabled={true}>{name}</Item>);
       //  console.log("disable in opp of",this.props.placeholder);
       }
     }
@@ -57,7 +67,7 @@ class Holiday extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           name={this.createName('Holiday')}
-          placeholder={this.props.placeholder}
+          placeholder={placeholder(this.props.sign)}
           onChange={this.onChange.bind(this)}
         >
           {options}

@@ -16,9 +16,9 @@ class Cuisine extends Component {
       values     : []
     }
   }
-  placeholder( flag ) {
-    return (flag) ? "Cuisines you like"  : "Cuisines you don't like"
-  }
+  // placeholder( flag ) {
+  //   return (flag) ? "Cuisines you like"  : "Cuisines you don't like"
+  // }
 
   onChange(value) {
     this.setState({ values: value })
@@ -35,7 +35,9 @@ class Cuisine extends Component {
   }
 
   render(){
-
+    const placeholder = ( flag ) => {
+       return (flag) ? "Cuisines you like"  : "Cuisines you don't like"
+    }
     // const onChangeInclude = (value) => {
     //   this.setState({ include: value })
     // };
@@ -78,7 +80,7 @@ class Cuisine extends Component {
           mode="multiple"
           style={{ width: '100%' }}
           name={this.createName('Cuisine')}
-          placeholder={this.props.placeholder}
+          placeholder={placeholder(this.props.sign)}
           onChange={this.onChange.bind(this)}
         >
           {options}
