@@ -15,7 +15,9 @@ class Test extends Component {
 
   componentWillReceiveProps(newProps) {
     // console.log(JSON.stringify(this.state.recipes), JSON.stringify(newProps.passedRecipes[0]))
-    if(newProps.passedRecipes && JSON.stringify(this.state.recipes) !== JSON.stringify(newProps.passedRecipes)){
+    if( newProps.passedRecipes
+      && JSON.stringify(this.state.recipes)
+      !== JSON.stringify(newProps.passedRecipes) ){
       this.setState({recipes: newProps.passedRecipes})
     }
 

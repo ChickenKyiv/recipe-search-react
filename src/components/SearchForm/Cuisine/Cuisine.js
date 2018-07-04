@@ -27,6 +27,7 @@ class Cuisine extends Component {
     // const onChangeExclude = (value) => {
     //   this.setState({ exclude: value })
     // };
+
     const Option    = Select.Option;
 //@todo change push to underscore methods
     const options = [];
@@ -35,13 +36,18 @@ class Cuisine extends Component {
       // options.push(
       //   <Option key={cuisines[i].toString()}>{cuisines[i].toString()}</Option>
       // );
+      const listItems = numbers.map((number) =>
+        <li key={number.toString()}>
+          {number}
+        </li>
+      );
+
       if(this.props.passedSelected.indexOf(cuisines[i]) === -1){
         options.push(
           <Option key={cuisines[i].toString()} disabled={false}>{cuisines[i].toString()}</Option>
         );
         // console.log("enable in opp of",this.props.placeholder);
-      }
-      else{
+      } else {
         options.push(
           <Option key={cuisines[i].toString()} disabled={true}>{cuisines[i].toString()}</Option>
         );
@@ -69,7 +75,6 @@ class Cuisine extends Component {
         <Select
           mode="multiple"
           style={{ width: '100%' }}
-          
           name={createName('Cuisine')}
           placeholder={this.props.placeholder}
           onChange={onChange}
