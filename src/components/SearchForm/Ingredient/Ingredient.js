@@ -38,19 +38,10 @@ class Ingredient extends Component {
     //@todo change push to underscore methods
     const options = [];
     var list = gf.getIngredients()
-    // console.log(ingredients)
-
-    // for (let i = 0; i < ingredients.length; i++) {
-    //    options.push(<Item key={i}>{i}</Item>)
-    // }
-
-    // const Listeee () => {
-    //
-    // }
 
     return (
       <Col span="12">
-        <SelectContainer {...list} />
+        <SelectContainer list={list} />
 
       </Col>
     );

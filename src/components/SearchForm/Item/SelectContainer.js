@@ -1,32 +1,43 @@
-import React      from 'react';
-// import classNames from 'classnames';
+import React, { Component } from 'react';
+
 import {
   Select
-  // Col
 } from 'antd';
 
 const Option   = Select.Option;
 
-const SelectContainer = (props) => {
+class SelectContainer extends Component {
 
-  const {
-    ...list
-  } = props;
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      list       : props.list,
+      values     : []
+    }
+
+    this._change = this._change.bind(this);
+
+
+  }
+
+  _change(items) {
+    this.setState({values: [...items]})
+    console.log(items)
+  }
+
+  render(){
+
+      return (
+        <Select mode="multiple" style={{ width: '100%' }} onChange={this._change} >
+           {Object.keys(this.state.list).map((item, index) => <Option key={index}>{this.state.list[index]}</Option>)}
+
+        </Select>
+      );
+  }
 
 
 
-  // next version
-  // .map(item => <Item key={item.id}>{item.name}</Item>));
-  return (
-
-    <Select mode="multiple"
-            style={{ width: '100%' }}
-            onChange={this._change}>
-       {Object.keys(list).map((item, index) => <Option key={index} value={item}>{item}</Option>)}
-
-    </Select>
-
-  );
 };
 
 export default SelectContainer;
