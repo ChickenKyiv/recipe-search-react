@@ -17,7 +17,7 @@ import qs from 'qs'
 
 import GroupContainer from './GroupContainer/GroupContainer';
 
-const InputGroup = Input.Group;
+// const InputGroup = Input.Group;
 const start = 0, count = 5;
 
 class SearchForm extends Component {
@@ -28,15 +28,15 @@ class SearchForm extends Component {
     this.state = {
       formLayout: 'vertical',
       maxTime: '',
-      haveIngredients: [],
+      allowedIngredients: [],
       dontHaveIngredients: [],
       allergies: [],
       specificDiets: [],
-      likeCuisines: [],
+      allowedCuisines: [],
       dontLikeCuisines: [],
-      wantCourses: [],
+      allowedCourses: [],
       dontWantCourses: [],
-      wantOnHolidays: [],
+      allowedHolidays: [],
       dontWantOnHolidays: [],
       displayFetchedRecipes: []
     }
@@ -147,10 +147,10 @@ class SearchForm extends Component {
 
     const { formLayout }   = this.state.formLayout;
 
-    const formItemLayout   = {
-      labelCol:   { offset: 4 },
-      wrapperCol: { span: 12 }
-    };
+    // const formItemLayout   = {
+    //   labelCol:   { offset: 4 },
+    //   wrapperCol: { span: 12 }
+    // };
 
     return (
       <div>

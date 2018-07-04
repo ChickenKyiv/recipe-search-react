@@ -20,14 +20,3 @@ const Item = (props) => {
 };
 
 export default Item;
-
-
-// const listItems = numbers.map((number) =>
-//   <li key={number.toString()}>
-//     {number}
-//   </li>
-// );
-// const List = ({ list }) =>
-//   <div>
-//     {list.map(item => <div key={item.id}>{item.title}</div>)}
-//   </div>

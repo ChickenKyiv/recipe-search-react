@@ -52,11 +52,12 @@ class Ingredient extends Component {
         // );
         options.push(<Item key={name} disabled={false}>{name}</Item>)
         // console.log("enable in opp of",this.props.placeholder);
-      } else {
+      }
+      else{
         // options.push(
         //   <Option key={ingredients[i].toString()} disabled={true}>{ingredients[i].toString()}</Option>
         // );
-        options.push(<Item key={name} disabled={true}>{name}</Item>)
+        options.push(<Item key={name} disabled={false}>{name}</Item>)
         // console.log("disable in opp of",this.props.placeholder);
       }
 
