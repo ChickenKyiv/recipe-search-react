@@ -4,8 +4,7 @@ import {
   Col
 } from 'antd';
 import gf from '@groceristar/groceristar-fetch';
-// @todo update the paths. put to components arrays
-// import holidays       from '../../../data/holidays';
+
 
 class Holiday extends Component {
   constructor(props) {
@@ -15,6 +14,9 @@ class Holiday extends Component {
       sign       : props.sign,
       values     : []
     }
+  }
+  placeholder( flag ) {
+    return (flag) ? "Holidays/Specific You want" : "Holidays/Specific You don't want";
   }
 
   onChange(value) {

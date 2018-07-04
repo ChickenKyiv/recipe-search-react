@@ -15,6 +15,8 @@ import axios from 'axios'
 import Test from './Test/Test'
 import qs from 'qs'
 
+import GroupContainer from './GroupContainer/GroupContainer';
+
 const InputGroup = Input.Group;
 const start = 0, count = 5;
 
@@ -154,7 +156,7 @@ class SearchForm extends Component {
       <div>
         <Form {...formLayout} onSubmit={this.onSubmit.bind(this)}>
 
-          <InputGroup size="large" {...formItemLayout}>
+          <GroupContainer >
             <Col span="12">
               <Input placeholder="Recipe Name" />
             </Col>
@@ -162,8 +164,18 @@ class SearchForm extends Component {
               <Input id="time" onChange={this.updateMaxTime.bind(this)}
                 placeholder="Maximum Cooking Time in Minutes" />
             </Col>
-          </InputGroup>
+          </GroupContainer>
 
+          <GroupContainer >
+            <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
+              sign={true} passedSelected={this.state.dontHaveIngredients}
+               />
+            <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)}
+              sign={false} passedSelected={this.state.haveIngredients}
+               />
+          </GroupContainer>
+
+          {/*
           <InputGroup size="large" {...formItemLayout}>
             <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.dontHaveIngredients}
@@ -171,44 +183,44 @@ class SearchForm extends Component {
             <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)}
               sign={false} passedSelected={this.state.haveIngredients}
               placeholder="Ingredients you don't have" />
-
           </InputGroup>
+          */}
 
-          <InputGroup size="large" {...formItemLayout}>
+          <GroupContainer >
             <Col span="12">
               <Allergy updateAllergy={this.updateAllergies.bind(this)} />
             </Col>
             <Col span="12">
               <Diet updateDiet={this.updateSpecificDiets.bind(this)} />
             </Col>
-          </InputGroup>
+          </GroupContainer>
 
-          <InputGroup size="large" {...formItemLayout}>
+          <GroupContainer >
             <Cuisine updateCuisines={this.updateLikeCuisines.bind(this)}
               passedSelected={this.state.dontLikeCuisines} sign={true}
               placeholder="Cuisines you like" />
             <Cuisine updateCuisines={this.updateDontLikeCuisines.bind(this)}
               passedSelected={this.state.likeCuisines} sign={false}
               placeholder="Cuisines you don't like" />
-          </InputGroup>
+          </GroupContainer>
 
-          <InputGroup size="large" {...formItemLayout}>
+          <GroupContainer >
             <Course updateCourses={this.updateWantCourses.bind(this)}
               passedSelected={this.state.dontWantCourses} sign={true}
               placeholder="Courses You want" />
             <Course updateCourses={this.updateDontWantCourses.bind(this)}
               passedSelected={this.state.wantCourses} sign={false}
               placeholder="Courses You don't want" />
-          </InputGroup>
+          </GroupContainer>
 
-          <InputGroup size="large" {...formItemLayout}>
+          <GroupContainer >
             <Holiday updateHoliday={this.updateWantOnHolidays.bind(this)}
               sign={true} passedSelected={this.state.dontWantOnHolidays}
               placeholder="Holidays/Specific You want" />
             <Holiday updateHoliday={this.updateDontWantOnHolidays.bind(this)}
               sign={false} passedSelected={this.state.wantOnHolidays}
               placeholder="Holidays/Specific You don't want" />
-          </InputGroup>
+          </GroupContainer>
 
 
           <Button type="primary" htmlType="submit" icon="search">

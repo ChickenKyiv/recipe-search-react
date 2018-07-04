@@ -4,8 +4,8 @@ import {
   Col
 } from 'antd';
 import gf from '@groceristar/groceristar-fetch';
-// @todo update the paths. put to components arrays
-// import courses from '../../../data/courses';
+
+import classNames from 'classnames';
 
 
 class Course extends Component {
@@ -21,6 +21,9 @@ class Course extends Component {
       values     : []
 
     }
+  }
+  placeholder( flag ) {
+    return (flag) ? "Courses You want" : "Courses You don't want";
   }
 
   onChange(value) {
@@ -68,6 +71,13 @@ class Course extends Component {
           }
 
     }
+
+    //---Both options looks stupid /
+    let name = classNames('', {
+      'allowedCourse' : this.state.sign,
+      'excludedCourse': !this.state.sign,
+    })
+
 
     return (
       <Col span={12}>

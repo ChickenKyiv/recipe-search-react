@@ -6,9 +6,6 @@ import {
 
 import gf from '@groceristar/groceristar-fetch';
 
-// @todo update the paths. put to components arrays
-// import ingredients from '../../../data/ingredients';
-
 class Ingredient extends Component {
 
   constructor(props) {
@@ -32,7 +29,11 @@ class Ingredient extends Component {
             + className
             ;
   }
-  
+
+  zplaceholder( flag ) {
+    return (flag) ? "Ingredients you have" : "Ingredients you don't have";
+  }
+
   render(){
 
     const Option     = Select.Option;
@@ -59,8 +60,11 @@ class Ingredient extends Component {
 
     return (
       <Col span="12">
-        <Select mode="multiple" style={{ width: '100%' }} name={this.createName('Ingredient')}
-         placeholder={this.props.placeholder} onChange={this.onChange.bind(this)}>
+
+        <Select mode="multiple" style={{ width: '100%' }}
+                name={this.createName('Ingredient')}
+                placeholder={this.zplaceholder(this.props.sign)}
+                onChange={this.onChange.bind(this)}>
           {options}
         </Select>
       </Col>

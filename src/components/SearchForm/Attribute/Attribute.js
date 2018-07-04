@@ -6,7 +6,7 @@ import {
 import gf from '@groceristar/groceristar-fetch';
 
 
-class Cuisine extends Component {
+class Attribute extends Component {
   constructor(props) {
     super(props)
 
@@ -17,21 +17,7 @@ class Cuisine extends Component {
     }
   }
   placeholder( flag ) {
-    return (flag) ? "Cuisines you like"  : "Cuisines you don't like"
-  }
-
-  onChange(value) {
-    this.setState({ values: value })
-    this.props.updateCuisines(value)
-  }
-
-  createName(className) {
-    return ( this.state.sign )
-            ? 'allowed'
-            : 'excluded'
-
-            + className
-            ;
+    return (flag) ? "Attribute you like"  : "Attribute you don't like"
   }
 
   render(){
@@ -72,14 +58,28 @@ class Cuisine extends Component {
 
     }
 
+    const onChange = (value) => {
+      this.setState({ values: value })
+      this.props.updateCuisines(value)
+    };
+
+    const createName = (className) => {
+      return ( this.state.sign )
+              ? 'allowed'
+              : 'excluded'
+
+              + className
+              ;
+    };
+
     return (
       <Col span={12}>
         <Select
           mode="multiple"
           style={{ width: '100%' }}
-          name={this.createName('Cuisine')}
+          name={createName('Cuisine')}
           placeholder={this.props.placeholder}
-          onChange={this.onChange.bind(this)}
+          onChange={onChange}
         >
           {options}
         </Select>
@@ -87,4 +87,4 @@ class Cuisine extends Component {
     );
   }
 }
-export default Cuisine;
+export default Attribute;
