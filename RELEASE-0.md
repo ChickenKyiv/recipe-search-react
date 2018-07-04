@@ -9,7 +9,7 @@ Summary: We'll create a search page with form Inside
 Problem: A lot of food tech projects need a search form. This component will help you to save time. Setup and this form are ready to send an API requests to your server.
 
 Solution: Search form with basic functionality. With clean code, separated backend & frontend logic. Ready to use in your project.
-How to start: Clone/fork -> `npm install`, `npm start`
+How to start: Clone/fork -> `npm install`, `npm start`, `yarn install` + `yarn start`
 Can be deployed to Netlify.
 
 

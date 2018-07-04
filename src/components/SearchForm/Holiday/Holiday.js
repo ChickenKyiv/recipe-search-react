@@ -10,7 +10,7 @@ const gf = require('@groceristar/groceristar-fetch')
 class Holiday extends Component {
   constructor(props) {
     super(props)
-  
+
     this.state = {
       sign       : props.sign,
       values     : []
@@ -32,8 +32,7 @@ class Holiday extends Component {
           <Option key={holidays[i].toString()} disabled={false}>{holidays[i].toString()}</Option>
         );
       //  console.log("enable in opp of",this.props.placeholder);
-      }
-      else{
+      } else {
         options.push(
           <Option key={holidays[i].toString()} disabled={true}>{holidays[i].toString()}</Option>
         );

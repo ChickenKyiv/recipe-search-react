@@ -82,7 +82,7 @@ class SearchForm extends Component {
     }
      // this.handleReset() //does not work
     e.preventDefault()
-        // update as per fieldname in database    
+        // update as per fieldname in database
     //   time: this.state.maxTime,
     //   includeIngredients: this.state.haveIngredients,
     //   excludeIngredients: this.state.dontHaveIngredients,
@@ -94,7 +94,7 @@ class SearchForm extends Component {
     //   excludeCourses: this.state.dontWantCourses,
     //   wantdays: this.state.wantOnHolidays,
     //   excludedays: this.state.dontWantOnHolidays,
-        
+
   }
   updateMaxTime() {
     var time = window.document.getElementById('time').value
@@ -163,7 +163,7 @@ class SearchForm extends Component {
                 placeholder="Maximum Cooking Time in Minutes" />
             </Col>
           </InputGroup>
-          
+
           <InputGroup size="large" {...formItemLayout}>
             <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.dontHaveIngredients}
@@ -173,18 +173,16 @@ class SearchForm extends Component {
               placeholder="Ingredients you don't have" />
 
           </InputGroup>
-          
+
           <InputGroup size="large" {...formItemLayout}>
             <Col span="12">
               <Allergy updateAllergy={this.updateAllergies.bind(this)} />
-
             </Col>
             <Col span="12">
               <Diet updateDiet={this.updateSpecificDiets.bind(this)} />
-
             </Col>
           </InputGroup>
-          
+
           <InputGroup size="large" {...formItemLayout}>
             <Cuisine updateCuisines={this.updateLikeCuisines.bind(this)}
               passedSelected={this.state.dontLikeCuisines} sign={true}
@@ -193,7 +191,7 @@ class SearchForm extends Component {
               passedSelected={this.state.likeCuisines} sign={false}
               placeholder="Cuisines you don't like" />
           </InputGroup>
-          
+
           <InputGroup size="large" {...formItemLayout}>
             <Course updateCourses={this.updateWantCourses.bind(this)}
               passedSelected={this.state.dontWantCourses} sign={true}
@@ -202,7 +200,7 @@ class SearchForm extends Component {
               passedSelected={this.state.wantCourses} sign={false}
               placeholder="Courses You don't want" />
           </InputGroup>
-          
+
           <InputGroup size="large" {...formItemLayout}>
             <Holiday updateHoliday={this.updateWantOnHolidays.bind(this)}
               sign={true} passedSelected={this.state.dontWantOnHolidays}
@@ -211,7 +209,7 @@ class SearchForm extends Component {
               sign={false} passedSelected={this.state.wantOnHolidays}
               placeholder="Holidays/Specific You don't want" />
           </InputGroup>
-          
+
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes
@@ -219,7 +217,7 @@ class SearchForm extends Component {
         </Form>
 
         <Test passedRecipes={this.state.displayFetchedRecipes} />
-        
+
       </div>
     );
   }
