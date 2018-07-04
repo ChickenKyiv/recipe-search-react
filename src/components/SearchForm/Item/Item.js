@@ -6,9 +6,10 @@ const Option   = Select.Option;
 
 const Item = (props) => {
   const {
+    name,
     ...attributes
   } = props;
-  console.log({...attributes})
+  // console.log({...attributes})
   return (
     <Option {...attributes} />
 
