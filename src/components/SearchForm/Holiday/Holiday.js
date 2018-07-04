@@ -16,6 +16,10 @@ class Holiday extends Component {
       values     : []
     }
   }
+    this.onChange = this.onChange.bind(this);
+    this.createName = this.createName.bind(this);
+
+
   // placeholder( flag ) {
   //   return (flag) ? "Holidays/Specific You want" : "Holidays/Specific You don't want";
   // }

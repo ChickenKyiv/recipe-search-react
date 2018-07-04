@@ -15,7 +15,25 @@ class Attribute extends Component {
       sign       : props.sign,
       values     : []
     }
+    this.createName = this.createName.bind.this;
+    this.onChange = this.onChange.bind(this);
+
   }
+
+    onChange(value) {
+      this.setState({ values: value })
+      this.props.updateCuisines(value)
+    }
+
+    createName(className) {
+      return ( this.state.sign )
+              ? 'allowed'
+              : 'excluded'
+
+              + className
+              ;
+    }
+
   placeholder( flag ) {
     return (flag) ? "Attribute you like"  : "Attribute you don't like"
   }
@@ -57,20 +75,6 @@ class Attribute extends Component {
       }
 
     }
-
-    const onChange = (value) => {
-      this.setState({ values: value })
-      this.props.updateCuisines(value)
-    };
-
-    const createName = (className) => {
-      return ( this.state.sign )
-              ? 'allowed'
-              : 'excluded'
-
-              + className
-              ;
-    };
 
     return (
       <Col span={12}>

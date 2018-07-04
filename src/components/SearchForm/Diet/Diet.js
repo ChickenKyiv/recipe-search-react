@@ -17,6 +17,7 @@ class Diet extends Component {
     this.state = {
       diets: [],
     }
+    this.onChange = this.onChange.bind(this);
   }
 
   onChange(value) {
@@ -40,7 +41,7 @@ class Diet extends Component {
         mode="multiple"
         style={{ width: '100%' }}
         placeholder="Specific Diets"
-        onChange={this.onChange.bind(this)}
+        onChange={this.onChange}
       >
         {options}
       </Select>

@@ -13,6 +13,7 @@ class Allergy extends Component {
     this.state = {
       allergies: []
     }
+    this.onChange = this.onChange.bind(this);
   }
 
   onChange(value) {
@@ -38,7 +39,7 @@ class Allergy extends Component {
         mode="multiple"
         style={{ width: '100%' }}
         placeholder="Allergies"
-        onChange={this.onChange.bind(this)}
+        onChange={this.onChange}
       >
         {options}
       </Select>

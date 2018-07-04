@@ -16,7 +16,22 @@ class Ingredient extends Component {
       sign       : props.sign,
       values     : []
     }
+    this.onChange = this.onChange.bind(this);
+    this.createName = this.createName.bind(this);
   }
+    onChange(value) {
+      this.setState({ values: value })
+      this.props.updateIng(value)
+    }
+
+    createName(className) {
+      return ( this.state.sign )
+              ? 'allowed'
+              : 'excluded'
+
+              + className
+              ;
+    }
 
 
 

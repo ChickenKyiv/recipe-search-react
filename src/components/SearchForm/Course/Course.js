@@ -21,6 +21,9 @@ class Course extends Component {
       values     : []
 
     }
+    this.onChange = this.onChange.bind(this);
+    this.createName = this.createName.bind(this);
+
   }
   // placeholder( flag ) {
   //   return (flag) ? "Courses You want" : "Courses You don't want";
@@ -89,7 +92,7 @@ class Course extends Component {
           style={{ width: '100%' }}
           name={this.createName('Course')}
           placeholder={placeholder(this.props.sign)}
-          onChange={this.onChange.bind(this)}
+          onChange={this.onChange}
         >
           {options}
         </Select>

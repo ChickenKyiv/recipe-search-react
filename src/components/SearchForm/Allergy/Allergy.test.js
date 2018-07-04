@@ -1,8 +1,19 @@
-import React    from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Allergy  from './Allergy';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Allergy from '../Allergy';
 
-// it('Allergy renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-// });
+Enzyme.configure({ adapter: new Adapter() });
+
+describe('<Allergy />', () => {
+    it('Allergy renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<Allergy />, div);
+    });
+    
+    it('has property `allergies` in state', () => {
+        const component = shallow(<Allergy />);
+        expect(component.property('allergies')).toBeDefined();
+    });
+});

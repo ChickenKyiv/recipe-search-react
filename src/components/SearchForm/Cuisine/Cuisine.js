@@ -15,6 +15,8 @@ class Cuisine extends Component {
       sign       : props.sign,
       values     : []
     }
+    this.onChange = this.onChange.bind(this);
+    this.createName = this.createName.bind(this);
   }
   // placeholder( flag ) {
   //   return (flag) ? "Cuisines you like"  : "Cuisines you don't like"
@@ -81,7 +83,7 @@ class Cuisine extends Component {
           style={{ width: '100%' }}
           name={this.createName('Cuisine')}
           placeholder={placeholder(this.props.sign)}
-          onChange={this.onChange.bind(this)}
+          onChange={this.onChange}
         >
           {options}
         </Select>
