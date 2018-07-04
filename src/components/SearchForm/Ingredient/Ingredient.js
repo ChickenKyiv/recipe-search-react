@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import {  Select, Col } from 'antd';
-const gf = require('@groceristar/groceristar-fetch')
+import {
+  Select,
+  Col
+} from 'antd';
+
+import gf from '@groceristar/groceristar-fetch';
+
 // @todo update the paths. put to components arrays
 // import ingredients from '../../../data/ingredients';
 
@@ -8,7 +13,7 @@ class Ingredient extends Component {
 
   constructor(props) {
     super(props)
-    
+
     this.state = {
       sign       : props.sign,
       values     : []
@@ -54,7 +59,7 @@ class Ingredient extends Component {
 
     return (
       <Col span="12">
-        <Select mode="multiple" style={{ width: '100%' }} name={createName('Ingredient')} 
+        <Select mode="multiple" style={{ width: '100%' }} name={createName('Ingredient')}
          placeholder={this.props.placeholder} onChange={onChange}>
           {options}
         </Select>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  Select } from 'antd';
-const gf = require('@groceristar/groceristar-fetch')
+import gf from '@groceristar/groceristar-fetch';
 // @todo update the paths. put to components arrays
 // import allergies from '../../../data/allergies';
 
@@ -16,7 +16,7 @@ class Allergy extends Component {
   }
 
   componentDidMount() {
-    
+
 
   }
 

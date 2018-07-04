@@ -3,7 +3,7 @@ import {
   Select,
   Col
 } from 'antd';
-const gf = require('@groceristar/groceristar-fetch')
+import gf from '@groceristar/groceristar-fetch';
 // @todo update the paths. put to components arrays
 // import cuisines from '../../../data/cuisines';
 
@@ -36,11 +36,11 @@ class Cuisine extends Component {
       // options.push(
       //   <Option key={cuisines[i].toString()}>{cuisines[i].toString()}</Option>
       // );
-      const listItems = numbers.map((number) =>
-        <li key={number.toString()}>
-          {number}
-        </li>
-      );
+      // const listItems = numbers.map((number) =>
+      //   <li key={number.toString()}>
+      //     {number}
+      //   </li>
+      // );
 
       if(this.props.passedSelected.indexOf(cuisines[i]) === -1){
         options.push(
