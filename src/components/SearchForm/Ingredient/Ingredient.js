@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import {
-  Select,
-  Col
-} from 'antd';
+import { Col } from 'antd';
 
 import gf from '@groceristar/groceristar-fetch';
 
-import SelectContainer from '../Item/SelectContainer'
+import SelectContainer from '../SelectContainer/SelectContainer'
 
 
 class Ingredient extends Component {
@@ -15,33 +12,22 @@ class Ingredient extends Component {
     super(props);
 
     this.state = {
-      sign       : props.sign,
-      values     : [],
-      flag: props.flag
+      flag: props.flag,
+      selected: []
     }
 
-    // this._change = this._change.bind(this);
-    this.placeholder = this.placeholder.bind(this);
-
-  }
-  placeholder = () => {
-    return (this.state.flag) ? "Ingredients you have" : "Ingredients you don't have";
   }
 
-  // _change(items) {
-  //   this.setState({values: [...items]})
-  //   console.log(items)
-  // }
 
   render(){
 
-
-
-    var list = gf.getIngredients()
+    const placeholder = () => {
+      return (this.state.flag) ? "Ingredients you have" : "Ingredients you don't have";
+    }
 
     return (
       <Col span="12">
-        <SelectContainer list={list} />
+        <SelectContainer list={gf.getIngredients()} placeholder={placeholder()} />
 
       </Col>
     );

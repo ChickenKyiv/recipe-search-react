@@ -4,7 +4,7 @@ import {
   Select
 } from 'antd';
 
-import shori from 'shortid';
+import shortid from 'shortid';
 
 const Option   = Select.Option;
 
@@ -15,16 +15,19 @@ class SelectContainer extends Component {
 
     this.state = {
       list       : props.list,
-      values     : []
+      flag       : props.flag,
+      selected     : [],
+      name       : ( (props.flag) ? 'allowed' : 'excluded' ) + props.name,
+      placeholder: props.placeholder
     }
-
+    console.log(props.placeholder)
     this._change = this._change.bind(this);
 
 
   }
 
   _change(items) {
-    this.setState({values: [...items]})
+    this.setState({selected: [...items]})
     console.log(items)
   }
 
@@ -33,7 +36,8 @@ class SelectContainer extends Component {
       return (
         <Select mode="multiple"
                 style={{ width: '100%' }}
-                onChange={this._change}>
+                onChange={this._change}
+                placeholder={this.state.placeholder}>
 
            {Object.keys(this.state.list).map(
              (item, index) => <Option key={shortid.generate}>{this.state.list[index]}</Option>

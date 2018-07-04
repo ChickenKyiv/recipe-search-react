@@ -16,7 +16,8 @@ import Test from './Test/Test'
 import qs from 'qs'
 
 import GroupContainer from './GroupContainer/GroupContainer';
-
+import UnitedSelectField from './SelectContainer/UnitedSelectField';
+UnitedSelectField
 // const InputGroup = Input.Group;
 const start = 0, count = 5;
 
@@ -166,6 +167,10 @@ class SearchForm extends Component {
             </Col>
           </GroupContainer>
 */}
+          <UnitedSelectField>
+            <Ingredient flag={true} />
+            <Ingredient flag={false} />
+          </UnitedSelectField>
           <GroupContainer >
             <Ingredient flag={true} />
             {/*<Ingredient updateIng={this.updateHaveIngredients.bind(this)}

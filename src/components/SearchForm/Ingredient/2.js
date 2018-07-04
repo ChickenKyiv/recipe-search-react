@@ -13,15 +13,21 @@ class Ingredient extends Component {
     super(props)
 
     this.state = {
-      sign       : props.sign,
-      values     : []
+      flag       : props.flag,
+      values     : [],
+      name       : ( (props.flag) ? 'allowed' : 'excluded' ) + 'Ingredient'
     }
   }
 
   _change(item) {
     this.setState({values: [...item]})
   }
-
+  // createName() {
+  //   return ( this.state.flag )
+  //           ? 'allowed'
+  //           : 'excluded'
+  //           + 'Ingredient';
+  // }
   // updateDontHaveIngredients(item) {
   //   this.setState({excludedIngredients: [...item]})
   // }
@@ -35,12 +41,10 @@ class Ingredient extends Component {
     };
 
     const createName = (className) => {
-      return ( this.state.sign )
+      return ( this.state.flag )
               ? 'allowed'
               : 'excluded'
-
-              + className
-              ;
+              + 'Ingredient';
     };
     const placeholder = ( flag ) => {
       return (flag) ? "Ingredients you have" : "Ingredients you don't have";
@@ -77,7 +81,7 @@ class Ingredient extends Component {
     return (
       <Col span="12">
         <Select mode="multiple" style={{ width: '100%' }}
-                name={createName('Ingredient')}
+                name={this.name}
                 placeholder={placeholder(this.props.sign)}
                 onChange={_change}>
           {options}
