@@ -164,6 +164,7 @@ class SearchForm extends Component {
             </Col>
           </InputGroup>
 
+          {/*
           <InputGroup size="large" {...formItemLayout}>
             <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.dontHaveIngredients}
@@ -172,6 +173,7 @@ class SearchForm extends Component {
               sign={false} passedSelected={this.state.haveIngredients}
               placeholder="Ingredients you don't have" />
           </InputGroup>
+          */}
 
           <InputGroup size="large" {...formItemLayout}>
             <Col span="12">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RecipeList = ({something}) => {
+const RecipeList = (props) => {
   return (
 
   );
