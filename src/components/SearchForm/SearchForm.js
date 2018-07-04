@@ -155,7 +155,7 @@ class SearchForm extends Component {
     return (
       <div>
         <Form {...formLayout} onSubmit={this.onSubmit.bind(this)}>
-
+{/*
           <GroupContainer >
             <Col span="12">
               <Input placeholder="Recipe Name" />
@@ -165,11 +165,11 @@ class SearchForm extends Component {
                 placeholder="Maximum Cooking Time in Minutes" />
             </Col>
           </GroupContainer>
-
+*/}
           <GroupContainer >
             <Ingredient
                         sign={true}
-                        
+
              />
             {/*<Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.excludedIngredients}

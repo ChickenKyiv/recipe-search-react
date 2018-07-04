@@ -6,6 +6,9 @@ import {
 
 import gf from '@groceristar/groceristar-fetch';
 import Item from '../Item/Item'
+// import ItemList from '../Item/ItemList'
+import SelectContainer from '../Item/SelectContainer'
+
 
 class Ingredient extends Component {
 
@@ -22,47 +25,33 @@ class Ingredient extends Component {
 
   }
 
-  _change(item) {
-    this.setState({values: [...item]})
+  _change(items) {
+    this.setState({values: [...items]})
+    console.log(items)
   }
 
-  // updateDontHaveIngredients(item) {
-  //   this.setState({excludedIngredients: [...item]})
-  // }
-
-
-
   render(){
-    const onChange = (value) => {
-      this.setState({ values: value })
-      this.props.updateIng(value)
-    };
 
-    // const createName = (className) => {
-    //   return ( this.state.sign )
-    //           ? 'allowed'
-    //           : 'excluded'
-    //
-    //           + className
-    //           ;
-    // };
-    // const placeholder = ( flag ) => {
-    //   return (flag) ? "Ingredients you have" : "Ingredients you don't have";
-    // }
 
 
 
     //@todo change push to underscore methods
     const options = [];
-    var ingredients = gf.getIngredients()
+    var list = gf.getIngredients()
+    // console.log(ingredients)
 
+    // for (let i = 0; i < ingredients.length; i++) {
+    //    options.push(<Item key={i}>{i}</Item>)
+    // }
+
+    // const Listeee () => {
+    //
+    // }
 
     return (
       <Col span="12">
-        <Select mode="multiple" style={{ width: '100%' }}
-                onChange={_change}>
-          {options}
-        </Select>
+        <SelectContainer {...list} />
+
       </Col>
     );
   }
