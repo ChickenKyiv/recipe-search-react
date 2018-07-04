@@ -65,7 +65,7 @@ class Course extends Component {
 
 
     //---Both options looks stupid /
-    let name = classnames('', {
+    let name = classNames('', {
       'allowedCourse' : this.state.sign,
       'excludedCourse': !this.state.sign,
     })

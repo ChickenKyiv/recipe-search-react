@@ -1,24 +1,43 @@
 import React from 'react';
+import {
+
+  Input,
+
+} from 'antd';
+
+const InputGroup = Input.Group;
 
 const GroupContainer = (props) => {
-  this.state = {
-    formLayout: 'vertical',
-  }
-  const { formLayout }   = this.state.formLayout;
 
   const formItemLayout   = {
     labelCol:   { offset: 4 },
     wrapperCol: { span: 12 }
   };
+  // const formItemLayout   = {
+  //   labelCol:   { offset: 4 },
+  //   wrapperCol: { span: 12 }
+  // };
+
+const {
+  ...attributes
+} = props
+
+
   return (
 
-    <InputGroup size="large" {...formItemLayout}>
-      {children}
-    </InputGroup>
+    <InputGroup size="large" {...formItemLayout} {...attributes} />
+
   );
 };
 
 export default GroupContainer;
+
+// <InputGroup {...attributes}>
+//   {children}
+// </InputGroup>
+// <InputGroup size="large" {...formItemLayout}>
+//   {children}
+// </InputGroup>
 
 //
 // <InputGroup size="large" {...formItemLayout}>
