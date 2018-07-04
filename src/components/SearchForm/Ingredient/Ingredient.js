@@ -18,6 +18,14 @@ class Ingredient extends Component {
     }
   }
 
+  _change(item) {
+    this.setState({values: [...item]})
+  }
+
+  // updateDontHaveIngredients(item) {
+  //   this.setState({excludedIngredients: [...item]})
+  // }
+
 
 
   render(){
@@ -71,7 +79,7 @@ class Ingredient extends Component {
         <Select mode="multiple" style={{ width: '100%' }}
                 name={createName('Ingredient')}
                 placeholder={placeholder(this.props.sign)}
-                onChange={onChange}>
+                onChange={_change}>
           {options}
         </Select>
       </Col>

@@ -103,13 +103,13 @@ class SearchForm extends Component {
     this.setState({maxTime: time})
   }
 
-  updateHaveIngredients(item) {
-    this.setState({allowedIngredients: [...item]})
-  }
-
-  updateDontHaveIngredients(item) {
-    this.setState({excludedIngredients: [...item]})
-  }
+  // updateHaveIngredients(item) {
+  //   this.setState({allowedIngredients: [...item]})
+  // }
+  //
+  // updateDontHaveIngredients(item) {
+  //   this.setState({excludedIngredients: [...item]})
+  // }
 
   updateAllergies(item) {
     this.setState({allergies: [...item]})
@@ -165,7 +165,7 @@ class SearchForm extends Component {
                 placeholder="Maximum Cooking Time in Minutes" />
             </Col>
           </GroupContainer>
-          
+
           <GroupContainer >
             <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.excludedIngredients}
@@ -185,7 +185,7 @@ class SearchForm extends Component {
               placeholder="Ingredients you don't have" />
           </InputGroup>
           */}
-
+{/*
           <GroupContainer >
             <Col span="12">
               <Allergy updateAllergy={this.updateAllergies.bind(this)} />
@@ -221,7 +221,7 @@ class SearchForm extends Component {
               sign={false} passedSelected={this.state.wantOnHolidays}
               placeholder="Holidays/Specific You don't want" />
           </GroupContainer>
-
+*/}
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes
