@@ -40,7 +40,10 @@ class SelectContainer extends Component {
                 placeholder={this.state.placeholder}>
 
            {Object.keys(this.state.list).map(
-             (item, index) => <Option key={shortid.generate}>{this.state.list[index]}</Option>
+             (item, index) =>
+                <Option key={shortid.generate}>
+                  {this.state.list[index]}
+                </Option>
            )}
 
         </Select>

@@ -12,78 +12,38 @@ class Attribute extends Component {
 
     // @todo change to include, exclude
     this.state = {
-      sign       : props.sign,
-      values     : []
+      // sign       : props.sign,
+      // values     : []
+      selected:[]
     }
   }
-  placeholder( flag ) {
-    return (flag) ? "Attribute you like"  : "Attribute you don't like"
+  // placeholder( flag ) {
+  //   return (flag) ? "Attribute you like"  : "Attribute you don't like"
+  // }
+  _change(items) {
+    this.setState({selected: [...items]})
+    console.log('-----------');
+    console.log(items)
   }
+
+
 
   render(){
 
-    // const onChangeInclude = (value) => {
-    //   this.setState({ include: value })
-    // };
-    //
-    // const onChangeExclude = (value) => {
-    //   this.setState({ exclude: value })
-    // };
-
-    const Option    = Select.Option;
-//@todo change push to underscore methods
-    const options = [];
-    var cuisines = gf.getCuisines()
-    for (let i = 0; i < cuisines.length; i++) {
-      // options.push(
-      //   <Option key={cuisines[i].toString()}>{cuisines[i].toString()}</Option>
-      // );
-      // const listItems = numbers.map((number) =>
-      //   <li key={number.toString()}>
-      //     {number}
-      //   </li>
-      // );
-
-      if(this.props.passedSelected.indexOf(cuisines[i]) === -1){
-        options.push(
-          <Option key={cuisines[i].toString()} disabled={false}>{cuisines[i].toString()}</Option>
-        );
-        // console.log("enable in opp of",this.props.placeholder);
-      } else {
-        options.push(
-          <Option key={cuisines[i].toString()} disabled={true}>{cuisines[i].toString()}</Option>
-        );
-        // console.log("disable in opp of",this.props.placeholder);
-      }
-
+    const TYPES = {
+      allergy: 'Allergy',
+      course : 'Course',
+      cuisine: 'Cuisine',
+      diet   : 'Diet',
+      holiday: 'Holiday'
     }
 
-    const onChange = (value) => {
-      this.setState({ values: value })
-      this.props.updateCuisines(value)
-    };
+    // const isUnited = (this.props.united);
 
-    const createName = (className) => {
-      return ( this.state.sign )
-              ? 'allowed'
-              : 'excluded'
-
-              + className
-              ;
-    };
+    const Component = TYPES[this.props.type];
 
     return (
-      <Col span={12}>
-        <Select
-          mode="multiple"
-          style={{ width: '100%' }}
-          name={createName('Cuisine')}
-          placeholder={this.props.placeholder}
-          onChange={onChange}
-        >
-          {options}
-        </Select>
-      </Col>
+        <Component {...props} onChange={this._change}>
     );
   }
 }
