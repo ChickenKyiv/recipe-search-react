@@ -17,7 +17,7 @@ import qs from 'qs'
 
 import GroupContainer from './GroupContainer/GroupContainer';
 import UnitedSelectField from './SelectContainer/UnitedSelectField';
-UnitedSelectField
+
 // const InputGroup = Input.Group;
 const start = 0, count = 5;
 
@@ -168,12 +168,13 @@ class SearchForm extends Component {
           </GroupContainer>
 */}
           <UnitedSelectField>
-            <Ingredient flag={true} />
+            <Ingredient flag={true} onChange=/>
             <Ingredient flag={false} />
           </UnitedSelectField>
+
           <GroupContainer >
-            <Ingredient flag={true} />
-            {/*<Ingredient updateIng={this.updateHaveIngredients.bind(this)}
+              {/*<Ingredient flag={true} />
+          <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.excludedIngredients}
                />
             <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)}
@@ -227,11 +228,12 @@ class SearchForm extends Component {
               sign={false} passedSelected={this.state.wantOnHolidays}
               placeholder="Holidays/Specific You don't want" />
           </GroupContainer>
-*/}
+
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes
           </Button>
+          */}
         </Form>
 
         <Test passedRecipes={this.state.displayFetchedRecipes} />

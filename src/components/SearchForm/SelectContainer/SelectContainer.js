@@ -20,7 +20,7 @@ class SelectContainer extends Component {
       name       : ( (props.flag) ? 'allowed' : 'excluded' ) + props.name,
       placeholder: props.placeholder
     }
-    console.log(props.placeholder)
+    // console.log(props.placeholder)
     this._change = this._change.bind(this);
 
 

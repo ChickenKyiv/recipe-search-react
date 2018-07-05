@@ -5,13 +5,6 @@ import { Col } from 'antd';
 
 import GroupContainer from '../GroupContainer/GroupContainer'
 
-// const UnitedSelectField = ({children}) => {
-//   return (
-//     <GroupContainer>
-//       {children}
-//     </GroupContainer>
-//   );
-// }
 
 
 class UnitedSelectField extends Component {
@@ -35,7 +28,7 @@ class UnitedSelectField extends Component {
 
     return (
       <GroupContainer>
-        {props.children}
+        {this.props.children}
       </GroupContainer>
     );
   }
