@@ -1,45 +1,49 @@
-import React, { Component } from 'react';
-import {  Select } from 'antd';
+import React, { Component } from "react";
+import { Select } from "antd";
+import axios from "axios";
 
-// @todo update the paths. put to components arrays
-import allergies from '../../../data/allergies';
-
-
-const Option     = Select.Option;
-
-//@todo change push to underscore methods
-const options = [];
-for (let i = 0; i < allergies.length; i++) {
-  options.push(
-    <Option key={allergies[i].toString()}>{allergies[i].toString()}</Option>
-  );
-}
+import { ALLERGY_ENDPOINT } from "../../../constants/endpoints";
+const Option = Select.Option;
 
 class Allergy extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     // @todo change to include
     this.state = {
-      allergies: []
-    }
+      allergies: [],
+      allergiesList: []
+    };
   }
 
-  render(){
+  componentDidMount() {
+    axios.get(ALLERGY_ENDPOINT).then(response => {
+      if (response.status === 200) {
+        this.setState({
+          allergiesList: response.data
+        });
+      }
+    });
+  }
 
-    const onChange = (value) => {
-      this.setState({ allergies: value })
-      this.props.updateAllergy(value)
-    };
+  onChange = value => {
+    this.setState({ allergies: value });
+    this.props.updateAllergy(value);
+  };
+
+  render() {
+    const { allergiesList } = this.state;
 
     return (
       <Select
         mode="multiple"
-        style={{ width: '100%' }}
+        style={{ width: "100%" }}
         placeholder="Allergies"
-        onChange={onChange}
+        onChange={this.onChange}
       >
-        {options}
+        {allergiesList.map(allergy => 
+          <Option key={allergy.id}>{allergy.name}</Option>
+        )}
       </Select>
     );
   }

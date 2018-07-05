@@ -1,0 +1,5 @@
+export const ALLERGY_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/attribute?filter[where][type]=allergy"
+export const DIET_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/attribute?filter[where][type]=diet"
+export const CUISINES_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/attribute?filter[where][type]=cuisine"
+export const COURSES_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/attribute?filter[where][type]=course"
+export const HOLIDAY_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/attribute?filter[where][and][][type]=holiday"

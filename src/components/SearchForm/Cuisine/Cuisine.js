@@ -1,25 +1,41 @@
-import React, { Component } from 'react';
-import {
-  Select,
-  Col
-} from 'antd';
+import React, { Component } from "react";
+import { Select, Col } from "antd";
 
-// @todo update the paths. put to components arrays
-import cuisines from '../../../data/cuisines';
+import axios from "axios";
+import { CUISINES_ENDPOINT } from "../../../constants/endpoints";
 
 class Cuisine extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     // @todo change to include, exclude
     this.state = {
-      sign       : props.sign,
-      values     : []
-    }
+      sign: props.sign,
+      values: [],
+      cuisinesList: []
+    };
   }
 
-  render(){
+  componentDidMount() {
+    axios.get(CUISINES_ENDPOINT).then(response => {
+      if (response.status === 200) {
+        this.setState({
+          cuisinesList: response.data
+        });
+      }
+    });
+  }
 
+  onChange = value => {
+    this.setState({ values: value });
+    this.props.updateCuisines(value);
+  };
+
+  createName = className => {
+    return this.state.sign ? "allowed" : "excluded" + className;
+  };
+
+  render() {
     // const onChangeInclude = (value) => {
     //   this.setState({ include: value })
     // };
@@ -27,51 +43,37 @@ class Cuisine extends Component {
     // const onChangeExclude = (value) => {
     //   this.setState({ exclude: value })
     // };
-    const Option    = Select.Option;
-//@todo change push to underscore methods
-    const options = [];
-    for (let i = 0; i < cuisines.length; i++) {
-      // options.push(
-      //   <Option key={cuisines[i].toString()}>{cuisines[i].toString()}</Option>
-      // );
-      if(this.props.passedSelected.indexOf(cuisines[i]) === -1){
-        options.push(
-          <Option key={cuisines[i].toString()} disabled={false}>{cuisines[i].toString()}</Option>
+    const Option = Select.Option;
+
+    const { cuisinesList } = this.state;
+    const { passedSelected } = this.props;
+    const options = cuisinesList.map(cuisine => {
+      if (passedSelected.indexOf(cuisine) === -1) {
+        return (
+          <Option key={cuisine.id} disabled={false}>
+            {cuisine.name}
+          </Option>
         );
+
         // console.log("enable in opp of",this.props.placeholder);
-      }
-      else{
-        options.push(
-          <Option key={cuisines[i].toString()} disabled={true}>{cuisines[i].toString()}</Option>
+      } else {
+        return (
+          <Option key={cuisine.id} disabled={true}>
+            {cuisine.name}
+          </Option>
         );
         // console.log("disable in opp of",this.props.placeholder);
       }
-
-    }
-
-    const onChange = (value) => {
-      this.setState({ values: value })
-      this.props.updateCuisines(value)
-    };
-
-    const createName = (className) => {
-      return ( this.state.sign )
-              ? 'allowed'
-              : 'excluded'
-
-              + className
-              ;
-    };
+    });
 
     return (
       <Col span={12}>
         <Select
           mode="multiple"
-          style={{ width: '100%' }}
-          
-          name={createName('Cuisine')}
+          style={{ width: "100%" }}
+          name={this.createName("Cuisine")}
           placeholder={this.props.placeholder}
-          onChange={onChange}
+          onChange={this.onChange}
         >
           {options}
         </Select>

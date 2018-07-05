@@ -1,46 +1,47 @@
-import React, { Component } from 'react';
-import {
-  Select,
+import React, { Component } from "react";
+import { Select } from "antd";
+import axios from "axios";
+import { DIET_ENDPOINT } from "../../../constants/endpoints";
 
-} from 'antd';
-
-// @todo update the paths. put to components arrays
-import diets from '../../../data/diets';
-
-const Option     = Select.Option;
-//@todo change push to underscore methods
-const options = [];
-for (let i = 0; i < diets.length; i++) {
-  options.push(
-    <Option key={diets[i].toString()}>{diets[i].toString()}</Option>
-  );
-}
+const Option = Select.Option;
 
 class Diet extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     // @todo change to include
     this.state = {
       diets: [],
-    }
+      dietsList: []
+    };
   }
 
-  render(){
+  componentDidMount() {
+    axios.get(DIET_ENDPOINT).then(response => {
+      if (response.status === 200) {
+        this.setState({
+          dietsList: response.data
+        });
+      }
+    });
+  }
 
-    const onChange = (value) => {
-      this.setState({ diets: value })
-      this.props.updateDiet(value)
-    };
+  onChange = value => {
+    this.setState({ diets: value });
+    this.props.updateDiet(value);
+  };
+
+  render() {
+    const { dietsList } = this.state;
 
     return (
       <Select
         mode="multiple"
-        style={{ width: '100%' }}
+        style={{ width: "100%" }}
         placeholder="Specific Diets"
-        onChange={onChange}
+        onChange={this.onChange}
       >
-        {options}
+        {dietsList.map(diet => <Option key={diet.id}>{diet.name}</Option>)}
       </Select>
     );
   }

@@ -1,29 +1,42 @@
-import React, { Component } from 'react';
-import {
-  Select,
-  Col
-} from 'antd';
-
-// @todo update the paths. put to components arrays
-import courses from '../../../data/courses';
-
+import React, { Component } from "react";
+import { Select, Col } from "antd";
+import axios from "axios";
+import { COURSES_ENDPOINT } from "../../../constants/endpoints";
 
 class Course extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     // @todo change to include, exclude
     this.state = {
-
       // sign is a boolean variable that helps to understand if we're
       // including ids from this field or excluding them
-      sign       : props.sign,
-      values     : []
-
-    }
+      sign: props.sign,
+      values: [],
+      coursesList: []
+    };
   }
 
-  render(){
+  componentDidMount() {
+    axios.get(COURSES_ENDPOINT).then(response => {
+      if (response.status === 200) {
+        this.setState({
+          coursesList: response.data
+        });
+      }
+    });
+  }
+
+  onChange = value => {
+    this.setState({ values: value });
+    this.props.updateCourses(value);
+  };
+
+  createName = className => {
+    return this.state.sign ? "allowed" : "excluded" + className;
+  };
+
+  render() {
     //@todo make one method by passing flag variable
     // const onChangeInclude = (value) => {
     //   this.setState({ include: value })
@@ -32,51 +45,37 @@ class Course extends Component {
     // const onChangeExclude = (value) => {
     //   this.setState({ exclude: value })
     // };
-  const Option   = Select.Option;
-  //@todo change push to underscore methods
-  const options = [];
-  for (let i = 0; i < courses.length; i++) {
-    // options.push(
-    //   <Option key={courses[i].toString()}>{courses[i].toString()}</Option>
-    // );
-          if(this.props.passedSelected.indexOf(courses[i]) === -1){
-          options.push(
-            <Option key={courses[i].toString()} disabled={false}>{courses[i].toString()}</Option>
-          );
-          // console.log("enable in opp of",this.props.placeholder);
-        }
-        else{
-          options.push(
-            <Option key={courses[i].toString()} disabled={true}>{courses[i].toString()}</Option>
-          );
-          // console.log("disable in opp of",this.props.placeholder);
-        }
+    const Option = Select.Option;
 
-  }
+    const { coursesList } = this.state;
+    const { passedSelected } = this.props;
+    const options = coursesList.map(course => {
+      if (passedSelected.indexOf(course) === -1) {
+        return (
+          <Option key={course.id} disabled={false}>
+            {course.name}
+          </Option>
+        );
 
-    const onChange = (value) => {
-      this.setState({ values: value })
-      this.props.updateCourses(value)
-    };
-
-    const createName = (className) => {
-      return ( this.state.sign )
-              ? 'allowed'
-              : 'excluded'
-
-              + className
-              ;
-    };
-
+        // console.log("enable in opp of",this.props.placeholder);
+      } else {
+        return (
+          <Option key={course.id} disabled={true}>
+            {course.name}
+          </Option>
+        );
+        // console.log("disable in opp of",this.props.placeholder);
+      }
+    });
 
     return (
       <Col span={12}>
         <Select
           mode="multiple"
-          style={{ width: '100%' }}
-          name={createName('Course')}
+          style={{ width: "100%" }}
+          name={this.createName("Course")}
           placeholder={this.props.placeholder}
-          onChange={onChange}
+          onChange={this.onChange}
         >
           {options}
         </Select>

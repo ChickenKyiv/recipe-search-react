@@ -1,62 +1,72 @@
-import React, { Component } from 'react';
-import {
-  Select,
-  Col
-} from 'antd';
-
-// @todo update the paths. put to components arrays
-import holidays       from '../../../data/holidays';
+import React, { Component } from "react";
+import { Select, Col } from "antd";
+import axios from "axios";
+import { HOLIDAY_ENDPOINT } from "../../../constants/endpoints";
 
 class Holiday extends Component {
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     this.state = {
-      sign       : props.sign,
-      values     : []
-    }
+      sign: props.sign,
+      values: [],
+      holidayList: [],
+    
+    };
   }
 
-  render(){
-    const Option     = Select.Option;
-
-    //@todo change push to underscore methods
-    const options = [];
-    for (let i = 0; i < holidays.length; i++) {
-      // options.push(
-      //   <Option key={holidays[i].toString()}>{holidays[i].toString()}</Option>
-      // );
-      if(this.props.passedSelected.indexOf(holidays[i]) === -1){
-        options.push(
-          <Option key={holidays[i].toString()} disabled={false}>{holidays[i].toString()}</Option>
-        );
-      //  console.log("enable in opp of",this.props.placeholder);
+  componentDidMount() {
+    axios.get(HOLIDAY_ENDPOINT).then(response => {
+      if (response.status === 200) {
+        this.setState({
+          holidayList: response.data
+        });
       }
-      else{
-        options.push(
-          <Option key={holidays[i].toString()} disabled={true}>{holidays[i].toString()}</Option>
+    });
+  }
+
+  onChange = value => {
+    this.setState({ values: value });
+    this.props.updateHoliday(value);
+  };
+
+  createName = className => {
+    return this.state.sign ? "allowed" : "excluded" + className;
+  };
+
+  render() {
+    const Option = Select.Option;
+
+    const { holidayList } = this.state;
+    const { passedSelected } = this.props;
+    const options = holidayList.map(holiday => {
+      if (passedSelected.indexOf(holiday) === -1) {
+        return (
+          <Option key={holiday.id} disabled={false}>
+            {holiday.name}
+          </Option>
         );
-      //  console.log("disable in opp of",this.props.placeholder);
+
+        // console.log("enable in opp of",this.props.placeholder);
+      } else {
+        return (
+          <Option key={holiday.id} disabled={true}>
+            {holiday.name}
+          </Option>
+        );
+        // console.log("disable in opp of",this.props.placeholder);
       }
-    }
+    });
 
-      const onChange = (value) => {
-        this.setState({ values: value })
-        this.props.updateHoliday(value)
-      };
-
-      const createName = (className) => {
-        return  this.state.sign ? 'allowed': 'excluded'  + className ;
-      };
-
+    
     return (
       <Col span={12}>
         <Select
           mode="multiple"
-          style={{ width: '100%' }}
-          name={createName('Holiday')}
+          style={{ width: "100%" }}
+          name={this.createName("Holiday")}
           placeholder={this.props.placeholder}
-          onChange={onChange}
+          onChange={this.onChange}
         >
           {options}
         </Select>
