@@ -10,6 +10,7 @@ import {
 // import Cuisine    from './Cuisine/Cuisine'
 // import Diet       from './Diet/Diet'
 // import Holiday    from './Holiday/Holiday'
+import Attribute from './Attribute/Attribute'
 import Ingredient from './Ingredient/Ingredient'
 import axios from 'axios'
 import Test from './Test/Test'
@@ -167,8 +168,12 @@ class SearchForm extends Component {
             </Col>
           </GroupContainer>
 */}
+          <GroupContainer>
+            <Attribute type="Allergy" />
+          </GroupContainer>
+
           <UnitedSelectField>
-            <Ingredient flag={true} onChange=/>
+            <Ingredient flag={true} />
             <Ingredient flag={false} />
           </UnitedSelectField>
 
