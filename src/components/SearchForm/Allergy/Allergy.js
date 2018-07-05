@@ -47,7 +47,7 @@ class Allergy extends Component {
       return "Allergies";
     }
     console.log(gf.getAllergies())
-    // i think we can move selectContainer outside too. but not sure how
+    // @TODO i think we can move selectContainer outside too. but not sure how
     return (
       <Col span="12">
         <SelectContainer list={gf.getAllergies()} placeholder={placeholder()} />
