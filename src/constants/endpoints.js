@@ -3,3 +3,4 @@ export const DIET_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/a
 export const CUISINES_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/attribute?filter[where][type]=cuisine"
 export const COURSES_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/attribute?filter[where][type]=course"
 export const HOLIDAY_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/attribute?filter[where][and][][type]=holiday"
+export const INGREDIENTS_ENDPOINT = "https://loopback-recipe-search.herokuapp.com/api/ingredient"

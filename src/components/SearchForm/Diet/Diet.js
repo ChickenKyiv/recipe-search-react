@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Select } from "antd";
-import axios from "axios";
-import { DIET_ENDPOINT } from "../../../constants/endpoints";
 
 const Option = Select.Option;
 
@@ -11,19 +9,8 @@ class Diet extends Component {
 
     // @todo change to include
     this.state = {
-      diets: [],
-      dietsList: []
+      diets: []
     };
-  }
-
-  componentDidMount() {
-    axios.get(DIET_ENDPOINT).then(response => {
-      if (response.status === 200) {
-        this.setState({
-          dietsList: response.data
-        });
-      }
-    });
   }
 
   onChange = value => {
@@ -32,7 +19,7 @@ class Diet extends Component {
   };
 
   render() {
-    const { dietsList } = this.state;
+    const { dietsList } = this.props;
 
     return (
       <Select
@@ -41,7 +28,11 @@ class Diet extends Component {
         placeholder="Specific Diets"
         onChange={this.onChange}
       >
-        {dietsList.map(diet => <Option key={diet.id}>{diet.name}</Option>)}
+        {dietsList.map(diet => (
+          <Option key={diet.id} id={diet.id}>
+            {diet.name}
+          </Option>
+        ))}
       </Select>
     );
   }

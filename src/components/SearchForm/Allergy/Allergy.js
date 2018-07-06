@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { Select } from "antd";
-import axios from "axios";
-
-import { ALLERGY_ENDPOINT } from "../../../constants/endpoints";
 const Option = Select.Option;
 
 class Allergy extends Component {
@@ -11,19 +8,8 @@ class Allergy extends Component {
 
     // @todo change to include
     this.state = {
-      allergies: [],
-      allergiesList: []
+      allergies: []
     };
-  }
-
-  componentDidMount() {
-    axios.get(ALLERGY_ENDPOINT).then(response => {
-      if (response.status === 200) {
-        this.setState({
-          allergiesList: response.data
-        });
-      }
-    });
   }
 
   onChange = value => {
@@ -32,7 +18,7 @@ class Allergy extends Component {
   };
 
   render() {
-    const { allergiesList } = this.state;
+    const { allergiesList } = this.props;
 
     return (
       <Select
@@ -41,9 +27,11 @@ class Allergy extends Component {
         placeholder="Allergies"
         onChange={this.onChange}
       >
-        {allergiesList.map(allergy => 
-          <Option key={allergy.id}>{allergy.name}</Option>
-        )}
+        {allergiesList.map(allergy => (
+          <Option key={allergy.id} id={allergy.id}>
+            {allergy.name}
+          </Option>
+        ))}
       </Select>
     );
   }

@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { Select, Col } from "antd";
 
-import axios from "axios";
-import { CUISINES_ENDPOINT } from "../../../constants/endpoints";
-
 class Cuisine extends Component {
   constructor(props) {
     super(props);
@@ -11,19 +8,8 @@ class Cuisine extends Component {
     // @todo change to include, exclude
     this.state = {
       sign: props.sign,
-      values: [],
-      cuisinesList: []
+      values: []
     };
-  }
-
-  componentDidMount() {
-    axios.get(CUISINES_ENDPOINT).then(response => {
-      if (response.status === 200) {
-        this.setState({
-          cuisinesList: response.data
-        });
-      }
-    });
   }
 
   onChange = value => {
@@ -45,12 +31,11 @@ class Cuisine extends Component {
     // };
     const Option = Select.Option;
 
-    const { cuisinesList } = this.state;
-    const { passedSelected } = this.props;
+    const { passedSelected, cuisinesList } = this.props;
     const options = cuisinesList.map(cuisine => {
       if (passedSelected.indexOf(cuisine) === -1) {
         return (
-          <Option key={cuisine.id} disabled={false}>
+          <Option key={cuisine.id} id={cuisine.id} disabled={false}>
             {cuisine.name}
           </Option>
         );
@@ -58,7 +43,7 @@ class Cuisine extends Component {
         // console.log("enable in opp of",this.props.placeholder);
       } else {
         return (
-          <Option key={cuisine.id} disabled={true}>
+          <Option key={cuisine.id} id={cuisine.id} disabled={true}>
             {cuisine.name}
           </Option>
         );

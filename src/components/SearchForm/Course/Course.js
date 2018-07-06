@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Select, Col } from "antd";
-import axios from "axios";
-import { COURSES_ENDPOINT } from "../../../constants/endpoints";
 
 class Course extends Component {
   constructor(props) {
@@ -12,19 +10,8 @@ class Course extends Component {
       // sign is a boolean variable that helps to understand if we're
       // including ids from this field or excluding them
       sign: props.sign,
-      values: [],
-      coursesList: []
+      values: []
     };
-  }
-
-  componentDidMount() {
-    axios.get(COURSES_ENDPOINT).then(response => {
-      if (response.status === 200) {
-        this.setState({
-          coursesList: response.data
-        });
-      }
-    });
   }
 
   onChange = value => {
@@ -46,13 +33,11 @@ class Course extends Component {
     //   this.setState({ exclude: value })
     // };
     const Option = Select.Option;
-
-    const { coursesList } = this.state;
-    const { passedSelected } = this.props;
+    const { passedSelected, coursesList } = this.props;
     const options = coursesList.map(course => {
       if (passedSelected.indexOf(course) === -1) {
         return (
-          <Option key={course.id} disabled={false}>
+          <Option key={course.id} id={course.id} disabled={false}>
             {course.name}
           </Option>
         );
@@ -60,7 +45,7 @@ class Course extends Component {
         // console.log("enable in opp of",this.props.placeholder);
       } else {
         return (
-          <Option key={course.id} disabled={true}>
+          <Option key={course.id} id={course.id} disabled={true}>
             {course.name}
           </Option>
         );

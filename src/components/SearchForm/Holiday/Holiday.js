@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Select, Col } from "antd";
-import axios from "axios";
-import { HOLIDAY_ENDPOINT } from "../../../constants/endpoints";
 
 class Holiday extends Component {
   constructor(props) {
@@ -9,20 +7,8 @@ class Holiday extends Component {
 
     this.state = {
       sign: props.sign,
-      values: [],
-      holidayList: [],
-    
+      values: []
     };
-  }
-
-  componentDidMount() {
-    axios.get(HOLIDAY_ENDPOINT).then(response => {
-      if (response.status === 200) {
-        this.setState({
-          holidayList: response.data
-        });
-      }
-    });
   }
 
   onChange = value => {
@@ -37,12 +23,11 @@ class Holiday extends Component {
   render() {
     const Option = Select.Option;
 
-    const { holidayList } = this.state;
-    const { passedSelected } = this.props;
+    const { passedSelected, holidayList } = this.props;
     const options = holidayList.map(holiday => {
       if (passedSelected.indexOf(holiday) === -1) {
         return (
-          <Option key={holiday.id} disabled={false}>
+          <Option key={holiday.id} id={holiday.id} disabled={false}>
             {holiday.name}
           </Option>
         );
@@ -50,7 +35,7 @@ class Holiday extends Component {
         // console.log("enable in opp of",this.props.placeholder);
       } else {
         return (
-          <Option key={holiday.id} disabled={true}>
+          <Option key={holiday.id} id={holiday.id} disabled={true}>
             {holiday.name}
           </Option>
         );
@@ -58,7 +43,6 @@ class Holiday extends Component {
       }
     });
 
-    
     return (
       <Col span={12}>
         <Select

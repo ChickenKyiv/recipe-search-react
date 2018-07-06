@@ -1,65 +1,62 @@
-import React, { Component } from 'react';
-import {  Select, Col } from 'antd';
-
-// @todo update the paths. put to components arrays
-import ingredients from '../../../data/ingredients';
+import React, { Component } from "react";
+import { Select, Col } from "antd";
 
 class Ingredient extends Component {
-
   constructor(props) {
-    super(props)
-    
+    super(props);
+
     this.state = {
-      sign       : props.sign,
-      values     : []
-    }
+      sign: props.sign,
+      values: []
+    };
   }
 
-  render(){
-    const onChange = (value) => {
-      this.setState({ values: value })
-      this.props.updateIng(value)
-    };
+  onChange = value => {
+    this.setState({ values: value });
+    this.props.updateIng(value);
+  };
 
-    const createName = (className) => {
-      return ( this.state.sign )
-              ? 'allowed'
-              : 'excluded'
+  createName = className => {
+    return this.state.sign ? "allowed" : "excluded" + className;
+  };
 
-              + className
-              ;
-    };
+  render() {
+    const { passedSelected, ingredientsList } = this.props;
 
-    const Option     = Select.Option;
+    const Option = Select.Option;
 
-    //@todo change push to underscore methods
-    const options = [];
-    for (let i = 0; i < ingredients.length; i++) {
-      //console.log(this.props.placeholder+this.props.passedSelected.indexOf(ingredients[i]))
-      if(this.props.passedSelected.indexOf(ingredients[i]) === -1){
-        options.push(
-          <Option key={ingredients[i].toString()} disabled={false}>{ingredients[i].toString()}</Option>
+    const options = ingredientsList.map(ingredient => {
+      if (passedSelected.indexOf(ingredient) === -1) {
+        return (
+          <Option key={ingredient.id} id={ingredient.id} disabled={false}>
+            {ingredient.name}
+          </Option>
         );
+
         // console.log("enable in opp of",this.props.placeholder);
-      }
-      else{
-        options.push(
-          <Option key={ingredients[i].toString()} disabled={true}>{ingredients[i].toString()}</Option>
+      } else {
+        return (
+          <Option key={ingredient.id} id={ingredient.id} disabled={true}>
+            {ingredient.name}
+          </Option>
         );
         // console.log("disable in opp of",this.props.placeholder);
       }
-
-    }
+    });
 
     return (
       <Col span="12">
-        <Select mode="multiple" style={{ width: '100%' }} name={createName('Ingredient')} 
-         placeholder={this.props.placeholder} onChange={onChange}>
+        <Select
+          mode="multiple"
+          style={{ width: "100%" }}
+          name={this.createName("Ingredient")}
+          placeholder={this.props.placeholder}
+          onChange={this.onChange}
+        >
           {options}
         </Select>
       </Col>
     );
   }
-
 }
 export default Ingredient;
