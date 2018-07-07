@@ -29,7 +29,10 @@ We need to use a separated components, that can work without Andt too.
 Have tests. Have form elements separated we
 
 ![Search DB Schema](https://github.com/ChickenKyiv/database-visuals/blob/master/RecipeAPI_Search_Schema%20%20%20SqlDBM.png)
-=======
+
+
+* [Releases Plan][https://chickenkyiv.gitbook.io/documentation/search-api-releases]
+
 ## Advanced Search Form for Recipe Based projects
 
 
@@ -101,7 +104,7 @@ I.E. for example for course item we'll have this value for search URL : "filter[
 or maybe we can hardcode this stuff for a first times
 
 
-
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
