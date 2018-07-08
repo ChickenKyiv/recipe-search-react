@@ -1,3 +1,5 @@
+## Advanced Search Form for Recipe Based projects
+
 
 pages
 - page 1 Search Form
@@ -32,17 +34,6 @@ Have tests. Have form elements separated we
 
 
 * [Releases Plan][https://chickenkyiv.gitbook.io/documentation/search-api-releases]
-
-## Advanced Search Form for Recipe Based projects
-
-
-
-
-
-
----
-
----
 
 
 ## Table of Contents

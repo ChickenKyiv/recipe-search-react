@@ -22,10 +22,6 @@ class UnitedSelectField extends Component {
 
   render(){
 
-    // const placeholder = () => {
-    //   return (this.state.flag) ? "Ingredients you have" : "Ingredients you don't have";
-    // }
-
     return (
       <GroupContainer>
         {this.props.children}

@@ -10,13 +10,13 @@ import {
 // import Cuisine    from './Cuisine/Cuisine'
 // import Diet       from './Diet/Diet'
 // import Holiday    from './Holiday/Holiday'
-import Attribute from './Attribute/Attribute'
+import Attribute  from './Attribute/Attribute'
 import Ingredient from './Ingredient/Ingredient'
-import axios from 'axios'
-import Test from './Test/Test'
-import qs from 'qs'
+import axios      from 'axios'
+import Test       from './Test/Test'
+import qs         from 'qs'
 
-import GroupContainer from './GroupContainer/GroupContainer';
+import GroupContainer    from './GroupContainer/GroupContainer';
 import UnitedSelectField from './SelectContainer/UnitedSelectField';
 
 // const InputGroup = Input.Group;
@@ -170,13 +170,27 @@ class SearchForm extends Component {
 */}
           <GroupContainer>
             <Attribute type="Allergy" />
+            <Attribute type="Diet" />
           </GroupContainer>
 
+          <GroupContainer>
+            <Attribute type="Cuisine" />
+            <Attribute type="Cuisine" />
+          </GroupContainer>
+          <GroupContainer>
+            <Attribute type="Course" />
+            <Attribute type="Course" />
+          </GroupContainer>
+          <GroupContainer>
+            <Attribute type="Holiday" />
+            <Attribute type="Holiday" />
+          </GroupContainer>
+{/*
           <UnitedSelectField>
             <Ingredient flag={true} />
             <Ingredient flag={false} />
           </UnitedSelectField>
-
+*/}
           <GroupContainer >
               {/*<Ingredient flag={true} />
           <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
@@ -233,12 +247,12 @@ class SearchForm extends Component {
               sign={false} passedSelected={this.state.wantOnHolidays}
               placeholder="Holidays/Specific You don't want" />
           </GroupContainer>
-
+*/}
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes
           </Button>
-          */}
+
         </Form>
 
         <Test passedRecipes={this.state.displayFetchedRecipes} />
