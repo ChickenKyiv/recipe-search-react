@@ -20,13 +20,21 @@ class UnitedSelectField extends Component {
       allowed:  [],
       excluded: []
     }
+    this.handleChange = this.handleChange.bind(this);
 
   }
 
-  handleChange(items) {
+  handleChange(items, sign = true) {
     // this.setState({selected: [...items]})
     // console.log(items)
-    console.log('zzzzzzz');
+    // console.log('zzzzzzz');
+    if(sign){
+      this.setState({allowed: [...items]})
+    } else {
+      this.setState({excluded: [...items]})
+    }
+
+    console.log(this.state)
   }
 
   render(){
@@ -39,8 +47,8 @@ class UnitedSelectField extends Component {
 
     return (
       <GroupContainer>
-        <Attribute type={this.props.type}  />
-        <Attribute type={this.props.type}  />
+        <Attribute type={this.props.type} onChange={this.handleChange} sign={true} />
+        <Attribute type={this.props.type} onChange={this.handleChange} sign={false} />
       </GroupContainer>
     );
     // return (

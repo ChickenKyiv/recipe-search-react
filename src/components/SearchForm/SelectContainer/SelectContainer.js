@@ -19,14 +19,15 @@ class SelectContainer extends Component {
       placeholder: props.placeholder
     }
     // console.log(props.placeholder)
-    this._change = this._change.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
 
   }
 
-  _change(items) {
+  handleChange(items) {
     this.setState({selected: [...items]})
     // console.log(items)
+    this.props.onChange(items)
   }
 
   render(){
@@ -34,7 +35,7 @@ class SelectContainer extends Component {
       return (
         <Select mode="multiple"
                 style={{ width: '100%' }}
-                onChange={this._change}
+                onChange={this.handleChange}
                 placeholder={this.state.placeholder}>
 
                 {Object.keys(this.state.list).map(

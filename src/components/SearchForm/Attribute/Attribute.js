@@ -15,7 +15,7 @@ class Attribute extends Component {
 
     // @todo change to include, exclude
     this.state = {
-      // sign       : props.sign,
+      sign       : props.sign,
       // values     : []
       selected: []
     }
@@ -26,20 +26,24 @@ class Attribute extends Component {
 
   handleChange(items) {
     this.setState({selected: [...items]})
-    console.log('-----------');
-    console.log(items)
+    // console.log('-----------');
+    // console.log(this.state.selected)
+
+    // if( this.props.sign )
+
+    // when sign is underfined - then our field is single, and don't have an evil twin
+    if ( this.state.sign !== undefined ){
+      // console.log(this.state.sign)
+      this.props.onChange(items, this.state.sign);
+    }
+
+
+    //
   }
 
 
   // @TODO maybe pass this at constructor, so render will looks clearer?
 
-  // getAllergies()
-  // getCourses()
-  // getCuisines()
-  // getIngredientsgetHolidays()
-  //
-  // getIngredients()
-  // getIngredients2()
   getAttributeData(type){
     // this.props.type
     if (this.props.type == 'Allergy') {
@@ -102,7 +106,8 @@ class Attribute extends Component {
     return (
       <SelectContainer list={this.getAttributeData(TYPES)}
           placeholder={this.getPlaceholder(TYPES)}
-          onChange={this.handleChange} />
+          onChange={this.handleChange}
+           />
 
     );
     // return (
@@ -111,11 +116,6 @@ class Attribute extends Component {
     //   </SelectContainer>
     // );
 
-    // return (
-    //   <SelectContainer>
-    //     <Component {...this.props} onChange={this.handleChange} list={gf.getAllergies()} />
-    //   </SelectContainer>
-    // );
   }
 }
 export default Attribute;
