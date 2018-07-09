@@ -25,17 +25,17 @@ class Attribute extends Component {
   }
 
   handleChange(items) {
-    this.setState({selected: [...items]})
+    this.setState({ selected: [...items] })
     // console.log('-----------');
     // console.log(this.state.selected)
 
     // if( this.props.sign )
 
     // when sign is underfined - then our field is single, and don't have an evil twin
-    if ( this.state.sign !== undefined ){
-      // console.log(this.state.sign)
-      this.props.onChange(items, this.state.sign);
-    }
+    // if ( this.state.sign !== undefined ){
+    //   // console.log(this.state.sign)
+    //   this.props.onChange(items, this.state.sign);
+    // }
 
 
     //

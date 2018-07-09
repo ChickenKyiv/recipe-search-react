@@ -14,7 +14,7 @@ class UnitedSelectField extends Component {
 
     this.state = {
     //   flag: props.flag,
-      selected: [],
+      // selected: [],
 
       // do we need them well?
       allowed:  [],
@@ -28,13 +28,13 @@ class UnitedSelectField extends Component {
     // this.setState({selected: [...items]})
     // console.log(items)
     // console.log('zzzzzzz');
-    if(sign){
-      this.setState({allowed: [...items]})
-    } else {
-      this.setState({excluded: [...items]})
-    }
-
-    console.log(this.state)
+    // if( sign ){
+    //   this.setState({ allowed: [...items] })
+    // } else {
+    //   this.setState({ excluded: [...items] })
+    // }
+    //
+    // console.log(this.state)
   }
 
   render(){

@@ -42,6 +42,9 @@ class SearchForm extends Component {
       // excludedHolidays: [],
       // displayFetchedRecipes: []
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset  = this.handleReset.bind(this);
+    // this.searchResults = this.searchResults.bind(this);
   }
 
   handleReset() {
@@ -58,7 +61,7 @@ class SearchForm extends Component {
     // this.updateDontWantOnHolidays(n)
   }
 
-  onSubmit(e) {
+  handleSubmit(e) {
     if( this.state.haveIngredients.length > 0 ){
       axios.get(process.env.REACT_APP_API_URL, {
         headers: {"Access-Control-Allow-Origin": "*"},
@@ -100,10 +103,19 @@ class SearchForm extends Component {
     //   excludedays: this.state.dontWantOnHolidays,
 
   }
+
   updateMaxTime() {
     var time = window.document.getElementById('time').value
     this.setState({maxTime: time})
   }
+
+  // searchResults({ isNotEmpty }) {
+  //   return (
+  //     <div>
+  //       { isNotEmpty && <Test passedRecipes={this.state.displayFetchedRecipes} /> }
+  //     </div>
+  //   )
+  // }
 
   // updateHaveIngredients(item) {
   //   this.setState({allowedIngredients: [...item]})
@@ -134,9 +146,11 @@ class SearchForm extends Component {
 
     const { formLayout }   = this.state.formLayout;
 
+    const results = (this.state.displayFetchedRecipes) ? true : false;
+
     return (
       <div>
-        <Form {...formLayout} onSubmit={this.onSubmit.bind(this)}>
+        <Form {...formLayout} onSubmit={this.handleSubmit}>
 {/*
           <GroupContainer >
             <Col span="12">
@@ -224,7 +238,9 @@ class SearchForm extends Component {
           </Button>
         </Form>
 
-        <Test passedRecipes={this.state.displayFetchedRecipes} />
+        {/*searchResults*/}
+
+
 
       </div>
     );
