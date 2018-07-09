@@ -174,8 +174,11 @@ class SearchForm extends Component {
           </GroupContainer>
 
           <GroupContainer>
-            <Attribute type="Cuisine" />
-            <Attribute type="Cuisine" />
+            <UnitedSelectField>
+              <Attribute type="Cuisine" />
+              <Attribute type="Cuisine" />
+            </UnitedSelectField>
+
           </GroupContainer>
           <GroupContainer>
             <Attribute type="Course" />

@@ -12,18 +12,22 @@ class UnitedSelectField extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
+    this.state = {
     //   flag: props.flag,
-    //   selected: []
-    // }
+      selected: []
+    }
 
   }
-
+  handleChange(items) {
+    this.setState({selected: [...items]})
+    console.log(items)
+    console.log('zzzzzzz');
+  }
 
   render(){
 
     return (
-      <GroupContainer>
+      <GroupContainer onChange={this.handleChange}>
         {this.props.children}
       </GroupContainer>
     );

@@ -44,6 +44,8 @@ class Attribute extends Component {
     console.log(items)
   }
 
+
+  // @TODO maybe pass this at constructor, so render will looks clearer?
   getAttributeData(type){
     // this.props.type
     if (this.props.type == 'Allergy') {
