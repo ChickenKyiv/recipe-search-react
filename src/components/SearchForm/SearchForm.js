@@ -5,11 +5,7 @@ import {
   Col,
   Button
 } from 'antd';
-// import Allergy    from './Allergy/Allergy'
-// import Course     from './Course/Course'
-// import Cuisine    from './Cuisine/Cuisine'
-// import Diet       from './Diet/Diet'
-// import Holiday    from './Holiday/Holiday'
+
 import Attribute  from './Attribute/Attribute'
 import Ingredient from './Ingredient/Ingredient'
 import axios      from 'axios'
@@ -19,7 +15,7 @@ import qs         from 'qs'
 import GroupContainer    from './GroupContainer/GroupContainer';
 import UnitedSelectField from './SelectContainer/UnitedSelectField';
 
-// const InputGroup = Input.Group;
+
 const start = 0, count = 5;
 
 class SearchForm extends Component {
@@ -42,9 +38,11 @@ class SearchForm extends Component {
       // excludedHolidays: [],
       // displayFetchedRecipes: []
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleReset  = this.handleReset.bind(this);
+    this.handleSubmit       = this.handleSubmit.bind(this);
+    this.handleReset        = this.handleReset.bind(this);
+    // this.handleFieldChange  = this.handleFieldChange.bind(this);
     // this.searchResults = this.searchResults.bind(this);
+
   }
 
   handleReset() {
@@ -104,6 +102,11 @@ class SearchForm extends Component {
 
   }
 
+
+  // handleFieldChange(e){
+  //   this.setState({ [fieldId]: value });
+  // }
+
   updateMaxTime() {
     var time = window.document.getElementById('time').value
     this.setState({maxTime: time})
@@ -162,45 +165,45 @@ class SearchForm extends Component {
             </Col>
           </GroupContainer>
 */}
+
+{/*onChange={this.handleFieldChange} value={this.state[field]} */}
+          {/*
+          <GroupContainer>
+            <UnitedSelectField>
+              <Ingredient flag={true} />
+              <Ingredient flag={false} />
+            </UnitedSelectField>
+          </GroupContainer> */}
+
           <GroupContainer>
             <Attribute type="Allergy" />
             <Attribute type="Diet" />
           </GroupContainer>
 
           <GroupContainer>
-            <UnitedSelectField type="Cuisine">
-            </UnitedSelectField>
-          </GroupContainer>
-{/*
-          <GroupContainer>
-            <UnitedSelectField>
-              <Attribute type="Course" />
-              <Attribute type="Course" />
-            </UnitedSelectField>
+            <UnitedSelectField type="Cuisine" />
           </GroupContainer>
 
           <GroupContainer>
-            <UnitedSelectField>
-              <Attribute type="Holiday" />
-              <Attribute type="Holiday" />
-            </UnitedSelectField>
+            <UnitedSelectField type="Course" />
           </GroupContainer>
-*/}
-{/*
-          <UnitedSelectField>
-            <Ingredient flag={true} />
-            <Ingredient flag={false} />
-          </UnitedSelectField>
-*/}
+
+          <GroupContainer>
+            <UnitedSelectField type="Holiday" />
+          </GroupContainer>
+
+
+      {/*
           <GroupContainer >
-              {/*<Ingredient flag={true} />
+              <Ingredient flag={true} />
           <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
               sign={true} passedSelected={this.state.excludedIngredients}
                />
             <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)}
               sign={false} passedSelected={this.state.allowedIngredients}
-               />*/}
+               />
           </GroupContainer>
+*/}
 
           {/*
           <InputGroup size="large" {...formItemLayout}>
@@ -213,14 +216,7 @@ class SearchForm extends Component {
           </InputGroup>
           */}
 {/*
-          <GroupContainer >
-            <Col span="12">
-              <Allergy updateAllergy={this.updateAllergies.bind(this)} />
-            </Col>
-            <Col span="12">
-              <Diet updateDiet={this.updateSpecificDiets.bind(this)} />
-            </Col>
-          </GroupContainer>
+
 
           <GroupContainer >
             <Cuisine updateCuisines={this.updateLikeCuisines.bind(this)}

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Col } from 'antd';
 
-// import gf from '@groceristar/groceristar-fetch';
 import Attribute      from '../Attribute/Attribute'
+import Attribute      from '../Ingredient/Ingredient'
 import GroupContainer from '../GroupContainer/GroupContainer'
-// import Cuisine from '../Cuisine/Cuisine';
 
 
 class UnitedSelectField extends Component {
@@ -13,7 +12,6 @@ class UnitedSelectField extends Component {
     super(props);
 
     this.state = {
-    //   flag: props.flag,
       // selected: [],
 
       // do we need them well?
@@ -25,39 +23,35 @@ class UnitedSelectField extends Component {
   }
 
   handleChange(items, sign = true) {
-    // this.setState({selected: [...items]})
-    // console.log(items)
-    // console.log('zzzzzzz');
-    // if( sign ){
-    //   this.setState({ allowed: [...items] })
-    // } else {
-    //   this.setState({ excluded: [...items] })
-    // }
-    //
-    // console.log(this.state)
+
+    if( sign ){
+      this.setState({ allowed: [...items] })
+    } else {
+      this.setState({ excluded: [...items] })
+    }
+
+    console.log(this.state)
+  }
+
+  renderField(){
+
+  }
+
+  renderChildrens(){
+
   }
 
   render(){
-
-    // this.props.children.map((item) => {
-    //   console.log(item)
-    // })
-    // const Component = this.props.type;
-      // console.log(Component);
-
     return (
       <GroupContainer>
-        <Attribute type={this.props.type} onChange={this.handleChange} sign={true} />
-        <Attribute type={this.props.type} onChange={this.handleChange} sign={false} />
+        <Col>
+          <Attribute type={this.props.type} onChange={this.handleChange} sign={true} />
+        </Col>
+        <Col>
+          <Attribute type={this.props.type} onChange={this.handleChange} sign={false} />
+        </Col>
       </GroupContainer>
     );
-    // return (
-    //   <GroupContainer onChange={this.handleChange}>
-    //     {this.props.children}
-    //   </GroupContainer>
-    // );
-    // <Attribute type="Cuisine" />
-    // <Attribute type="Cuisine" />
   }
 
 }

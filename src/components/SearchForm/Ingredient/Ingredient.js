@@ -14,7 +14,11 @@ class Ingredient extends Component {
       flag: props.flag,
       selected: []
     }
-
+    this.handleChange = this.handleChange.bind(this);
+  }
+  
+  handleChange(event){
+    console.log(event);
   }
 
   render(){
@@ -25,7 +29,10 @@ class Ingredient extends Component {
 
     return (
       <Col span="12">
-        <SelectContainer list={gf.getIngredients()} placeholder={placeholder()} />
+        <SelectContainer
+          list={gf.getIngredients()}
+          placeholder={placeholder()}
+          onChange={this.handleChange} />
       </Col>
     );
   }
