@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
 import {
   Select
 } from 'antd';
-
 import shortid from 'shortid';
 
 const Option   = Select.Option;
@@ -28,7 +26,7 @@ class SelectContainer extends Component {
 
   _change(items) {
     this.setState({selected: [...items]})
-    console.log(items)
+    // console.log(items)
   }
 
   render(){

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Col } from 'antd';
 
 import gf from '@groceristar/groceristar-fetch';
-
 import SelectContainer from '../SelectContainer/SelectContainer'
 
 
@@ -18,7 +17,6 @@ class Ingredient extends Component {
 
   }
 
-
   render(){
 
     const placeholder = () => {
@@ -28,7 +26,6 @@ class Ingredient extends Component {
     return (
       <Col span="12">
         <SelectContainer list={gf.getIngredients()} placeholder={placeholder()} />
-
       </Col>
     );
   }

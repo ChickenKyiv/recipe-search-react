@@ -128,11 +128,31 @@ class SearchForm extends Component {
   // updateDontLikeCuisines(item) {
   //   this.setState({excludedCuisines: [...item]})
   // }
-
+  //
+  // updateWantCourses(item) {
+  //   this.setState({allowedCourses: [...item]})
+  // }
+  //
+  // updateDontWantCourses(item) {
+  //   this.setState({excludedCourses: [...item]})
+  // }
+  //
+  // updateWantOnHolidays(item) {
+  //   this.setState({excludedCourses: [...item]})
+  // }
+  //
+  // updateDontWantOnHolidays(item) {
+  //   this.setState({excludedHolidays: [...item]})
+  // }
 
   render(){
 
     const { formLayout }   = this.state.formLayout;
+
+    // const formItemLayout   = {
+    //   labelCol:   { offset: 4 },
+    //   wrapperCol: { span: 12 }
+    // };
 
     return (
       <div>
@@ -154,24 +174,22 @@ class SearchForm extends Component {
           </GroupContainer>
 
           <GroupContainer>
-            <UnitedSelectField type="Cuisine">
-            </UnitedSelectField>
-          </GroupContainer>
-{/*
-          <GroupContainer>
             <UnitedSelectField>
-              <Attribute type="Course" />
-              <Attribute type="Course" />
+              <Attribute type="Cuisine" />
+              <Attribute type="Cuisine" />
             </UnitedSelectField>
           </GroupContainer>
 
           <GroupContainer>
-            <UnitedSelectField>
-              <Attribute type="Holiday" />
-              <Attribute type="Holiday" />
-            </UnitedSelectField>
+            <Attribute type="Course" />
+            <Attribute type="Course" />
           </GroupContainer>
-*/}
+
+          <GroupContainer>
+            <Attribute type="Holiday" />
+            <Attribute type="Holiday" />
+          </GroupContainer>
+
 {/*
           <UnitedSelectField>
             <Ingredient flag={true} />
@@ -217,6 +235,23 @@ class SearchForm extends Component {
               placeholder="Cuisines you don't like" />
           </GroupContainer>
 
+          <GroupContainer >
+            <Course updateCourses={this.updateWantCourses.bind(this)}
+              passedSelected={this.state.excludedCourses} sign={true}
+              placeholder="Courses You want" />
+            <Course updateCourses={this.updateDontWantCourses.bind(this)}
+              passedSelected={this.state.allowedCourses} sign={false}
+              placeholder="Courses You don't want" />
+          </GroupContainer>
+
+          <GroupContainer >
+            <Holiday updateHoliday={this.updateWantOnHolidays.bind(this)}
+              sign={true} passedSelected={this.state.excludedHolidays}
+              placeholder="Holidays/Specific You want" />
+            <Holiday updateHoliday={this.updateDontWantOnHolidays.bind(this)}
+              sign={false} passedSelected={this.state.wantOnHolidays}
+              placeholder="Holidays/Specific You don't want" />
+          </GroupContainer>
 */}
 
           <Button type="primary" htmlType="submit" icon="search">

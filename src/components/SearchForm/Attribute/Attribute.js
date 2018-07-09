@@ -7,17 +7,6 @@ import {
 import gf from '@groceristar/groceristar-fetch';
 // @TODO add test if list that passed isset or pass instead of it - null or undefined
 
-
-// getAllergies()
-// getCourses()
-// getCuisines()
-// getIngredientsgetHolidays()
-//
-// getIngredients()
-// getIngredients2()
-
-
-// import Allergy    from '../Allergy/Allergy'
 import SelectContainer from '../SelectContainer/SelectContainer'
 
 class Attribute extends Component {
@@ -34,9 +23,6 @@ class Attribute extends Component {
 
     // console.log(gf.getAllergies())
   }
-  // placeholder( flag ) {
-  //   return (flag) ? "Attribute you like"  : "Attribute you don't like"
-  // }
 
   handleChange(items) {
     this.setState({selected: [...items]})
@@ -46,6 +32,14 @@ class Attribute extends Component {
 
 
   // @TODO maybe pass this at constructor, so render will looks clearer?
+
+  // getAllergies()
+  // getCourses()
+  // getCuisines()
+  // getIngredientsgetHolidays()
+  //
+  // getIngredients()
+  // getIngredients2()
   getAttributeData(type){
     // this.props.type
     if (this.props.type == 'Allergy') {
@@ -99,18 +93,17 @@ class Attribute extends Component {
     const Component = this.props.type;
 
     // const C = React.createElement(this.props.type)
-    console.log(this.getAttributeData(TYPES))
+    // console.log(this.getAttributeData(TYPES))
     // console.log(Component);
     // return (
     //     <C {...this.props}/>
     // );
-//
-    // const placeholder = () => {
-    //   return "Allergies";
-    // }
+
     return (
-      <SelectContainer list={this.getAttributeData(TYPES)} placeholder={this.getPlaceholder(TYPES)} />
-      // <div></div>
+      <SelectContainer list={this.getAttributeData(TYPES)}
+          placeholder={this.getPlaceholder(TYPES)}
+          onChange={this.handleChange} />
+
     );
     // return (
     //   <SelectContainer list={gf.getIngredients()} placeholder={placeholder()}>
