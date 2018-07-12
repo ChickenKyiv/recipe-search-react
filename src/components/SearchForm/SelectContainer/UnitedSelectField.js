@@ -21,6 +21,24 @@ class UnitedSelectField extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.renderField = this.renderField.bind(this);
     this.renderChildrens = this.renderChildrens.bind(this);
+
+    this.Field = this.Field.bind(this);
+  }
+
+
+  Field(props, sign) {
+
+    const components = {
+      attribute: Attribute,
+      ingredient: Ingredient
+    };
+
+    // Correct! JSX type can be a capitalized variable.
+    const Component = components[props.type];
+    return <Component
+              type={props.type}
+              onChange={this.handleChange}
+              sign={sign} />;
   }
 
   handleChange(items, sign = true) {
@@ -35,47 +53,23 @@ class UnitedSelectField extends Component {
   }
 
   renderField(sign){
-    if(this.props.type == 'Ingredient'){
-      return (
-        <Col>
-        <Ingredient type={this.props.type}
-          onChange={this.handleChange}
-          sign={sign} />
-          </Col>
-      );
-    } else {
-      // we assume that other united fields related to Attributes
-      return (<Col>
-      <Attribute
-        type={this.props.type}
-        onChange={this.handleChange}
-        sign={sign} />
-        </Col>
-      );
-    }
+    return (
+      <Col>
+        { this.Field(this.props, sign) }
+      </Col>
+    )
 
-    const components = {
-      photo: PhotoStory,
-      video: VideoStory
-    };
-
-    function Story(props) {
-      // Correct! JSX type can be a capitalized variable.
-      const SpecificStory = components[props.storyType];
-      return <SpecificStory story={props.story} />;
-    }
   }
-
+  //@TODO Yeah, it can be updated to a better way
   renderChildrens(){
       this.renderField(true);
       this.renderField(false);
-
   }
 
   render(){
     return (
         <GroupContainer>
-        {this.renderChildrens()}
+          {this.renderChildrens()}
         </GroupContainer>
     );
     // return (
