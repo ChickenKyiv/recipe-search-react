@@ -141,6 +141,12 @@ class SearchForm extends Component {
       <div>
         <Form {...formLayout} onSubmit={this.handleSubmit}>
 
+
+
+{/*onChange={this.handleFieldChange} value={this.state[field]} */}
+
+
+          {/*}
           <GroupContainer >
             <Col span="12">
               <Input placeholder="Recipe Name" />
@@ -153,7 +159,6 @@ class SearchForm extends Component {
           </GroupContainer>
 
 
-{/*onChange={this.handleFieldChange} value={this.state[field]} */}
 
 
 
@@ -169,22 +174,19 @@ class SearchForm extends Component {
 
 
           <UnitedSelectField type="Ingredient" onChange={this.onChangeUnitedField} />
-
           <br />
+          */}
 
 
           <UnitedSelectField type="Cuisine" onChange={this.onChangeUnitedField} />
-
           <br />
 
 
           <UnitedSelectField type="Course" onChange={this.onChangeUnitedField} />
-
           <br />
 
 
           <UnitedSelectField type="Holiday" onChange={this.onChangeUnitedField} />
-
           <br />
 
       {/*
@@ -198,8 +200,6 @@ class SearchForm extends Component {
                />
           </GroupContainer>
 */}
-
-
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes

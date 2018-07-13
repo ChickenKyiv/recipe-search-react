@@ -100,7 +100,8 @@ class Attribute extends Component {
 
     return (
 
-        <SelectContainer list={this.getAttributeData(TYPES)}
+        <SelectContainer
+            list={this.getAttributeData(TYPES)}
             placeholder={this.getPlaceholder(TYPES)}
             onChange={this.handleChange}
              />

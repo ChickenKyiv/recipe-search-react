@@ -70,7 +70,7 @@ class UnitedSelectField extends Component {
     const Component = types[this.props.type];
 
     const disabled = (sign) ? this.state.excluded : this.state.allowed ;
-    console.log( disabled )
+    // console.log( disabled )
 
     // if (!)
 
