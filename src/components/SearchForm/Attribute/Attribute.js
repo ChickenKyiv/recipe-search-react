@@ -31,10 +31,13 @@ class Attribute extends Component {
 
     // if( this.props.sign )
 
+
+
     // when sign is underfined - then our field is single, and don't have an evil twin
     if ( this.state.sign !== undefined ){
-      // console.log(this.state.sign)
-      this.props.onChange(items, this.state.sign);
+    //   // console.log(this.state.sign)
+    //@TODO i don't like how it looks
+      this.props.onChange(items, this.state.sign, this.props.type);
     }
 
 

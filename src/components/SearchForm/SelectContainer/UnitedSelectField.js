@@ -12,7 +12,7 @@ class UnitedSelectField extends Component {
     super(props);
 
     this.state = {
-      // selected: [],
+
 
       // do we need them well?
       allowed:  [],
@@ -20,68 +20,64 @@ class UnitedSelectField extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.renderField = this.renderField.bind(this);
-    this.renderChildrens = this.renderChildrens.bind(this);
+    // this.renderChildrens = this.renderChildrens.bind(this);
 
-    this.Field = this.Field.bind(this);
   }
 
 
-  Field(props, sign) {
+//@TODO Yeah, update it
+  handleChange(items, sign = true, type) {
 
-    const components = {
-      attribute: Attribute,
-      ingredient: Ingredient
-    };
-
-    // Correct! JSX type can be a capitalized variable.
-    const Component = components[props.type];
-    return <Component
-              type={props.type}
-              onChange={this.handleChange}
-              sign={sign} />;
-  }
-
-  handleChange(items, sign = true) {
+    console.log(type)
 
     if( sign ){
-      this.setState({ allowed: [...items] })
+      this.setState({
+        // this.props.type: {
+          allowed: [...items]
+        // }
+      })
     } else {
-      this.setState({ excluded: [...items] })
+      this.setState({
+        // this.props.type: {
+          excluded: [...items]
+        // }
+      })
     }
 
     console.log(this.state)
   }
 
+// @TODO move field to separated component too
   renderField(sign){
+
+    const types = {
+      Allergy   : Attribute,
+      Diet      : Attribute,
+      Course    : Attribute,
+      Cuisine   : Attribute,
+      Holiday   : Attribute,
+      Ingredient: Ingredient
+    };
+    const Component = types[this.props.type];
+
     return (
       <Col>
-        { this.Field(this.props, sign) }
+        <Component
+            type={this.props.type}
+            onChange={this.handleChange}
+            sign={sign} />
       </Col>
     )
 
-  }
-  //@TODO Yeah, it can be updated to a better way
-  renderChildrens(){
-      this.renderField(true);
-      this.renderField(false);
   }
 
   render(){
     return (
         <GroupContainer>
-          {this.renderChildrens()}
+          {this.renderField(true)}
+          {this.renderField(false)}
         </GroupContainer>
     );
-    // return (
-    //   <GroupContainer>
-    //     <Col>
-    //       <Attribute type={this.props.type} onChange={this.handleChange} sign={true} />
-    //     </Col>
-    //     <Col>
-    //       <Attribute type={this.props.type} onChange={this.handleChange} sign={false} />
-    //     </Col>
-    //   </GroupContainer>
-    // );
   }
 
 }
