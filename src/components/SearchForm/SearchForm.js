@@ -38,7 +38,7 @@ class SearchForm extends Component {
       // allowedHolidays: [],
       // excludedHolidays: [],
 
-      
+
       // displayFetchedRecipes: []
     }
     this.handleSubmit       = this.handleSubmit.bind(this);
@@ -108,8 +108,8 @@ class SearchForm extends Component {
   }
 
   onChangeUnitedField(items, type){
-    console.log(items )
-       console.log( type)
+    // console.log(items )
+    //    console.log( type)
     // this.setState
   }
   // handleFieldChange(e){

@@ -16,7 +16,8 @@ class Attribute extends Component {
     // @todo change to include, exclude
     this.state = {
       sign       : props.sign,
-      selected: []
+      selected: [],
+      disabled: props.disab
     }
     this.handleChange = this.handleChange.bind(this);
 
@@ -86,6 +87,8 @@ class Attribute extends Component {
   // renderComponent
 
   render(){
+    // console.log('DDDDDDDDDDDDDDDDD');
+    // console.log(this.state.disabled)
 
     const TYPES = {
       Allergy: 'Allergy',
@@ -101,7 +104,7 @@ class Attribute extends Component {
             placeholder={this.getPlaceholder(TYPES)}
             onChange={this.handleChange}
              />
-      
+
 
     );
 

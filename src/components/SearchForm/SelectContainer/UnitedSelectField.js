@@ -19,7 +19,7 @@ class UnitedSelectField extends Component {
       excluded: []
     }
     this.handleChange = this.handleChange.bind(this);
-    this.renderField = this.renderField.bind(this);
+    this.renderField  = this.renderField.bind(this);
     // this.renderChildrens = this.renderChildrens.bind(this);
 
   }
@@ -44,14 +44,14 @@ class UnitedSelectField extends Component {
       })
     }
 
-    this.props.onChange(
-      {
-        allowed : this.state.allowed,
-        excluded: this.state.excluded,
-      },
-      type
-
-    );
+    // this.props.onChange(
+    //   {
+    //     allowed : this.state.allowed,
+    //     excluded: this.state.excluded,
+    //   },
+    //   type
+    //
+    // );
     // console.log(this.state)
 
   }
@@ -69,13 +69,18 @@ class UnitedSelectField extends Component {
     };
     const Component = types[this.props.type];
 
+    const disabled = (sign) ? this.state.excluded : this.state.allowed ;
+    console.log( disabled )
+
+    // if (!)
+
     return (
       <Col>
         <Col span="12">
           <Component
               type={this.props.type}
               onChange={this.handleChange}
-              
+              disab={ disabled }
               sign={sign} />
         </Col>
       </Col>
