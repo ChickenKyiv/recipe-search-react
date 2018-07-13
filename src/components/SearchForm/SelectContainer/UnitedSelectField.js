@@ -28,7 +28,7 @@ class UnitedSelectField extends Component {
 //@TODO Yeah, update it
   handleChange(items, sign = true, type) {
 
-    console.log(type)
+    // console.log(type)
 
     if( sign ){
       this.setState({
@@ -44,7 +44,8 @@ class UnitedSelectField extends Component {
       })
     }
 
-    console.log(this.state)
+    // console.log(this.state)
+
   }
 
 // @TODO move field to separated component too
@@ -62,10 +63,12 @@ class UnitedSelectField extends Component {
 
     return (
       <Col>
-        <Component
-            type={this.props.type}
-            onChange={this.handleChange}
-            sign={sign} />
+        <Col span="12">
+          <Component
+              type={this.props.type}
+              onChange={this.handleChange}
+              sign={sign} />
+        </Col>
       </Col>
     )
 

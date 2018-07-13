@@ -22,7 +22,7 @@ class Ingredient extends Component {
   // }
   handleChange(items) {
     this.setState({ selected: [items] })
-    console.log('-----------');
+    // console.log('-----------');
     // console.log(items);
     // console.log(this.state)
 
@@ -48,12 +48,12 @@ class Ingredient extends Component {
     }
 
     return (
-      <Col span="12">
+
         <SelectContainer
           list={gf.getIngredients()}
           placeholder={placeholder()}
           onChange={this.handleChange} />
-      </Col>
+
     );
   }
 

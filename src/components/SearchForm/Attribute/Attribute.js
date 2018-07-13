@@ -95,29 +95,16 @@ class Attribute extends Component {
       Holiday: 'Holiday'
     }
 
-    // const isUnited = (this.props.united);
-    // console.log(this.props.type);
-    const Component = this.props.type;
-
-    // const C = React.createElement(this.props.type)
-    // console.log(this.getAttributeData(TYPES))
-    // console.log(Component);
-    // return (
-    //     <C {...this.props}/>
-    // );
-
     return (
-      <SelectContainer list={this.getAttributeData(TYPES)}
-          placeholder={this.getPlaceholder(TYPES)}
-          onChange={this.handleChange}
-           />
+
+        <SelectContainer list={this.getAttributeData(TYPES)}
+            placeholder={this.getPlaceholder(TYPES)}
+            onChange={this.handleChange}
+             />
+      
 
     );
-    // return (
-    //   <SelectContainer list={gf.getIngredients()} placeholder={placeholder()}>
-    //     <Component {...this.props} onChange={this.handleChange} />
-    //   </SelectContainer>
-    // );
+
 
   }
 }

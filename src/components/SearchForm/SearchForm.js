@@ -167,35 +167,37 @@ class SearchForm extends Component {
 */}
 
 {/*onChange={this.handleFieldChange} value={this.state[field]} */}
-          {/*
-          <GroupContainer>
-            <UnitedSelectField>
-              <Ingredient flag={true} />
-              <Ingredient flag={false} />
-            </UnitedSelectField>
-          </GroupContainer> */}
 
-          {/*
-          <GroupContainer>
-            <Attribute type="Allergy" />
-            <Attribute type="Diet" />
-          </GroupContainer> */}
+
 
           <GroupContainer>
-            <UnitedSelectField type="Ingredient" />
-          </GroupContainer>
-
-          <GroupContainer>
-            <UnitedSelectField type="Cuisine" />
+            <Col><Col span="12">
+              <Attribute type="Allergy" />
+            </Col></Col>
+            <Col><Col span="12">
+              <Attribute type="Diet" />
+            </Col></Col>
           </GroupContainer>
           <br />
-          <GroupContainer>
-            <UnitedSelectField type="Course" />
-          </GroupContainer>
+
+          {/*}<GroupContainer> */}
+            <UnitedSelectField type="Ingredient" onChange={this.onChangeUnitedField}/>
+          {/*}</GroupContainer> */}
           <br />
-          <GroupContainer>
-            <UnitedSelectField type="Holiday" />
-          </GroupContainer>
+
+          {/*}<GroupContainer> */}
+            <UnitedSelectField type="Cuisine" onChange={this.onChangeUnitedField}/>
+          {/*}</GroupContainer> */}
+          <br />
+
+          {/*}<GroupContainer> */}
+            <UnitedSelectField type="Course" onChange={this.onChangeUnitedField}/>
+          {/*}</GroupContainer> */}
+          <br />
+
+          {/*}<GroupContainer> */}
+            <UnitedSelectField type="Holiday" onChange={this.onChangeUnitedField}/>
+          {/*}</GroupContainer> */}
           <br />
 
       {/*
