@@ -13,7 +13,7 @@ class UnitedSelectField extends Component {
 
     this.state = {
 
-
+      // selected: [],
       // do we need them well?
       allowed:  [],
       excluded: []
@@ -44,6 +44,14 @@ class UnitedSelectField extends Component {
       })
     }
 
+    this.props.onChange(
+      {
+        allowed : this.state.allowed,
+        excluded: this.state.excluded,
+      },
+      type
+
+    );
     // console.log(this.state)
 
   }
@@ -67,6 +75,7 @@ class UnitedSelectField extends Component {
           <Component
               type={this.props.type}
               onChange={this.handleChange}
+              
               sign={sign} />
         </Col>
       </Col>

@@ -26,8 +26,9 @@ class SearchForm extends Component {
     this.state = {
       formLayout: 'vertical',
       maxTime: '',
-      allowedIngredients: [],
-      excludedIngredients: [],
+
+      // allowedIngredients: [],
+      // excludedIngredients: [],
       // allergies: [],
       // specificDiets: [],
       // allowedCuisines: [],
@@ -36,10 +37,14 @@ class SearchForm extends Component {
       // excludedCourses: [],
       // allowedHolidays: [],
       // excludedHolidays: [],
+
+      
       // displayFetchedRecipes: []
     }
     this.handleSubmit       = this.handleSubmit.bind(this);
     this.handleReset        = this.handleReset.bind(this);
+
+    this.onChangeUnitedField = this.onChangeUnitedField.bind(this);
     // this.handleFieldChange  = this.handleFieldChange.bind(this);
     // this.searchResults = this.searchResults.bind(this);
 
@@ -102,7 +107,11 @@ class SearchForm extends Component {
 
   }
 
-
+  onChangeUnitedField(items, type){
+    console.log(items )
+       console.log( type)
+    // this.setState
+  }
   // handleFieldChange(e){
   //   this.setState({ [fieldId]: value });
   // }
@@ -120,29 +129,6 @@ class SearchForm extends Component {
   //   )
   // }
 
-  // updateHaveIngredients(item) {
-  //   this.setState({allowedIngredients: [...item]})
-  // }
-  //
-  // updateDontHaveIngredients(item) {
-  //   this.setState({excludedIngredients: [...item]})
-  // }
-
-  // updateAllergies(item) {
-  //   this.setState({allergies: [...item]})
-  // }
-  //
-  // updateSpecificDiets(item) {
-  //   this.setState({specificDiets: [...item]})
-  // }
-  //
-  // updateLikeCuisines(item) {
-  //   this.setState({allowedCuisines: [...item]})
-  // }
-  //
-  // updateDontLikeCuisines(item) {
-  //   this.setState({excludedCuisines: [...item]})
-  // }
 
 
   render(){
@@ -154,17 +140,18 @@ class SearchForm extends Component {
     return (
       <div>
         <Form {...formLayout} onSubmit={this.handleSubmit}>
-{/*
+
           <GroupContainer >
             <Col span="12">
               <Input placeholder="Recipe Name" />
             </Col>
             <Col span="12">
-              <Input id="time" onChange={this.updateMaxTime.bind(this)}
+              <Input id="time"
+                onChange={this.updateMaxTime.bind(this)}
                 placeholder="Maximum Cooking Time in Minutes" />
             </Col>
           </GroupContainer>
-*/}
+
 
 {/*onChange={this.handleFieldChange} value={this.state[field]} */}
 
@@ -172,32 +159,32 @@ class SearchForm extends Component {
 
           <GroupContainer>
             <Col><Col span="12">
-              <Attribute type="Allergy" />
+              <Attribute type="Allergy" onChange={this.onChangeAllergy} />
             </Col></Col>
             <Col><Col span="12">
-              <Attribute type="Diet" />
+              <Attribute type="Diet" onChange={this.onChangeDiet} />
             </Col></Col>
           </GroupContainer>
           <br />
 
-          {/*}<GroupContainer> */}
-            <UnitedSelectField type="Ingredient" onChange={this.onChangeUnitedField}/>
-          {/*}</GroupContainer> */}
+
+          <UnitedSelectField type="Ingredient" onChange={this.onChangeUnitedField} />
+
           <br />
 
-          {/*}<GroupContainer> */}
-            <UnitedSelectField type="Cuisine" onChange={this.onChangeUnitedField}/>
-          {/*}</GroupContainer> */}
+
+          <UnitedSelectField type="Cuisine" onChange={this.onChangeUnitedField} />
+
           <br />
 
-          {/*}<GroupContainer> */}
-            <UnitedSelectField type="Course" onChange={this.onChangeUnitedField}/>
-          {/*}</GroupContainer> */}
+
+          <UnitedSelectField type="Course" onChange={this.onChangeUnitedField} />
+
           <br />
 
-          {/*}<GroupContainer> */}
-            <UnitedSelectField type="Holiday" onChange={this.onChangeUnitedField}/>
-          {/*}</GroupContainer> */}
+
+          <UnitedSelectField type="Holiday" onChange={this.onChangeUnitedField} />
+
           <br />
 
       {/*
@@ -212,29 +199,7 @@ class SearchForm extends Component {
           </GroupContainer>
 */}
 
-          {/*
-          <InputGroup size="large" {...formItemLayout}>
-            <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
-              sign={true} passedSelected={this.state.dontHaveIngredients}
-              placeholder="Ingredients you have" />
-            <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)}
-              sign={false} passedSelected={this.state.haveIngredients}
-              placeholder="Ingredients you don't have" />
-          </InputGroup>
-          */}
-{/*
 
-
-          <GroupContainer >
-            <Cuisine updateCuisines={this.updateLikeCuisines.bind(this)}
-              passedSelected={this.state.excludedCuisines} sign={true}
-              placeholder="Cuisines you like" />
-            <Cuisine updateCuisines={this.updateDontLikeCuisines.bind(this)}
-              passedSelected={this.state.allowedCuisines} sign={false}
-              placeholder="Cuisines you don't like" />
-          </GroupContainer>
-
-*/}
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes
