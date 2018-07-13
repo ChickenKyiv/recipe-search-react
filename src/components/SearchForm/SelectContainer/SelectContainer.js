@@ -20,67 +20,36 @@ class SelectContainer extends Component {
     // console.log(props.placeholder)
     this.handleChange  = this.handleChange.bind(this);
 
-    this.renderOptions = this.renderOptions.bind(this);
 
-    // this.createSelect  = this.createSelect.bind(this);
   }
 
   handleChange(items) {
     this.props.onChange(items)
   }
 
-  // createSelect (){
-  //   const options = Object.keys(this.state.list);
-  //   console.log(options)
-  // }
-
-  renderOptions(){
-
-    // this.createSelect();
-
-    // const options = Object.keys(this.state.list);
-    // console.log(options)
-    // const opts = options.map((item) => {
-    //   return (
-    //     <Select.Option key={shortid.generate()}>
-    //       {item}
-    //     </Select.Option>
-    //   )
-    // });
 
 
-    // return (<div></div>);
 
-  }
+  render() {
 
-  render(){
       const options = this.state.list;
       // console.log(this.state.list)
       const opts    = options.map((item) => {
         // console.log(item)
         return (
-          <Select.Option key={shortid.generate()}>
+          <Select.Option key={item}>
             {item}
           </Select.Option>
         )
       });
-      // console.log(opts)
+      console.log(this.props.disabled)
+
       return (
         <Select mode="multiple"
                 style={{ width: '100%' }}
                 onChange={this.handleChange}
                 placeholder={this.state.placeholder}>
-
-                {/*Object.keys(this.state.list).map(
-                  (item, index) =>
-                     <Select.Option key={shortid.generate()}>
-                       {this.state.list[index]}
-                     </Select.Option>
-                )*/}
-                {opts}
-
-
-
+              {opts}
         </Select>
       );
 

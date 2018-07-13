@@ -104,6 +104,7 @@ class Attribute extends Component {
             list={this.getAttributeData(TYPES)}
             placeholder={this.getPlaceholder(TYPES)}
             onChange={this.handleChange}
+            disabled={this.state.disabled}
              />
 
 
