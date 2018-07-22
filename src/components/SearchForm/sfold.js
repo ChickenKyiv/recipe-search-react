@@ -27,6 +27,19 @@ class SearchForm extends Component {
       formLayout: 'vertical',
       maxTime: '',
 
+      // allowedIngredients: [],
+      // excludedIngredients: [],
+      // allergies: [],
+      // specificDiets: [],
+      // allowedCuisines: [],
+      // excludedCuisines: [],
+      // allowedCourses: [],
+      // excludedCourses: [],
+      // allowedHolidays: [],
+      // excludedHolidays: [],
+
+
+      // displayFetchedRecipes: []
     }
     this.handleSubmit       = this.handleSubmit.bind(this);
     this.handleReset        = this.handleReset.bind(this);
@@ -41,7 +54,14 @@ class SearchForm extends Component {
     let n = []
     this.updateHaveIngredients(n)
     this.updateDontHaveIngredients(n)
-
+    // this.updateAllergies(n)
+    // this.updateSpecificDiets(n)
+    // this.updateLikeCuisines(n)
+    // this.updateDontLikeCuisines(n)
+    // this.updateWantCourses(n)
+    // this.updateDontWantCourses(n)
+    // this.updateWantOnHolidays(n)
+    // this.updateDontWantOnHolidays(n)
   }
 
   handleSubmit(e) {
@@ -169,12 +189,26 @@ class SearchForm extends Component {
           <UnitedSelectField type="Holiday" onChange={this.onChangeUnitedField} />
           <br />
 
+      {/*
+          <GroupContainer >
+              <Ingredient flag={true} />
+          <Ingredient updateIng={this.updateHaveIngredients.bind(this)}
+              sign={true} passedSelected={this.state.excludedIngredients}
+               />
+            <Ingredient updateIng={this.updateDontHaveIngredients.bind(this)}
+              sign={false} passedSelected={this.state.allowedIngredients}
+               />
+          </GroupContainer>
+*/}
+
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes
           </Button>
         </Form>
 
         {/*searchResults*/}
+
+
 
       </div>
     );

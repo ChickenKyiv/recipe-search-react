@@ -25,6 +25,9 @@ class Attribute extends Component {
   }
 
   handleChange(items) {
+
+    console.log(items);
+
     this.setState({ selected: [items] })
     // console.log('-----------');
     // console.log(items);
@@ -34,20 +37,23 @@ class Attribute extends Component {
 
 
 
-    // when sign is underfined - then our field is single, and don't have an evil twin
-    if ( this.state.sign !== undefined ){
-    //   // console.log(this.state.sign)
-    //@TODO i don't like how it looks
-      this.props.onChange(items, this.state.sign, this.props.type);
-    }
 
+
+//-----------
+    // when sign is underfined - then our field is single, and don't have an evil twin
+    // if ( this.state.sign !== undefined ){
+    // //   // console.log(this.state.sign)
+    // //@TODO i don't like how it looks
+    //   this.props.onChange(items, this.state.sign, this.props.type);
+    // }
+//-----------
 
     //
   }
 
 
   // @TODO maybe pass this at constructor, so render will looks clearer?
-
+//@TODO move label to a separated place
   getAttributeData(type){
     // this.props.type
     if (this.props.type == 'Allergy') {
@@ -66,22 +72,23 @@ class Attribute extends Component {
       return gf.getHolidays();
     }
   }
-
+  
+//@TODO move label to a separated place
   getPlaceholder(type){
     if (this.props.type == 'Allergy') {
       return "Allergies";
     }
     if (this.props.type == 'Diet') {
-      return "Specific Diets";
+      return "Specify Diets";
     }
     if (this.props.type == 'Cuisine') {
-      return "Specific ";
+      return "Specify Cuisine";
     }
     if (this.props.type == 'Course') {
-      return "Specifi";
+      return "Specify Course";
     }
     if (this.props.type == 'Holiday') {
-      return "Spec";
+      return "Specify Holiday";
     }
   }
   // renderComponent

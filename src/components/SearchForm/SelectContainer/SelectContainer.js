@@ -42,7 +42,8 @@ class SelectContainer extends Component {
           </Select.Option>
         )
       });
-      console.log(this.props.disabled)
+
+      // console.log(this.props.disabled)
 
       return (
         <Select mode="multiple"
