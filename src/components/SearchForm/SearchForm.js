@@ -45,46 +45,7 @@ class SearchForm extends Component {
   }
 
   handleSubmit(e) {
-    if( this.state.haveIngredients.length > 0 ){
-      axios.get(process.env.REACT_APP_API_URL, {
-        headers: {"Access-Control-Allow-Origin": "*"},
-        params: {
-          q: this.state.haveIngredients,
-          app_id: process.env.REACT_APP_API_ID, //remove if not required
-          app_key: process.env.REACT_APP_API_KEY, //remove if not required
-          from: start,    //index starting point
-          to: start+count,//index end point
-          diet: this.state.specificDiets,
-          health: this.state.allergies,
-          excluded: this.state.dontHaveIngredients
-        },
-        paramsSerializer: function(params) {//to pass arrays
-          return qs.stringify(params, {arrayFormat: 'repeat'})
-        },
-      }).then(response => {
-        console.log(response.data.hits)
-        this.setState({displayFetchedRecipes: response.data.hits})
-      })
-      .catch(error => console.log(error))
-    }
-    else {
-      alert("Please select atleast one Ingredient")
-    }
-     // this.handleReset() //does not work
     e.preventDefault()
-        // update as per fieldname in database
-    //   time: this.state.maxTime,
-    //   includeIngredients: this.state.haveIngredients,
-    //   excludeIngredients: this.state.dontHaveIngredients,
-    //   allergy: this.state.allergies,
-    //   diet: this.state.specificDiets,
-    //   likeCuisines: this.state.likeCuisines,
-    //   ignoreCuisines: this.state.dontLikeCuisines,
-    //   wantCourses: this.state.wantCourses,
-    //   excludeCourses: this.state.dontWantCourses,
-    //   wantdays: this.state.wantOnHolidays,
-    //   excludedays: this.state.dontWantOnHolidays,
-
   }
 
   onChangeUnitedField(items, type){
@@ -101,6 +62,8 @@ class SearchForm extends Component {
     this.setState({maxTime: time})
   }
 
+
+// @TODO move to a separated Test components. not like that is placed here
   // searchResults({ isNotEmpty }) {
   //   return (
   //     <div>
