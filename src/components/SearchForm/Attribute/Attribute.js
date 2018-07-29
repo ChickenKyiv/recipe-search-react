@@ -23,12 +23,16 @@ class Attribute extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
 
-     // console.log(gf.getCuisines())
-     console.log(gf.getDiets())
-     console.log(gf.getCourses())
-     console.log(gf.getHolidays())
-    // console.log(gf);
-  }
+ 
+    console.log(gf.getAttribute('allergy'));
+    console.log(gf.getAttribute('diets'));
+
+      console.log(gf.getAttribute('cuisine'));
+
+      console.log(gf.getAttribute('course'));
+
+      console.log(gf.getAttribute('holidays'));
+ }
 
   handleChange(items) {
 
@@ -62,20 +66,21 @@ class Attribute extends Component {
 //@TODO move label to a separated place
   getAttributeData(type){
     // this.props.type
+
     if (this.props.type == 'Allergy') {
-      return gf.getAllergies();
+      return gf.getAttribute('allergy');
     }
     if (this.props.type == 'Diet') {
-      return gf.getDiets();
+      // return gf.getAttribute('diets');
     }
     if (this.props.type == 'Cuisine') {
-      return gf.getCuisines();
+      return gf.getAttribute('cuisine');
     }
     if (this.props.type == 'Course') {
-      return gf.getCourses();
+      return gf.getAttribute('course');
     }
     if (this.props.type == 'Holiday') {
-      return gf.getHolidays();
+      return gf.getAttribute('holidays');
     }
   }
   
