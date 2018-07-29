@@ -4,9 +4,8 @@ import {
   Col
 } from 'antd';
 //@TODO move here call from gf
-import gf from '@groceristar/groceristar-fetch';
+import * as data from '@groceristar/groceristar-fetch';
 // @TODO add test if list that passed isset or pass instead of it - null or undefined
-
 
 
 import SelectContainer from '../SelectContainer/SelectContainer'
@@ -23,15 +22,16 @@ class Attribute extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
 
- 
-    console.log(gf.getAttribute('allergy'));
-    console.log(gf.getAttribute('diets'));
+ console.log(data.getAttribute('allergy'));
+// process.exit(1);
+    // console.log(data.getAttribute('allergy'));
+    // console.log(data.getAttribute('diets'));
 
-      console.log(gf.getAttribute('cuisine'));
+    //   console.log(data.getAttribute('cuisine'));
 
-      console.log(gf.getAttribute('course'));
+    //   console.log(data.getAttribute('course'));
 
-      console.log(gf.getAttribute('holidays'));
+    //   console.log(data.getAttribute('holidays'));
  }
 
   handleChange(items) {
@@ -68,19 +68,19 @@ class Attribute extends Component {
     // this.props.type
 
     if (this.props.type == 'Allergy') {
-      return gf.getAttribute('allergy');
+      return data.getAttribute('allergy');
     }
     if (this.props.type == 'Diet') {
       // return gf.getAttribute('diets');
     }
     if (this.props.type == 'Cuisine') {
-      return gf.getAttribute('cuisine');
+      return data.getAttribute('cuisine');
     }
     if (this.props.type == 'Course') {
-      return gf.getAttribute('course');
+      return data.getAttribute('course');
     }
     if (this.props.type == 'Holiday') {
-      return gf.getAttribute('holidays');
+      return data.getAttribute('holidays');
     }
   }
   
