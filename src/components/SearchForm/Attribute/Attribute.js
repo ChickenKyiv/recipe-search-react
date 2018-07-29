@@ -7,6 +7,8 @@ import {
 import gf from '@groceristar/groceristar-fetch';
 // @TODO add test if list that passed isset or pass instead of it - null or undefined
 
+
+
 import SelectContainer from '../SelectContainer/SelectContainer'
 
 class Attribute extends Component {
@@ -21,7 +23,11 @@ class Attribute extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
 
-    // console.log(gf.getAllergies())
+     // console.log(gf.getCuisines())
+     console.log(gf.getDiets())
+     console.log(gf.getCourses())
+     console.log(gf.getHolidays())
+    // console.log(gf);
   }
 
   handleChange(items) {
@@ -66,7 +72,7 @@ class Attribute extends Component {
       return gf.getCuisines();
     }
     if (this.props.type == 'Course') {
-      return gf.getCuisines();
+      return gf.getCourses();
     }
     if (this.props.type == 'Holiday') {
       return gf.getHolidays();
