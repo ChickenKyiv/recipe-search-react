@@ -57,9 +57,9 @@
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.7.3.tgz#4240c5eee8af86843452af7497ac2808be04a77d"
 
-"@groceristar/groceristar-fetch@^1.1.12":
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/@groceristar/groceristar-fetch/-/groceristar-fetch-1.1.12.tgz#1d6620f5eecba5e19eab8c443d442248f279de0f"
+"@groceristar/groceristar-fetch@^1.1.13":
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/@groceristar/groceristar-fetch/-/groceristar-fetch-1.1.13.tgz#d9d1c3d6d756635fa31f7d2057060f061ba6d761"
   dependencies:
     fs "0.0.1-security"
     underscore "^1.9.1"
