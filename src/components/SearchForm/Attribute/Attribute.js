@@ -4,7 +4,7 @@ import {
   Col
 } from 'antd';
 //@TODO move here call from gf
-import * as data from '@groceristar/groceristar-fetch';
+import data from '@groceristar/groceristar-fetch/search';
 // @TODO add test if list that passed isset or pass instead of it - null or undefined
 
 
@@ -22,8 +22,8 @@ class Attribute extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
 
-console.log(data.zaza())
- // console.log(data.getAttribute('allergy'));
+// console.log(data.zaza())
+ console.log(data.getAttribute('allergies'));
 // process.exit(1);
     // console.log(data.getAttribute('allergy'));
     // console.log(data.getAttribute('diets'));
@@ -69,16 +69,16 @@ console.log(data.zaza())
     // this.props.type
 
     if (this.props.type == 'Allergy') {
-      return data.getAttribute('allergy');
+      return data.getAttribute('allergies');
     }
     if (this.props.type == 'Diet') {
-      // return gf.getAttribute('diets');
+      return data.getAttribute('diets');
     }
     if (this.props.type == 'Cuisine') {
-      return data.getAttribute('cuisine');
+      return data.getAttribute('cuisines');
     }
     if (this.props.type == 'Course') {
-      return data.getAttribute('course');
+      return data.getAttribute('courses');
     }
     if (this.props.type == 'Holiday') {
       return data.getAttribute('holidays');
