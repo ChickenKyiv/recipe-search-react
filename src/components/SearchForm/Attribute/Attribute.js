@@ -23,7 +23,7 @@ class Attribute extends Component {
     this.handleChange = this.handleChange.bind(this);
 
 // console.log(data.zaza())
- console.log(data.getAttribute('allergies'));
+ // console.log(data.getAttribute('allergies'));
 // process.exit(1);
     // console.log(data.getAttribute('allergy'));
     // console.log(data.getAttribute('diets'));
