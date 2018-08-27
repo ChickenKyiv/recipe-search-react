@@ -7,7 +7,7 @@
     "antd": "^3.8.3",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
-    "final-form": "^4.9.1",
+    "final-form": "^4.10.0",
     "qs": "^6.5.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
