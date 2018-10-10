@@ -33,7 +33,7 @@ Have tests. Have form elements separated we
 ![Search DB Schema](https://github.com/ChickenKyiv/database-visuals/blob/master/RecipeAPI_Search_Schema%20%20%20SqlDBM.png)
 
 
-* [Releases Plan][https://chickenkyiv.gitbook.io/documentation/search-api-releases]
+[Releases Plan][https://chickenkyiv.github.io/documentation/docs/recipe-api-server-releases-plan/recipe-api-server-releases-plan.html]
 
 
 ## Table of Contents
