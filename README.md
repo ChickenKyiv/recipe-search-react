@@ -10,7 +10,9 @@ pages
 @TODO
 on results page implement some filtration panel. similar to masonry logic
 https://codepen.io/desandro/pen/wfaGu
+
 https://codepen.io/desandro/pen/mCdbD
+
 https://codepen.io/desandro/pen/Jfbpc
 
 #### Search Form
