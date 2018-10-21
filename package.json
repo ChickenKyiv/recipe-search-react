@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@groceristar/groceristar-fetch": "^1.1.25",
+    "@groceristar/groceristar-fetch": "^1.1.26",
     "antd": "^3.10.1",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
