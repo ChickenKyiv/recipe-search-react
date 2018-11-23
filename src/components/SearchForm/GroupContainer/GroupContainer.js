@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-
-  Input,
-
+  Input
 } from 'antd';
 
 const InputGroup = Input.Group;
@@ -18,9 +16,9 @@ const GroupContainer = (props) => {
   //   wrapperCol: { span: 12 }
   // };
 
-const {
-  ...attributes
-} = props
+  const {
+    ...attributes
+  } = props
 
 
   return (

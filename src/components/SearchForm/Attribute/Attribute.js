@@ -84,7 +84,7 @@ class Attribute extends Component {
       return data.getAttribute('holidays');
     }
   }
-  
+
 //@TODO move label to a separated place
   getPlaceholder(type){
     if (this.props.type == 'Allergy') {
@@ -108,7 +108,7 @@ class Attribute extends Component {
   render(){
     // console.log('DDDDDDDDDDDDDDDDD');
     // console.log(this.state.disabled)
-
+ // move to selectors?
     const TYPES = {
       Allergy: 'Allergy',
       Course : 'Course',
