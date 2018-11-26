@@ -6,6 +6,14 @@ import {
   Button
 } from 'antd';
 
+
+import {
+  getGroceryById,
+  getFullGrocery,
+  getGroceryDataFromId
+} from "./selectors/selector.js";
+
+
 import Attribute  from './Attribute/Attribute'
 import Ingredient from './Ingredient/Ingredient'
 

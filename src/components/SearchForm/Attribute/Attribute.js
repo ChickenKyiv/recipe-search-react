@@ -3,9 +3,15 @@ import {
   // Select,
   Col
 } from 'antd';
+
 //@TODO move here call from gf
-import data from '@groceristar/groceristar-fetch/search';
+// import data from '@groceristar/groceristar-fetch/search';
 // @TODO add test if list that passed isset or pass instead of it - null or undefined
+
+import {
+  getAttribute,
+  getPlaceholder
+} from "./selectors/selector.js";
 
 
 import SelectContainer from '../SelectContainer/SelectContainer'
@@ -69,40 +75,40 @@ class Attribute extends Component {
     // this.props.type
 
     if (this.props.type == 'Allergy') {
-      return data.getAttribute('allergies');
+      return getAttribute('allergies');
     }
     if (this.props.type == 'Diet') {
-      return data.getAttribute('diets');
+      return getAttribute('diets');
     }
     if (this.props.type == 'Cuisine') {
-      return data.getAttribute('cuisines');
+      return getAttribute('cuisines');
     }
     if (this.props.type == 'Course') {
-      return data.getAttribute('courses');
+      return getAttribute('courses');
     }
     if (this.props.type == 'Holiday') {
-      return data.getAttribute('holidays');
+      return getAttribute('holidays');
     }
   }
 
 //@TODO move label to a separated place
-  getPlaceholder(type){
-    if (this.props.type == 'Allergy') {
-      return "Allergies";
-    }
-    if (this.props.type == 'Diet') {
-      return "Specify Diets";
-    }
-    if (this.props.type == 'Cuisine') {
-      return "Specify Cuisine";
-    }
-    if (this.props.type == 'Course') {
-      return "Specify Course";
-    }
-    if (this.props.type == 'Holiday') {
-      return "Specify Holiday";
-    }
-  }
+  // getPlaceholder(type){
+  //   if (this.props.type == 'Allergy') {
+  //     return "Allergies";
+  //   }
+  //   if (this.props.type == 'Diet') {
+  //     return "Specify Diets";
+  //   }
+  //   if (this.props.type == 'Cuisine') {
+  //     return "Specify Cuisine";
+  //   }
+  //   if (this.props.type == 'Course') {
+  //     return "Specify Course";
+  //   }
+  //   if (this.props.type == 'Holiday') {
+  //     return "Specify Holiday";
+  //   }
+  // }
   // renderComponent
 
   render(){
@@ -121,7 +127,7 @@ class Attribute extends Component {
 
         <SelectContainer
             list={this.getAttributeData(TYPES)}
-            placeholder={this.getPlaceholder(TYPES)}
+            placeholder={getPlaceholder(TYPES)}
             onChange={this.handleChange}
             disabled={this.state.disabled}
              />
