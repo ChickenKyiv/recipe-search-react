@@ -8,9 +8,8 @@ import {
 
 
 import {
-  getGroceryById,
-  getFullGrocery,
-  getGroceryDataFromId
+  getAttribute,
+  getPlaceholder
 } from "./selectors/selector.js";
 
 
