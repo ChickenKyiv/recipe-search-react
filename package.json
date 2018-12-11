@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@groceristar/groceristar-fetch": "^1.1.33",
-    "antd": "^3.11.1",
+    "antd": "^3.11.2",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "final-form": "^4.11.0",
