@@ -22,7 +22,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "enzyme": "^3.7.0"
+    "enzyme": "^3.8.0"
   },
   "browserslist": [
     ">0.2%",
