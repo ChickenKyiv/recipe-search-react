@@ -10,7 +10,7 @@
     "final-form": "^4.11.0",
     "qs": "^6.6.0",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react-dom": "^16.7.0",
     "react-scripts": "2.1.1",
     "react-select": "^2.1.2",
     "shortid": "^2.2.14"
