@@ -5,13 +5,13 @@
   "dependencies": {
     "@groceristar/groceristar-fetch": "^1.1.33",
     "@groceristar/select-component": "^1.0.1",
-    "antd": "^3.11.1",
+    "antd": "^3.11.2",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "final-form": "^4.11.0",
     "qs": "^6.6.0",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react-dom": "^16.7.0",
     "react-scripts": "2.1.1",
     "react-select": "^2.1.2",
     "shortid": "^2.2.14"
@@ -23,7 +23,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "enzyme": "^3.7.0"
+    "enzyme": "^3.8.0"
   },
   "browserslist": [
     ">0.2%",
