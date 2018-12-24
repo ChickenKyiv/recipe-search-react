@@ -20,6 +20,9 @@ import axios      from 'axios'
 import Test       from './Test/Test'
 import qs         from 'qs'
 
+import { GroupedElements } from '@groceristar/select-component';
+
+
 import GroupContainer    from './GroupContainer/GroupContainer';
 import UnitedSelectField from './SelectContainer/UnitedSelectField';
 
