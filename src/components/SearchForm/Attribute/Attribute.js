@@ -11,7 +11,7 @@ import {
 import {
   getAttribute,
   getPlaceholder
-} from "./selectors/selector.js";
+} from "../../../selectors/selector";
 
 
 import SelectContainer from '../SelectContainer/SelectContainer'
