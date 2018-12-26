@@ -1,4 +1,4 @@
-import { search } from "@groceristar/groceristar-fetch";
+import { search, groceristar } from "@groceristar/groceristar-fetch";
 
 // console.log(groceristar);
 
@@ -6,6 +6,7 @@ import { search } from "@groceristar/groceristar-fetch";
 //       return mealCalendar.getDishByWeek(randomWeek);
 //   }
 //
+
 function getAttribute( name ) {
   return search.getAttribute(name);
 }
@@ -13,6 +14,11 @@ function getAttribute( name ) {
 function getPlaceholder(attribute){
   return search.getPlaceholder(attribute);
 }
+
+function getIngredients(){
+  return groceristar.getIngredients();
+}
+
 // function getFullGrocery( name ) {
 //   return groceristar.getGroceryByNameWithDepAndIng(name);
 // }
@@ -31,4 +37,4 @@ function getPlaceholder(attribute){
 // }
 
 
-export { getAttribute, getPlaceholder }
+export { getAttribute, getPlaceholder, getIngredients }
