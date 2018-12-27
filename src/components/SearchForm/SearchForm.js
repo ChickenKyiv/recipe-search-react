@@ -13,6 +13,9 @@ import {
 } from "../../selectors/selector";
 
 
+
+
+
 import Attribute  from './Attribute/Attribute'
 import Ingredient from './Ingredient/Ingredient'
 
@@ -27,7 +30,10 @@ import qs         from 'qs'
 import { GroupedElements } from '@groceristar/select-component';
 
 
-import GroupContainer    from './GroupContainer/GroupContainer';
+// import GroupContainer    from './GroupContainer/GroupContainer';
+
+
+
 import UnitedSelectField from './SelectContainer/UnitedSelectField';
 
 
@@ -139,6 +145,8 @@ class SearchForm extends Component {
           */}
 
 
+
+          {/*
           <UnitedSelectField type="Cuisine" onChange={this.onChangeUnitedField} />
           <br />
 
@@ -149,6 +157,12 @@ class SearchForm extends Component {
 
           <UnitedSelectField type="Holiday" onChange={this.onChangeUnitedField} />
           <br />
+          */}
+
+
+{/*
+          <GroupedElements type={false} options={} />
+        */}
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes

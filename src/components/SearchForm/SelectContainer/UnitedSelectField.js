@@ -3,8 +3,31 @@ import { Col } from 'antd';
 
 import Attribute      from '../Attribute/Attribute'
 import Ingredient     from '../Ingredient/Ingredient'
+
+
+import { GroupedElements } from '@groceristar/select-component';
+
+
 import GroupContainer from '../GroupContainer/GroupContainer'
 
+
+// @TODO or it can be if ingredient => Ingredient else Attribute..
+
+
+import {
+  getAttribute,
+  getPlaceholder
+} from "../../selectors/selector";
+
+
+const _TYPES =  {
+  Allergy   : Attribute,
+  Diet      : Attribute,
+  Course    : Attribute,
+  Cuisine   : Attribute,
+  Holiday   : Attribute,
+  Ingredient: Ingredient
+};
 
 class UnitedSelectField extends Component {
 

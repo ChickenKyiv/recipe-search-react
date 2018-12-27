@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import { Col } from 'antd';
 
 import gf from '@groceristar/groceristar-fetch';
+
+
+
+import {
+  getAttribute,
+  getPlaceholder
+} from "../../../selectors/selector";
+
+import { GroupedElements } from '@groceristar/select-component';
+
+
+
 import SelectContainer from '../SelectContainer/SelectContainer'
 
 
@@ -46,6 +58,8 @@ class Ingredient extends Component {
     const placeholder = () => {
       return (this.state.flag) ? "Ingredients you have" : "Ingredients you don't have";
     }
+
+
 
     return (
 

@@ -14,7 +14,19 @@ import {
 } from "../../../selectors/selector";
 
 
+const _TYPES = {
+  Allergy: 'Allergy',
+  Course : 'Course',
+  Cuisine: 'Cuisine',
+  Diet   : 'Diet',
+  Holiday: 'Holiday'
+}
+
 import SelectContainer from '../SelectContainer/SelectContainer'
+
+import { GroupedElements } from '@groceristar/select-component';
+
+
 
 class Attribute extends Component {
   constructor(props) {
@@ -69,6 +81,8 @@ class Attribute extends Component {
   }
 
 
+
+
   // @TODO maybe pass this at constructor, so render will looks clearer?
 //@TODO move label to a separated place
   getAttributeData(type){
@@ -91,6 +105,9 @@ class Attribute extends Component {
     }
   }
 
+
+
+
 //@TODO move label to a separated place
   // getPlaceholder(type){
   //   if (this.props.type == 'Allergy') {
@@ -111,17 +128,13 @@ class Attribute extends Component {
   // }
   // renderComponent
 
+
+
   render(){
     // console.log('DDDDDDDDDDDDDDDDD');
     // console.log(this.state.disabled)
  // move to selectors?
-    const TYPES = {
-      Allergy: 'Allergy',
-      Course : 'Course',
-      Cuisine: 'Cuisine',
-      Diet   : 'Diet',
-      Holiday: 'Holiday'
-    }
+
 
     return (
 
