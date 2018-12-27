@@ -7,17 +7,28 @@ import { search, groceristar } from "@groceristar/groceristar-fetch";
 //   }
 //
 
-function getAttribute( name ) {
-  return search.getAttribute(name);
+// this function will
+function getAttribute( attribute ) {
+  return search.getAttribute(attribute);
 }
 
-function getPlaceholder(attribute){
+function getPlaceholder( attribute ){
   return search.getPlaceholder(attribute);
 }
 
 function getIngredients(){
   return groceristar.getIngredients();
 }
+
+// @TODO i want to put types into one spot instead of having it at different places with different versions, etc.
+// const _TYPES =  {
+//   Allergy   : Attribute,
+//   Diet      : Attribute,
+//   Course    : Attribute,
+//   Cuisine   : Attribute,
+//   Holiday   : Attribute,
+//   Ingredient: Ingredient
+// };
 
 // function getFullGrocery( name ) {
 //   return groceristar.getGroceryByNameWithDepAndIng(name);
@@ -37,4 +48,6 @@ function getIngredients(){
 // }
 
 
-export { getAttribute, getPlaceholder, getIngredients }
+export { getAttribute, getPlaceholder, getIngredients,
+  // _TYPES 
+}

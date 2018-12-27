@@ -16,18 +16,19 @@ import GroupContainer from '../GroupContainer/GroupContainer'
 
 import {
   getAttribute,
-  getPlaceholder
-} from "../../selectors/selector";
+  getPlaceholder,
+  // _TYPES
+} from "../../../selectors/selector";
 
-
-const _TYPES =  {
-  Allergy   : Attribute,
-  Diet      : Attribute,
-  Course    : Attribute,
-  Cuisine   : Attribute,
-  Holiday   : Attribute,
-  Ingredient: Ingredient
-};
+//
+// const _TYPES =  {
+//   Allergy   : Attribute,
+//   Diet      : Attribute,
+//   Course    : Attribute,
+//   Cuisine   : Attribute,
+//   Holiday   : Attribute,
+//   Ingredient: Ingredient
+// };
 
 class UnitedSelectField extends Component {
 

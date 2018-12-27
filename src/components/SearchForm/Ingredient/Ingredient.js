@@ -7,7 +7,8 @@ import gf from '@groceristar/groceristar-fetch';
 
 import {
   getAttribute,
-  getPlaceholder
+  getPlaceholder,
+  getIngredients
 } from "../../../selectors/selector";
 
 import { GroupedElements } from '@groceristar/select-component';
@@ -60,12 +61,18 @@ class Ingredient extends Component {
     }
 
 
+    // @TODO compare placeholder with getPlaceholder data - because we can have not a same results.
+
+    const plhldr  = getPlaceholder('ingredients', false);
+    // const plhldr  = getPlaceholder('ingredients', true);
+    const options = getIngredients()
+
 
     return (
 
         <SelectContainer
-          list={gf.getIngredients()}
-          placeholder={placeholder()}
+          list={getIngredients}
+          placeholder={plhldr}
           onChange={this.handleChange} />
 
     );

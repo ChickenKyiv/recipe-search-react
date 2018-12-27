@@ -9,7 +9,8 @@ import {
 
 import {
   getAttribute,
-  getPlaceholder
+  getPlaceholder,
+  _TYPES
 } from "../../selectors/selector";
 
 
@@ -41,6 +42,18 @@ import UnitedSelectField from './SelectContainer/UnitedSelectField';
 
 
 const start = 0, count = 5;
+
+const options = [
+  { value: 'chocolate',  label: 'Chocolate'},
+  { value: 'strawberry', label: 'Strawberry'},
+  { value: 'vanilla',    label: 'Vanilla'  },
+  { value: 'vanilla-ice',    label: 'Vanilla Ice'},
+  { value: 'vanilla latte',    label: 'Vanilla Latte'},
+  { value: 'vanilla Chino',    label: 'Vanilla Chino'},
+  { value: 'vanilla double',    label: 'Vanilla Double' }
+];
+
+
 
 class SearchForm extends Component {
 
@@ -104,6 +117,8 @@ class SearchForm extends Component {
 
     const results = (this.state.displayFetchedRecipes) ? true : false;
 
+    console.log(getAttribute('holidays'))
+
     return (
       <div>
         <Form {...formLayout} onSubmit={this.handleSubmit}>
@@ -160,9 +175,10 @@ class SearchForm extends Component {
           */}
 
 
-{/*
-          <GroupedElements type={false} options={} />
-        */}
+
+
+          <GroupedElements type={false} options={options} />
+          {/*<GroupedElements type={false} options={getAttribute('holidays')} /> */}
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes
