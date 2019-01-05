@@ -10,7 +10,10 @@ import {
 import {
   getAttribute,
   getPlaceholder,
-  _TYPES
+  _TYPES,
+  getIngredients,
+  toOpt,
+  toOptAntD
 } from "../../selectors/selector";
 
 
@@ -52,6 +55,12 @@ const options = [
   { value: 'vanilla Chino',    label: 'Vanilla Chino'},
   { value: 'vanilla double',    label: 'Vanilla Double' }
 ];
+
+
+const ings = toOpt( getIngredients() )
+const holidays = toOpt( getAttribute('holidays') )
+// console.log()
+// console.log();
 
 
 
@@ -178,6 +187,12 @@ class SearchForm extends Component {
 
 
           <GroupedElements type={false} options={options} />
+
+          <GroupedElements type={false} options={options} />
+
+          <GroupedElements type={false} options={options} />
+
+
           {/*<GroupedElements type={false} options={getAttribute('holidays')} /> */}
 
           <Button type="primary" htmlType="submit" icon="search">

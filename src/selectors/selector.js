@@ -20,6 +20,14 @@ function getIngredients(){
   return groceristar.getIngredients();
 }
 
+function toOpt(array){
+  return search.toOpt(array);
+}
+
+function toOptAntD(array) {
+  return search.toOptAntD(array);
+}
+
 // @TODO i want to put types into one spot instead of having it at different places with different versions, etc.
 // const _TYPES =  {
 //   Allergy   : Attribute,
@@ -49,5 +57,6 @@ function getIngredients(){
 
 
 export { getAttribute, getPlaceholder, getIngredients,
-  // _TYPES 
+  toOpt, toOptAntD
+  // _TYPES
 }
