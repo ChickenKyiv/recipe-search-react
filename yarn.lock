@@ -924,10 +924,10 @@
     lodash "^4.17.10"
     uuid "3.3.2"
 
-"@groceristar/select-component@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@groceristar/select-component/-/select-component-1.0.4.tgz#355c805fdaf3ee0ce5be01387f85c985ff505380"
-  integrity sha512-XmjnrN75uzLvaOafOQbZZ93Esf1WlvumvkYvYFTJIQOZLYu/2yfWqYoF76nxm87b6SymW916rrRHrEVHKHNs8A==
+"@groceristar/select-component@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@groceristar/select-component/-/select-component-1.0.6.tgz#c714a81ec6bcf0a8d74a621e36f26dec2a126732"
+  integrity sha512-wGjt1raixCsoWc0SdcPbsQ7QBa2VDhXXpT1tyS8qvigF8yV7cjTDRjpUpTkJZDqXrziPlubue1NiSy/BxqdYlg==
   dependencies:
     antd "^3.11.2"
     react-select "^2.1.2"
