@@ -7,11 +7,16 @@ import {
 } from 'antd';
 
 
+
+
+import { GroupedElements } from '@groceristar/select-component';
+
+
 import {
-  getAttribute,
+  getFormattedAttributes,
   getPlaceholder,
   _TYPES,
-  getIngredients,
+  getFormattedIngredients,
   toOpt,
   toOptAntD
 } from "../../selectors/selector";
@@ -29,9 +34,6 @@ import qs         from 'qs'
 
 
 
-
-
-import { GroupedElements } from '@groceristar/select-component';
 
 
 // import GroupContainer    from './GroupContainer/GroupContainer';
@@ -57,10 +59,11 @@ const options = [
 ];
 
 
-const ings = toOpt( getIngredients() )
-const holidays = toOpt( getAttribute('holidays') )
-// console.log()
-// console.log();
+const ings = toOptAntD( getFormattedIngredients() )
+const holidays = toOptAntD( getFormattedAttributes('holidays') )
+
+console.log(ings)
+console.log(holidays);
 
 
 
@@ -126,7 +129,7 @@ class SearchForm extends Component {
 
     const results = (this.state.displayFetchedRecipes) ? true : false;
 
-    console.log(getAttribute('holidays'))
+    // console.log(getAttribute('holidays'))
 
     return (
       <div>

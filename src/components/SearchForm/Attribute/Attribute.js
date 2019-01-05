@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import {
   // Select,
@@ -6,7 +7,7 @@ import {
 
 
 import {
-  getAttribute,
+  getFormattedAttributes,
   getPlaceholder,
   // _TYPES
 } from "../../../selectors/selector";
@@ -89,7 +90,7 @@ class Attribute extends Component {
     // console.log(this.state.disabled)
  // move to selectors?
 
-    const options = getAttribute(_TYPES);
+    const options = getFormattedAttributes(_TYPES);
     const plhdr   = getPlaceholder(_TYPES);
 
     return (

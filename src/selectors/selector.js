@@ -8,16 +8,16 @@ import { search, groceristar } from "@groceristar/groceristar-fetch";
 //
 
 // this function will
-function getAttribute( attribute ) {
-  return search.getAttribute(attribute);
+function getFormattedAttributes( attribute ) {
+  return search.getFormattedAttributes(attribute);
 }
 
 function getPlaceholder( attribute ){
   return search.getPlaceholder(attribute);
 }
 
-function getIngredients(){
-  return groceristar.getIngredients();
+function getFormattedIngredients(){
+  return groceristar.getFormattedIngredients();
 }
 
 function toOpt(array){
@@ -56,7 +56,12 @@ function toOptAntD(array) {
 // }
 
 
-export { getAttribute, getPlaceholder, getIngredients,
-  toOpt, toOptAntD
+export {
+  // getAttribute,
+  getPlaceholder,
+  // getIngredients,
+  toOpt, toOptAntD,
+  getFormattedAttributes,
+  getFormattedIngredients
   // _TYPES
 }

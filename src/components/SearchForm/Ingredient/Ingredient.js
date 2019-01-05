@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Col } from 'antd';
 
-import gf from '@groceristar/groceristar-fetch';
-
+// import gf from '@groceristar/groceristar-fetch';
+// getFormattedAttributes
 
 
 import {
   getAttribute,
   getPlaceholder,
-  getIngredients
+  getFormattedIngredients
 } from "../../../selectors/selector";
 
 import { GroupedElements } from '@groceristar/select-component';
@@ -65,13 +65,13 @@ class Ingredient extends Component {
 
     const plhldr  = getPlaceholder('ingredients', false);
     // const plhldr  = getPlaceholder('ingredients', true);
-    const options = getIngredients()
+    const options = getFormattedIngredients()
 
 
     return (
 
         <SelectContainer
-          list={getIngredients}
+          list={getFormattedIngredients}
           placeholder={plhldr}
           onChange={this.handleChange} />
 
