@@ -10,6 +10,8 @@ import {
 
 
 
+
+// @TODO we have an issue with GroupedElements, because we're passing same array twice
 import { GroupedElements } from '@groceristar/select-component';
 
 
@@ -20,10 +22,7 @@ import {
   getFormattedIngredients,
   toOpt,
   toOptAntD
-} from "../../selectors/selector";
-
-
-
+} from "../../selectors/selector"
 
 
 import Attribute  from './Attribute/Attribute'
@@ -49,22 +48,22 @@ import UnitedSelectField from './SelectContainer/UnitedSelectField';
 
 const start = 0, count = 5;
 
-const options = [
-  { value: 'chocolate',  label: 'Chocolate'},
-  { value: 'strawberry', label: 'Strawberry'},
-  { value: 'vanilla',    label: 'Vanilla'  },
-  { value: 'vanilla-ice',    label: 'Vanilla Ice'},
-  { value: 'vanilla latte',    label: 'Vanilla Latte'},
-  { value: 'vanilla Chino',    label: 'Vanilla Chino'},
-  { value: 'vanilla double',    label: 'Vanilla Double' }
-];
-
-
-const ings = toOptAntD( getFormattedIngredients() )
-const holidays = toOptAntD( getFormattedAttributes('holidays') )
-
-console.log(ings)
-console.log(holidays);
+// const options = [
+//   { value: 'chocolate',  label: 'Chocolate'},
+//   { value: 'strawberry', label: 'Strawberry'},
+//   { value: 'vanilla',    label: 'Vanilla'  },
+//   { value: 'vanilla-ice',    label: 'Vanilla Ice'},
+//   { value: 'vanilla latte',    label: 'Vanilla Latte'},
+//   { value: 'vanilla Chino',    label: 'Vanilla Chino'},
+//   { value: 'vanilla double',    label: 'Vanilla Double' }
+// ];
+//
+//
+// const ings = toOptAntD( getFormattedIngredients() )
+// const holidays = toOptAntD( getFormattedAttributes('holidays') )
+//
+// console.log(ings)
+// console.log(holidays);
 
 
 
@@ -132,6 +131,10 @@ class SearchForm extends Component {
 
     // console.log(getAttribute('holidays'))
 
+    const ingredientsData = toOptAntD( getFormattedIngredients() );
+    const attributeData   = toOptAntD( getFormattedAttributes('holidays') );
+    const attributeData2  = toOptAntD( getFormattedAttributes('diets') );
+
     return (
       <div>
         <Form {...formLayout} onSubmit={this.handleSubmit}>
@@ -190,11 +193,11 @@ class SearchForm extends Component {
 
 
 
-          <GroupedElements type={false} options={options} />
+          <GroupedElements type={false} options={ingredientsData} />
 
-          <GroupedElements type={false} options={options} />
+          <GroupedElements type={false} options={attributeData} />
 
-          <GroupedElements type={false} options={options} />
+          <GroupedElements type={false} options={attributeData2} />
 
 
           {/*<GroupedElements type={false} options={getAttribute('holidays')} /> */}

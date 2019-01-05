@@ -17,7 +17,7 @@ function getPlaceholder( attribute ){
 }
 
 function getFormattedIngredients(){
-  return groceristar.getFormattedIngredients();
+  return search.getFormattedIngredients();
 }
 
 function toOpt(array){
