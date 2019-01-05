@@ -6,7 +6,7 @@ const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
 
 
 
-class SearchForm extends Component {
+class SearchView extends Component {
   render(){
     return(
       <div>
@@ -16,3 +16,5 @@ class SearchForm extends Component {
     );
   }
 }
+
+export default SearchView

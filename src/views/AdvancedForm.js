@@ -81,6 +81,4 @@ class AdvancedSearchForm extends React.Component {
   }
 }
 
-
-
-const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
+export default AdvancedSearchForm;
