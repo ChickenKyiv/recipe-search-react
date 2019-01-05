@@ -131,9 +131,19 @@ class SearchForm extends Component {
 
     // console.log(getAttribute('holidays'))
 
-    const ingredientsData = toOptAntD( getFormattedIngredients() );
-    const attributeData   = toOptAntD( getFormattedAttributes('holidays') );
-    const attributeData2  = toOptAntD( getFormattedAttributes('diets') );
+
+        const ingredientsData  = toOptAntD( getFormattedIngredients() );
+        const ingredientsData2 = toOptAntD( getFormattedIngredients() );
+
+        console.log(ingredientsData);
+        console.log(ingredientsData2);
+
+        const attributeData    = toOptAntD( getFormattedAttributes('holidays') );
+        const attributeData1   = toOptAntD( getFormattedAttributes('holidays') );
+
+        const attributeData2   = toOptAntD( getFormattedAttributes('diets') );
+        const attributeData21  = toOptAntD( getFormattedAttributes('diets') );
+
 
     return (
       <div>
@@ -193,11 +203,11 @@ class SearchForm extends Component {
 
 
 
-          <GroupedElements type={false} options={ingredientsData} />
+          <GroupedElements type={false} options1={ingredientsData} options2={ingredientsData2} />
 
-          <GroupedElements type={false} options={attributeData} />
+          <GroupedElements type={false} options1={attributeData} options2={attributeData1} />
 
-          <GroupedElements type={false} options={attributeData2} />
+          <GroupedElements type={false} options1={attributeData2} options2={attributeData21} />
 
 
           {/*<GroupedElements type={false} options={getAttribute('holidays')} /> */}

@@ -1,4 +1,4 @@
-import { search, groceristar } from "@groceristar/groceristar-fetch";
+import { search } from "@groceristar/groceristar-fetch";
 
 // console.log(groceristar);
 
@@ -57,9 +57,9 @@ function toOptAntD(array) {
 
 
 export {
-  // getAttribute,
+
   getPlaceholder,
-  // getIngredients,
+
   toOpt, toOptAntD,
   getFormattedAttributes,
   getFormattedIngredients
