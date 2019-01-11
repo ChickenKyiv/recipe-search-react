@@ -5,25 +5,32 @@ import {
 
 const InputGroup = Input.Group;
 
-const GroupContainer = (props) => {
+// <InputGroup size="large" {...formItemLayout} {...attributes} />
+//
+//
+// <InputGroup {...formItemLayout} {...attributes} >
+//   {children}
+// </InputGroup>
+
+const GroupContainer = ({ attributes, children }) => {
 
   const formItemLayout   = {
     labelCol:   { offset: 4 },
     wrapperCol: { span: 12 }
   };
-  // const formItemLayout   = {
-  //   labelCol:   { offset: 4 },
-  //   wrapperCol: { span: 12 }
-  // };
 
-  const {
-    ...attributes
-  } = props
+
+  // const {
+  //   ...attributes
+  // } = props
 
 
   return (
 
-    <InputGroup size="large" {...formItemLayout} {...attributes} />
+
+      <InputGroup size="large">
+        {children}
+      </InputGroup>
 
   );
 };

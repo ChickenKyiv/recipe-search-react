@@ -1,11 +1,6 @@
 import { search } from "@groceristar/groceristar-fetch";
 
-// console.log(groceristar);
 
-//  function getDish(randomWeek){
-//       return mealCalendar.getDishByWeek(randomWeek);
-//   }
-//
 
 // this function will
 function getFormattedAttributes( attribute ) {

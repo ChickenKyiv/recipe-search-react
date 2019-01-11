@@ -25,6 +25,7 @@ import {
 } from "../../selectors/selector"
 
 
+
 import Attribute  from './Attribute/Attribute'
 import Ingredient from './Ingredient/Ingredient'
 
@@ -36,7 +37,9 @@ import qs         from 'qs'
 
 
 
-// import GroupContainer    from './GroupContainer/GroupContainer';
+import GroupContainer    from './GroupContainer/GroupContainer';
+
+
 
 
 
@@ -48,16 +51,7 @@ import UnitedSelectField from './SelectContainer/UnitedSelectField';
 
 const start = 0, count = 5;
 
-// const options = [
-//   { value: 'chocolate',  label: 'Chocolate'},
-//   { value: 'strawberry', label: 'Strawberry'},
-//   { value: 'vanilla',    label: 'Vanilla'  },
-//   { value: 'vanilla-ice',    label: 'Vanilla Ice'},
-//   { value: 'vanilla latte',    label: 'Vanilla Latte'},
-//   { value: 'vanilla Chino',    label: 'Vanilla Chino'},
-//   { value: 'vanilla double',    label: 'Vanilla Double' }
-// ];
-//
+
 //
 // const ings = toOptAntD( getFormattedIngredients() )
 // const holidays = toOptAntD( getFormattedAttributes('holidays') )
@@ -77,8 +71,9 @@ class SearchForm extends Component {
       maxTime: '',
 
     }
-    this.handleSubmit       = this.handleSubmit.bind(this);
-    this.handleReset        = this.handleReset.bind(this);
+
+    this.handleSubmit        = this.handleSubmit.bind(this);
+    this.handleReset         = this.handleReset.bind(this);
 
     this.onChangeUnitedField = this.onChangeUnitedField.bind(this);
     // this.handleFieldChange  = this.handleFieldChange.bind(this);
@@ -102,6 +97,7 @@ class SearchForm extends Component {
     //    console.log( type)
     // this.setState
   }
+
   // handleFieldChange(e){
   //   this.setState({ [fieldId]: value });
   // }
@@ -132,17 +128,30 @@ class SearchForm extends Component {
     // console.log(getAttribute('holidays'))
 
 
-        const ingredientsData  = toOptAntD( getFormattedIngredients() );
-        const ingredientsData2 = toOptAntD( getFormattedIngredients() );
+    const ingredientsData  = toOptAntD( getFormattedIngredients() );
+    const ingredientsData2 = toOptAntD( getFormattedIngredients() );
 
-        console.log(ingredientsData);
-        console.log(ingredientsData2);
+    console.log(ingredientsData);
+    console.log(ingredientsData2);
 
-        const attributeData    = toOptAntD( getFormattedAttributes('holidays') );
-        const attributeData1   = toOptAntD( getFormattedAttributes('holidays') );
 
-        const attributeData2   = toOptAntD( getFormattedAttributes('diets') );
-        const attributeData21  = toOptAntD( getFormattedAttributes('diets') );
+    const diets1   = toOptAntD( getFormattedAttributes('diets') );
+    const diets2  = toOptAntD( getFormattedAttributes('diets') );
+
+
+    const cuisine1   = toOptAntD( getFormattedAttributes('cuisine') );
+    const cuisine2   = toOptAntD( getFormattedAttributes('cuisine') );
+
+    const course1   = toOptAntD( getFormattedAttributes('course') );
+    const course2   = toOptAntD( getFormattedAttributes('course') );
+
+    const allergy1   = toOptAntD( getFormattedAttributes('allergy') );
+    const allergy2   = toOptAntD( getFormattedAttributes('allergy') );
+
+
+    const holidays1    = toOptAntD( getFormattedAttributes('holidays') );
+    const holidays2   = toOptAntD( getFormattedAttributes('holidays') );
+
 
 
     return (
@@ -151,7 +160,7 @@ class SearchForm extends Component {
 
 
 
-{/*onChange={this.handleFieldChange} value={this.state[field]} */}
+        {/*onChange={this.handleFieldChange} value={this.state[field]} */}
 
 
           {/*}
@@ -181,36 +190,61 @@ class SearchForm extends Component {
           <br />
 
 
-          <UnitedSelectField type="Ingredient" onChange={this.onChangeUnitedField} />
-          <br />
-          */}
 
-
-
-          {/*
-          <UnitedSelectField type="Cuisine" onChange={this.onChangeUnitedField} />
-          <br />
-
-
-          <UnitedSelectField type="Course" onChange={this.onChangeUnitedField} />
-          <br />
-
-
-          <UnitedSelectField type="Holiday" onChange={this.onChangeUnitedField} />
           <br />
           */}
 
 
 
 
-          <GroupedElements type={false} options1={ingredientsData} options2={ingredientsData2} />
-
-          <GroupedElements type={false} options1={attributeData} options2={attributeData1} />
-
-          <GroupedElements type={false} options1={attributeData2} options2={attributeData21} />
 
 
-          {/*<GroupedElements type={false} options={getAttribute('holidays')} /> */}
+
+          <GroupContainer>
+            {/*ingredients*/}
+            <GroupedElements
+              type={false}
+              options1={ingredientsData}
+              options2={ingredientsData2} />
+
+          </GroupContainer>
+
+          {/*holidays*/}
+          <GroupedElements
+            type={false}
+            options1={holidays1}
+            options2={holidays2} />
+
+            {/* @TODO maybe we don't need to have 2 fields for diets */}
+          {/*diets*/}
+          <GroupedElements
+            type={false}
+            options1={diets1}
+            options2={diets2} />
+
+            {/*cuisine*/}
+            <GroupedElements
+              type={false}
+              options1={cuisine1}
+              options2={cuisine2} />
+
+              {/*course*/}
+              <GroupedElements
+                type={false}
+                options1={course1}
+                options2={course2} />
+
+                {/* @TODO maybe we don't need to have 2 fields for alleries */}
+                {/*allergy*/}
+                <GroupedElements
+                  type={false}
+                  options1={allergy1}
+                  options2={allergy1} />
+
+
+
+
+
 
           <Button type="primary" htmlType="submit" icon="search">
             Search Recipes

@@ -61,20 +61,7 @@ class Ingredient extends Component {
     for (let i = 0; i < ingredients.length; i++) {
       //console.log(this.props.placeholder+this.props.passedSelected.indexOf(ingredients[i]))
       var name = ingredients[i].toString();
-      // if(this.props.passedSelected.indexOf(ingredients[i]) === -1){
-      //
-      //   // options.push(
-      //   //   <Option key={ingredients[i].toString()} disabled={false}>{ingredients[i].toString()}</Option>
-      //   // );
-      //   options.push(<Item key={name} disabled={false}>{name}</Item>);
-      //   // console.log("enable in opp of",this.props.placeholder);
-      // } else {
-      //   // options.push(
-      //   //   <Option key={ingredients[i].toString()} disabled={true}>{ingredients[i].toString()}</Option>
-      //   // );
-      //   options.push(<Item key={name} disabled={true}>{name}</Item>);
-      //   // console.log("disable in opp of",this.props.placeholder);
-      // }
+  
 
     }
 

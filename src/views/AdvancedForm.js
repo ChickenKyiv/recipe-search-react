@@ -1,9 +1,12 @@
+import React, { Component, Fragment } from 'react';
+
 import {
   Form, Row, Col, Input, Button, Icon,
 } from 'antd';
 
 
-class AdvancedSearchForm extends React.Component {
+class AdvancedSearchForm extends Component {
+
   state = {
     expand: false,
   };
@@ -53,7 +56,9 @@ class AdvancedSearchForm extends React.Component {
 
 
   render() {
+
     return (
+      
       <Form
         className="ant-advanced-search-form"
         onSubmit={this.handleSearch}

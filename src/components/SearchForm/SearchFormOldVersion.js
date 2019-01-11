@@ -65,6 +65,7 @@ class SearchForm extends Component {
   }
 
   handleSubmit(e) {
+
     if( this.state.haveIngredients.length > 0 ){
       axios.get(process.env.REACT_APP_API_URL, {
         headers: {"Access-Control-Allow-Origin": "*"},
@@ -88,7 +89,7 @@ class SearchForm extends Component {
       .catch(error => console.log(error))
     }
     else {
-      alert("Please select atleast one Ingredient")
+      alert("Please select at least one Ingredient")
     }
      // this.handleReset() //does not work
     e.preventDefault()

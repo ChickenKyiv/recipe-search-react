@@ -6,6 +6,8 @@ import {
 
 import AdvancedSearchForm from './AdvancedForm';
 
+
+
 const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
 
 
@@ -15,6 +17,9 @@ class SearchView extends Component {
     return(
       <div>
         <WrappedAdvancedSearchForm />
+
+
+
         <div className="search-result-list">
           Search Result List
         </div>

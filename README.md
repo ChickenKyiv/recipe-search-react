@@ -1,5 +1,13 @@
 ## Advanced Search Form for Recipe Based projects
 
+
+- Move layout outside the App.js
+- Move to selectors. Split Search Form to Component that for Layout.
+- Selects from separated repo.
+- SF - contain data, all handleSubmit- Display layout inside.
+- we have an common onChange handler, for united fields
+
+
 @TODO
 i don't like that we're getting data from `fetch` in our field components - it's not cool at least
 We should replace it.
