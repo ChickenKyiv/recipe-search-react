@@ -138,15 +138,15 @@ class SearchForm extends Component {
     const diets1   = toOptAntD( getFormattedAttributes('diets') );
     const diets2  = toOptAntD( getFormattedAttributes('diets') );
 
-
-    const cuisine1   = toOptAntD( getFormattedAttributes('cuisine') );
-    const cuisine2   = toOptAntD( getFormattedAttributes('cuisine') );
-
-    const course1   = toOptAntD( getFormattedAttributes('course') );
-    const course2   = toOptAntD( getFormattedAttributes('course') );
-
-    const allergy1   = toOptAntD( getFormattedAttributes('allergy') );
-    const allergy2   = toOptAntD( getFormattedAttributes('allergy') );
+    //
+    // const cuisine1   = toOptAntD( getFormattedAttributes('cuisine') );
+    // const cuisine2   = toOptAntD( getFormattedAttributes('cuisine') );
+    //
+    // const course1   = toOptAntD( getFormattedAttributes('course') );
+    // const course2   = toOptAntD( getFormattedAttributes('course') );
+    //
+    // const allergy1   = toOptAntD( getFormattedAttributes('allergy') );
+    // const allergy2   = toOptAntD( getFormattedAttributes('allergy') );
 
 
     const holidays1    = toOptAntD( getFormattedAttributes('holidays') );
@@ -222,24 +222,6 @@ class SearchForm extends Component {
             options1={diets1}
             options2={diets2} />
 
-            {/*cuisine*/}
-            <GroupedElements
-              type={false}
-              options1={cuisine1}
-              options2={cuisine2} />
-
-              {/*course*/}
-              <GroupedElements
-                type={false}
-                options1={course1}
-                options2={course2} />
-
-                {/* @TODO maybe we don't need to have 2 fields for alleries */}
-                {/*allergy*/}
-                <GroupedElements
-                  type={false}
-                  options1={allergy1}
-                  options2={allergy1} />
 
 
 
