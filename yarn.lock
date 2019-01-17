@@ -916,10 +916,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.2.tgz#63985d3d8b02530e0869962f4da09142ee8e200e"
   integrity sha512-n/VQ4mbfr81aqkx/XmVicOLjviMuy02eenSdJY33SVA7S2J42EU0P1H0mOogfYedb3wXA0d/LVtBrgTSm04WEA==
 
-"@groceristar/groceristar-fetch@^1.1.40":
-  version "1.1.40"
-  resolved "https://registry.yarnpkg.com/@groceristar/groceristar-fetch/-/groceristar-fetch-1.1.40.tgz#256437359ad3e31ae992d9eb4dbe45a37dbad44b"
-  integrity sha512-lr+4sqUaetPI3SoKcmgDUiA9dG+OSIIb6zGgBmb4cA6bos9gOTQHV7WEGpnt55BgdlAbFEcehvjjy7JHOVE2NQ==
+"@groceristar/groceristar-fetch@^1.1.45":
+  version "1.1.45"
+  resolved "https://registry.yarnpkg.com/@groceristar/groceristar-fetch/-/groceristar-fetch-1.1.45.tgz#bc2ab54e45872ea76a608a91e0fbd1a884baffc9"
+  integrity sha512-nXz9u8earRzwYQW8LILXWRh0gd9VL7271z5Laa42yf6hWgh8h9NRuL+v4mDSM9YoFaE6X6YLqRTGl+mB9b4Nhg==
   dependencies:
     fs "0.0.1-security"
     lodash "^4.17.10"
