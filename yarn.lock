@@ -907,10 +907,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.8.2.tgz#576ff7fb1230185b619a75d258cbc98f0867a8dc"
   integrity sha512-rLu3wcBWH4P5q1CGoSSH/i9hrXs7SlbRLkoq9IGuoPYNGQvDJ3pt/wmOM+XgYjIDRMVIdkUWt0RsfzF50JfnCw==
 
-"@groceristar/groceristar-fetch@^1.1.45":
-  version "1.1.45"
-  resolved "https://registry.yarnpkg.com/@groceristar/groceristar-fetch/-/groceristar-fetch-1.1.45.tgz#bc2ab54e45872ea76a608a91e0fbd1a884baffc9"
-  integrity sha512-nXz9u8earRzwYQW8LILXWRh0gd9VL7271z5Laa42yf6hWgh8h9NRuL+v4mDSM9YoFaE6X6YLqRTGl+mB9b4Nhg==
+"@groceristar/groceristar-fetch@^1.1.48":
+  version "1.1.48"
+  resolved "https://registry.yarnpkg.com/@groceristar/groceristar-fetch/-/groceristar-fetch-1.1.48.tgz#f533f1ff92f276c0022984650510f70c0ab67688"
+  integrity sha512-Gye6wJRQj6SFZF11GxS289cUK2fhLxXJGEuLT9+FjYX84FJqaHolkQMXZ1kj5EjwyhFBTKYNXuESBtKdd0p/EQ==
   dependencies:
     fs "0.0.1-security"
     lodash "^4.17.10"
