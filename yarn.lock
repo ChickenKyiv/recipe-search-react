@@ -917,10 +917,10 @@
     underscore "^1.9.1"
     uuid "3.3.2"
 
-"@groceristar/select-component@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@groceristar/select-component/-/select-component-1.0.7.tgz#682624cbb2a51a989a3ddb18864694833afb9819"
-  integrity sha512-exdj4q0NEI4RtX7wuyLih2ASia9upqyF9gtYVpiaIdP7AcONvT9Hrc7P388YB9HqEjXaR6ztIE5jEUb/b1URiw==
+"@groceristar/select-component@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@groceristar/select-component/-/select-component-1.0.8.tgz#3b2873732ecfbced547955cc1fbf73082e7f3261"
+  integrity sha512-NM6T95LjFJMmv0BdTXsLTwi+Sc4wxOYhZVgd3xV4ZOXhkFYc3GLebdSr7xo8mE5XSvs1KiVMAnBeCd/oMYgKcA==
   dependencies:
     antd "^3.11.2"
     react-select "^2.1.2"
