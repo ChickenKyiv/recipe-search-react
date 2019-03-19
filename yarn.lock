@@ -1068,10 +1068,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.8.2.tgz#576ff7fb1230185b619a75d258cbc98f0867a8dc"
   integrity sha512-rLu3wcBWH4P5q1CGoSSH/i9hrXs7SlbRLkoq9IGuoPYNGQvDJ3pt/wmOM+XgYjIDRMVIdkUWt0RsfzF50JfnCw==
 
-"@groceristar/groceristar-fetch@^1.2.13":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@groceristar/groceristar-fetch/-/groceristar-fetch-1.2.13.tgz#5ecc4410868daae09911ccbb52619a67f6a5cfc6"
-  integrity sha512-QBHdDWn+Jnq4c3/l3OwdX+SvUsAKlB12CgLUN6k0FxinZZzPzuuR8Npo6J2mpODqwfTeuc9R6uly6y9SUpw/dQ==
+"@groceristar/groceristar-fetch@^1.2.17":
+  version "1.2.17"
+  resolved "https://registry.yarnpkg.com/@groceristar/groceristar-fetch/-/groceristar-fetch-1.2.17.tgz#cd0e06df9364cef0b7f3b8d4c8d5bebbd62a06fc"
+  integrity sha512-Y1JCY1oeFHec4W6cXObEdM+dByAy4VcCT4iqish6HWcSUXqwbQJ0UwPrUjW6WgS28CCUadRuK/tKe+bEcRq4yw==
   dependencies:
     "@groceristar/sd-wrapper" "^1.0.15"
     dayjs "^1.8.0"
