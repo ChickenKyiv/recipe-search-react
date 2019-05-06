@@ -5,7 +5,7 @@
   "dependencies": {
     "@groceristar/groceristar-fetch": "^1.2.13",
     "@groceristar/select-component": "^1.0.8",
-    "antd": "^3.13.0",
+    "antd": "^3.17.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "final-form": "^4.11.1",
