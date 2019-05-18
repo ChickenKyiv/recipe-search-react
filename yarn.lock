@@ -1345,10 +1345,10 @@
     path "^0.12.7"
     uuid "^3.3.2"
 
-"@groceristar/select-component@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@groceristar/select-component/-/select-component-1.0.8.tgz#3b2873732ecfbced547955cc1fbf73082e7f3261"
-  integrity sha512-NM6T95LjFJMmv0BdTXsLTwi+Sc4wxOYhZVgd3xV4ZOXhkFYc3GLebdSr7xo8mE5XSvs1KiVMAnBeCd/oMYgKcA==
+"@groceristar/select-component@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@groceristar/select-component/-/select-component-1.0.9.tgz#09bc0ec13ec161d51303f9f7d8694ffcc8795c5c"
+  integrity sha512-h3QmYca2cSBocF6k4fukHaBXrVtuMbqG0I+yiW0xqyvpAPVo3MxiYKvgHyLwVj5qkybxbPndKNzuVoYjByvdsg==
   dependencies:
     antd "^3.11.2"
     react-select "^2.1.2"
