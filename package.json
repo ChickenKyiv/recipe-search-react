@@ -28,7 +28,7 @@
     "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
-    "enzyme": "^3.8.0"
+    "enzyme": "^3.9.0"
   },
   "browserslist": [
     ">0.2%",
