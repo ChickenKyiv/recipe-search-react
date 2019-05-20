@@ -17,7 +17,7 @@
     "react-scripts": "3.0.1",
     "react-select": "^2.3.0",
     "shortid": "^2.2.14",
-    "snyk": "^1.161.1"
+    "snyk": "^1.165.1"
   },
   "scripts": {
     "start": "set PORT=3000 && react-scripts start",
