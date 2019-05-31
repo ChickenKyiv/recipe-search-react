@@ -4892,10 +4892,10 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-final-form@^4.11.1:
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.11.1.tgz#cf84a995a75140727c3676647d7cdb858869cb22"
-  integrity sha512-GuRAcbUE+vs/IFcvsRxMAaz0MQp5QaJKXU8FnNf4qlsVDuKoAyvDJGvvDsSTSgQDixavoxPmqwzJOVXrf0Hw1w==
+final-form@^4.13.1:
+  version "4.13.1"
+  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.13.1.tgz#5893b1fe490a36198b219b351eec135d7394cdcf"
+  integrity sha512-9bTIY68bKn6rIcyolFZlUqK1odlRXpi30C5CazJ5gUZpoMkeDAeb53FQ3gv37eX1zWtQtydgwD5ZAwZB5EGoGg==
   dependencies:
     "@babel/runtime" "^7.3.1"
 
