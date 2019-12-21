@@ -28,7 +28,7 @@
     "prepublish": "yarn run snyk-protect"
   },
   "devDependencies": {
-    "enzyme": "^3.10.0"
+    "enzyme": "^3.11.0"
   },
   "browserslist": [
     ">0.2%",
