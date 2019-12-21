@@ -15,7 +15,7 @@
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.3.0",
-    "react-select": "^3.0.4",
+    "react-select": "^3.0.8",
     "shortid": "^2.2.15",
     "snyk": "^1.258.2"
   },
